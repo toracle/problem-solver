@@ -10,7 +10,7 @@ _핵심 개념:_ Problem Space vs Solution Space · Einstellung Effect · Presum
 
 '''
 
-=== 3강. 고정 케이스 실습
+=== 3. 고정 케이스 실습
 
 ==== 워크시트 A-1 | 팀오더 케이스: 내 머릿속 지도 그리기
 
@@ -91,7 +91,7 @@ _핵심 개념:_ Problem Space vs Solution Space · Einstellung Effect · Presum
 
 '''
 
-=== 4강. 현업 케이스 슬롯
+=== 4. 현업 케이스 슬롯
 
 ==== 워크시트 B-1 | 내 현업 케이스 등록
 
@@ -133,7 +133,7 @@ _핵심 개념:_ Problem Space vs Solution Space · Einstellung Effect · Presum
 
 '''
 
-=== 6강. 강 간 과제
+=== 6. 강 간 과제
 
 _과제 카드 #1_
 

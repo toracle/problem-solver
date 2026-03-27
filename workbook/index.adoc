@@ -18,9 +18,14 @@ include::ch01.adoc[]
 
 include::ch02.adoc[]
 
+include::ch03.adoc[]
+
 include::ch04.adoc[]
+
+include::ch05.adoc[]
 
 include::ch06.adoc[]
 
-include::ch08.adoc[]
+include::ch07.adoc[]
 
+include::ch08.adoc[]
