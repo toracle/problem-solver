@@ -1,0 +1,230 @@
+extends: default
+page:
+  size: A4
+  margin: [22mm, 18mm, 22mm, 18mm]
+
+base:
+  font-family: NotoSerifKR
+  font-size: 10.5
+  line-height: 1.7
+  font-color: '#333333'
+  text-align: justify
+
+vertical_rhythm: 12
+
+font:
+  fallbacks:
+    - NotoSerifKR
+  catalog:
+    NotoSerifKR:
+      normal: NotoSerifKR-Regular.ttf
+      bold: NotoSerifKR-Bold.ttf
+      italic: NotoSerifKR-Regular.ttf
+      bold_italic: NotoSerifKR-Bold.ttf
+    NotoSansKR:
+      normal: NotoSansKR-Regular.ttf
+      bold: NotoSansKR-Bold.ttf
+      italic: NotoSansKR-Regular.ttf
+      bold_italic: NotoSansKR-Bold.ttf
+    NotoMono:
+      normal: NotoMono-Regular.ttf
+      bold: NotoMono-Regular.ttf
+      italic: NotoMono-Regular.ttf
+      bold_italic: NotoMono-Regular.ttf
+
+heading:
+  font-family: NotoSansKR
+  font-color: '#2C3E50'
+  font-style: bold
+  line-height: 1.3
+  margin-top: 12
+  margin-bottom: 6
+
+heading_h1:
+  font-size: 24
+  border-bottom-width: 1.5
+  border-bottom-color: '#2C3E50'
+  padding-bottom: 4
+  margin-top: 0
+  margin-bottom: 14
+
+heading_h2:
+  font-size: 17
+  margin-top: 18
+  margin-bottom: 8
+
+heading_h3:
+  font-size: 13
+  margin-top: 12
+  margin-bottom: 6
+
+heading_h4:
+  font-size: 11
+  font-color: '#555555'
+  font-style: bold
+
+title_page:
+  align: center
+  title:
+    font-family: NotoSansKR
+    font-size: 30
+    font-color: '#2C3E50'
+    font-style: bold
+    margin-bottom: 10
+  subtitle:
+    font-family: NotoSerifKR
+    font-size: 14
+    font-color: '#555555'
+    margin-bottom: 24
+  authors:
+    font-family: NotoSansKR
+    font-size: 12
+    font-color: '#333333'
+    margin-bottom: 6
+
+toc:
+  font-family: NotoSansKR
+  font-size: 10
+  font-color: '#333333'
+  dot-leader-font-color: '#BBBBBB'
+  line-height: 1.5
+  indent: 10
+  h2-font-style: bold
+  h2-font-color: '#2C3E50'
+
+header:
+  font-family: NotoSansKR
+  font-size: 8
+  font-color: '#999999'
+  height: 12mm
+  border-bottom-width: 0.5
+  border-bottom-color: '#DDDDDD'
+  recto:
+    right:
+      content: '{section-title}'
+  verso:
+    left:
+      content: '{doctitle}'
+
+footer:
+  font-family: NotoSansKR
+  font-size: 8
+  font-color: '#999999'
+  height: 12mm
+  border-top-width: 0.5
+  border-top-color: '#DDDDDD'
+  recto:
+    right:
+      content: '{page-number}'
+  verso:
+    left:
+      content: '{page-number}'
+
+footnotes:
+  font-size: 8
+  font-color: '#666666'
+  margin-top: 8
+  item-spacing: 3
+
+prose:
+  margin-top: 0
+  margin-bottom: 6
+
+list:
+  indent: 16
+  item-spacing: 3
+
+quote:
+  font-family: NotoSerifKR
+  font-size: 10.5
+  font-style: italic
+  font-color: '#2C3E50'
+  border-left-width: 3
+  border-left-color: '#2C3E50'
+  padding: [6, 12, 6, 12]
+  background-color: '#F5F5F5'
+  cite-font-family: NotoSerifKR
+  cite-font-size: 9
+  cite-font-color: '#999999'
+
+admonition:
+  column-rule-width: 0
+  padding: [6, 10, 6, 10]
+  label:
+    font-family: NotoSansKR
+    font-size: 8
+    font-style: bold
+
+admonition_note:
+  background-color: '#F0F4FB'
+  border-left-width: 3
+  border-left-color: '#5B7BA5'
+  label:
+    font-color: '#5B7BA5'
+
+admonition_tip:
+  background-color: '#F2F8F5'
+  border-left-width: 3
+  border-left-color: '#6A9B6A'
+  label:
+    font-color: '#6A9B6A'
+
+admonition_important:
+  background-color: '#FFF8E7'
+  border-left-width: 3
+  border-left-color: '#C8960A'
+  label:
+    font-color: '#C8960A'
+
+admonition_warning:
+  background-color: '#FFF4F3'
+  border-left-width: 3
+  border-left-color: '#D06050'
+  label:
+    font-color: '#D06050'
+
+example:
+  background-color: '#F8F8F8'
+  border-width: 1
+  border-color: '#DDDDDD'
+  border-radius: 3
+  padding: [8, 10, 8, 10]
+  title:
+    font-family: NotoSansKR
+    font-size: 10
+    font-style: bold
+    font-color: '#2C3E50'
+
+sidebar:
+  background-color: '#F5F5F5'
+  border-width: 1
+  border-color: '#CCCCCC'
+  border-radius: 3
+  padding: [8, 10, 8, 10]
+
+codespan:
+  font-family: NotoMono
+  font-size: 9.5
+
+code:
+  font-family: NotoMono
+  font-size: 9
+  font-color: '#E0E0E0'
+  background-color: '#2C3E50'
+  padding: [4, 6, 4, 6]
+
+table:
+  font-size: 9.5
+  border-width: 0.5
+  border-color: '#D0D0D0'
+  head:
+    font-style: bold
+    font-color: '#2C3E50'
+    background-color: '#EAEAEA'
+  body:
+    stripe-background-color: '#F9F9F9'
+
+thematic_break:
+  border-width: 0.5
+  border-color: '#CCCCCC'
+  margin: [8, 0, 8, 0]

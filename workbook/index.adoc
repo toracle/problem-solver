@@ -1,0 +1,26 @@
+= 워크샵 가이드북
+:doctype: book
+:toc: left
+:toc-title: 목차
+:toclevels: 3
+:sectnums:
+:chapter-label:
+:lang: ko
+:encoding: UTF-8
+:icons: font
+:source-highlighter: rouge
+:subtitle: 문제를 보는 눈 — Problem Space / Solution Space 훈련 (참가자용)
+
+
+include::front-matter.adoc[]
+
+include::ch01.adoc[]
+
+include::ch02.adoc[]
+
+include::ch04.adoc[]
+
+include::ch06.adoc[]
+
+include::ch08.adoc[]
+

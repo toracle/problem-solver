@@ -1,0 +1,66 @@
+[quote]
+____
+_대상:_ 풀스택 엔지니어 3-4년차  |  _구성:_ 8강 × 100분
+____
+
+'''
+
+=== 이 가이드북의 구성
+
+이 가이드북은 워크샵 _참가자용_ 자료입니다.
+각 강의에서 직접 쓰고, 채우고, 기록하는 공간입니다.
+
+----
+워크시트 A  각 강마다 제공되는 고정 케이스 실습 양식
+            팀오더(TeamOrder) 케이스를 강마다 다른 도구로 탐색합니다
+
+워크시트 B  1강부터 8강까지 동일한 현업 케이스를 들고 다니는 양식
+            매 강마다 새 도구를 내 현업 문제에 적용합니다
+            8강 끝에 하나의 완성된 분석이 남습니다
+
+과제 카드   각 강 후 현업에서 해올 짧은 실천 과제
+----
+
+'''
+
+=== 팀오더 케이스 소개
+
+이 워크샵 전체를 관통하는 고정 케이스입니다.
+
+----
+회사:  기업용 SaaS 스타트업, 시리즈 A 직후
+팀:    풀스택 엔지니어 4명, BizDev 1명
+
+민준 (BizDev, 31세)          고객사와 계약을 따오는 사람
+지연 (풀스택, 28세, 3년차)   빠르게 만드는 것에 자신 있다
+승현 (풀스택, 32세, 5년차)   팀의 시니어 / 이 워크샵의 시점 인물
+현태 (풀스택, 26세, 1년차)   막내. 당연한 것을 묻는다
+
+─────────────────────────────────────────────
+1강 출발 요구사항:
+
+  민준: "팀 협업 기능 강화해주세요.
+         알림이랑 업무 배정 쪽이요. 다음 달 데모."
+─────────────────────────────────────────────
+----
+
+'''
+
+=== 차례
+
+[cols="1,1,1", options="header"]
+|===
+| 강 | 제목 | 핵심 개념
+| 1강 | 솔루션 중독 — Problem Space를 건너뛰는 습관 | Problem Space vs Solution Space · Einstellung Effect · Presumptive Architecture
+| 2강 | 모호함의 해부학 — 요구사항을 분해하는 언어 | Functions / Attributes / Constraints (FAC) · 모호함의 세 출처
+| 3강 | 질문하는 자가 설계한다 — Context-Free Questions | Context-Free Questions · Black Box Test · Jobs-to-be-Done
+| 4강 | 지도를 그리기 전에 — 문제의 구조와 Domain Model | 증상-문제-근본원인 레이어 · Problem Framing · Domain Model
+| 5강 | 안개 속에서 걷는 법 — 모호함을 안고 가기 | Resolvable vs Essential Ambiguity · Spike Solution · Technical Debt
+| 6강 | 이 문제, 어디서 본 것 같은데 — 유사 추론 | 유사 추론(Analogical Reasoning) · 문제 유형 환원 · Trade-off 리서치
+| 7강 | 어디에 공을 들여야 하는가 — Risk-Driven 설계 | Quality Attributes · Engineering Risk · Risk-Driven Model
+| 8강 | 승현의 지도 — 해결책의 검증과 통합 | Problem-Solution Fit · Pre-mortem · 통합 회고
+|===
+
+
+'''
+
