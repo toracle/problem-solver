@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문제를 보는 눈 — Problem Space / Solution Space 훈련 워크샵</title>
+  <style>
+    :root {
+      --bg: #FAFAF8;
+      --fg: #2C3E50;
+      --muted: #6B7B8D;
+      --accent: #3A6EA5;
+      --card-bg: #FFFFFF;
+      --border: #E0E0E0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+                   "Noto Sans KR", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 80px 0 48px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    header .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    header .epigraph {
+      margin-top: 24px;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .intro {
+      margin-bottom: 48px;
+      color: var(--fg);
+      font-size: 0.95rem;
+    }
+
+    .intro p + p {
+      margin-top: 12px;
+    }
+
+    .resources {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 64px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .card .audience {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--fg);
+      margin-bottom: 16px;
+    }
+
+    .card-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .card-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid var(--accent);
+      border-radius: 5px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .card-links a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .card-links a.pdf {
+      border-color: var(--border);
+      color: var(--muted);
+    }
+
+    .card-links a.pdf:hover {
+      background: var(--fg);
+      border-color: var(--fg);
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 0 48px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 48px 0 32px; }
+      header h1 { font-size: 1.5rem; }
+      .card { padding: 20px; }
+      .card-links { flex-direction: column; }
+      .card-links a { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>문제를 보는 눈</h1>
+    <div class="subtitle">Problem Space / Solution Space 훈련 워크샵</div>
+    <div class="epigraph">"문제를 오래 보는 것이 해결책을 빠르게 만드는 방법이다."</div>
+  </header>
+
+  <section class="intro">
+    <p>
+      풀스택 엔지니어 3–4년차를 위한 8강 워크샵입니다.
+      요구사항이 들어오는 순간 Solution Space로 넘어가는 습관을 인식하고,
+      Problem Space를 깊이 탐색하는 근력을 키웁니다.
+    </p>
+    <p>
+      Pólya, Weinberg &amp; Gause, Fairbanks, Cunningham, Schön의 이론에 기반하며,
+      가상의 스타트업 "팀오더" 케이스를 8강에 걸쳐 반복 탐색합니다.
+    </p>
+  </section>
+
+  <section class="resources">
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-label">Resource B</span>
+      </div>
+      <h2>읽기 자료</h2>
+      <div class="audience">참가자 · 독립 학습자</div>
+      <p>
+        승현의 이야기를 따라가며 각 강의 핵심 개념을 배웁니다.
+        워크샵 전날 읽어오거나, 워크샵 없이도 독립적으로 학습할 수 있습니다.
+        프롤로그부터 에필로그까지 — 에피소드, 개념 노트, 현업 적용 가이드.
+      </p>
+      <div class="card-links">
+        <a href="reading.html">HTML</a>
+        <a href="reading.pdf" class="pdf">PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-label">Resource A</span>
+      </div>
+      <h2>워크샵 가이드북</h2>
+      <div class="audience">참가자</div>
+      <p>
+        워크샵 당일 들고 다니며 직접 쓰는 워크북입니다.
+        팀오더 고정 케이스 실습(워크시트 A), 나의 현업 케이스 분석(워크시트 B),
+        강 후 실천 과제 카드를 포함합니다.
+      </p>
+      <div class="card-links">
+        <a href="workbook.html">HTML</a>
+        <a href="workbook.pdf" class="pdf">PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-label">Resource C</span>
+      </div>
+      <h2>퍼실리테이터 가이드</h2>
+      <div class="audience">강의자 전용</div>
+      <p>
+        강별 시간 배분표, 진행 상세, 소그룹 공유 가이드, 디브리프 가이드를 담고 있습니다.
+        워크샵 전체 운영 원칙과 등장인물 퍼실리테이션 팁도 포함합니다.
+      </p>
+      <div class="card-links">
+        <a href="facilitator.html">HTML</a>
+        <a href="facilitator.pdf" class="pdf">PDF</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <a href="https://github.com/warmblood-kr/problem-solver">GitHub</a>
+    &nbsp;&middot;&nbsp;
+    CC BY 4.0
+  </footer>
+</div>
+
+</body>
+</html>

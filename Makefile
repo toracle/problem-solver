@@ -9,9 +9,13 @@ THEME      := theme/pdf-theme.yml
 HTML_TARGETS := $(addprefix $(BUILDDIR)/,$(addsuffix .html,$(BOOKS)))
 PDF_TARGETS  := $(addprefix $(BUILDDIR)/,$(addsuffix .pdf,$(BOOKS)))
 
-.PHONY: all html pdf fonts clean help
+.PHONY: all html pdf fonts site clean help
 
 all: html pdf
+
+site: html pdf
+	mkdir -p $(BUILDDIR)
+	cp site/index.html $(BUILDDIR)/index.html
 
 html: $(HTML_TARGETS)
 
@@ -42,6 +46,7 @@ help:
 	@echo "  make html   - Build all HTML books"
 	@echo "  make pdf    - Build all PDF books"
 	@echo "  make all    - Build both HTML and PDF"
+	@echo "  make site   - Build site (index + HTML + PDF)"
 	@echo "  make fonts  - Download and generate fonts"
 	@echo "  make clean  - Remove build directory"
 	@echo ""
