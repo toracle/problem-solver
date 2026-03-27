@@ -1,4 +1,6 @@
-= 워크샵 가이드북
+= 문제를 보는 눈: 워크샵 가이드북
+박정수 (Park Jeongsoo) <toracle@gmail.com>
+:subtitle: Problem Space / Solution Space 훈련 워크샵
 :doctype: book
 :toc: left
 :toc-title: 목차
@@ -9,7 +11,6 @@
 :encoding: UTF-8
 :icons: font
 :source-highlighter: rouge
-:subtitle: 문제를 보는 눈 — Problem Space / Solution Space 훈련 (참가자용)
 
 
 include::front-matter.adoc[]
