@@ -1,0 +1,375 @@
+== Seunghyun's Map — Validating and Integrating the Solution
+
+=== Time Allocation
+
+[cols="1,1,1", options="header"]
+|===
+| Order | Content | Time
+|  | 0. Connection from previous session — 8-session journey summary | 5 min
+|  | 1. Opening provocation — Two teams' demo | 10 min
+|  | 2. Concept explanation (Problem-Solution Fit, Pre-mortem) | 15 min
+|  | 3. Fixed case exercise — Worksheet A-8 | 30 min
+|  | 4. Real-work case final presentation — Worksheet B-8 | 25 min
+|  | 5. Debrief — full workshop convergence | 10 min
+|  | 6. Distribute final card | 5 min
+|  | _Total_ | _100 min_
+|===
+
+
+=== Session Facilitation Notes
+
+* ★ This is the final session. Focus on integration and reflection more than tool usage.
+* ★ In PART 3 "comparing Session 1 and now," be sure to call on someone who checked "things I no longer need to build appeared." This is the core conclusion of the entire workshop.
+* ★ Ask questions that connect Pre-mortem failure reasons to the Session 1–7 tools. "Which session's tool could have caught this failure reason?"
+* ★ Don't force the real-work case presentations. Keep it voluntary, but give presenters adequate feedback time.
+* ★ After distributing the final card, give a brief moment of silence. Let participants feel the resonance of Session 8.
+
+=== Session Walkthrough
+
+=== 0. Connection from Previous Session (5 minutes)
+
+----
+Summary of the 8-session journey:
+
+Problem Space exploration tools
+  Session 1: Recognizing premature jumps to Solution Space
+  Session 2: Decomposing requirements with FAC
+  Session 3: Context-Free Questions + Black Box
+  Session 4: Symptom/problem/root cause, Domain Model
+
+Handling ambiguity
+  Session 5: Resolvable vs Essential, Spike
+
+Solution Space exploration tools
+  Session 6: Analogical reasoning + business research
+  Session 7: Risk-Driven design energy allocation
+
+This session:
+  With everything learned in Sessions 1–8 → validate the solution
+  And reflect —
+  "What did understanding the problem deeply actually change?"
+
+Collecting Session 7 assignments:
+"When you applied a technique to your most important risk —
+ what came out?" → 2–3 people share briefly
+----
+
+'''
+
+=== 1. Opening Provocation (10 minutes)
+
+_"Two Teams' Demo"_
+
+[quote]
+____
+_Team A_
+____
+[quote]
+____
+They built quickly for one month.
+____
+[quote]
+____
+Notification feature, task assignment, dashboard, report feature.
+____
+[quote]
+____
+At the demo, the client team lead said:
+____
+[quote]
+____
+"This... doesn't seem like what we wanted."
+____
+
+[quote]
+____
+_Team B_
+____
+[quote]
+____
+They built just three things in one month.
+____
+[quote]
+____
+Task assignment notification, acknowledgement confirmation, night-shift urgent channel.
+____
+[quote]
+____
+At the demo, the client team lead said:
+____
+[quote]
+____
+"We could start using this right away."
+____
+
+Ask participants:
+
+[quote]
+____
+"Was Team B building only three things laziness,
+____
+[quote]
+____
+ or good judgment?"
+____
+
+A moment later:
+
+[quote]
+____
+"Team B understood the problem deeply enough
+____
+[quote]
+____
+ to know that three things was everything.
+____
+[quote]
+____
+ Team A built a lot because they didn't understand the problem —
+____
+[quote]
+____
+ they didn't know what was needed.
+____
+>
+[quote]
+____
+This is the core of today's session.
+____
+[quote]
+____
+When you truly understand the problem, the solution actually becomes simpler.
+____
+[quote]
+____
+What to build becomes clear,
+____
+[quote]
+____
+and what doesn't need to be built becomes visible.
+____
+[quote]
+____
+And that simpler thing can be delivered first."
+____
+
+'''
+
+=== 2. Concept Explanation (15 minutes)
+
+==== Concept 1 — Problem-Solution Fit (7 minutes)
+
+What must be continuously checked before building the solution — and while building it:
+
+_Is the problem I've defined actually connected to the solution I've built?_
+
+----
+Problem-Solution Fit check:
+
+┌──────────────────────────────────────────────────┐
+│ Problem definition (Problem Space exploration     │
+│ results)                                         │
+│                                                  │
+│  - Who is suffering?                             │
+│  - In what situation?                            │
+│  - What workaround are they using now?           │
+│  - What cost occurs if this isn't resolved?      │
+│                                                  │
+│           ↕  Does this correspond?               │
+│                                                  │
+│ Solution (Solution Space exploration results)    │
+│                                                  │
+│  - Whose pain does this feature alleviate?       │
+│  - In what situation does it work?               │
+│  - Does it replace the workaround?               │
+│  - What remains unresolved?                      │
+└──────────────────────────────────────────────────┘
+----
+
+The most common mismatch:
+
+----
+Problem: "Team members miss tasks and the line stops"
+Solution: "Nice notification UI + read receipts + notification history page"
+
+→ Do read receipts and a history page prevent line stoppages?
+  The core of the problem (guaranteed delivery) is missing.
+----
+
+Three practical questions for the Fit check:
+
+. *"If this feature didn't exist, what would users do?"*
+   → If the workaround would remain intact, Fit hasn't been achieved.
+
+. *"Could the problem still occur even with this feature?"*
+   → If yes, the core has been missed.
+
+. *"Is there anything not built that is needed to solve this problem?"*
+   → If there is, decide: does it need to happen now, or can it wait?
+
+'''
+
+==== Concept 2 — Pre-mortem: Reverse Simulation (8 minutes)
+
+A technique proposed by Gary Klein.
+
+Normal review: "Why will this solution succeed?"
+Pre-mortem: "Assume this solution was adopted and failed 6 months later — what were the reasons?"
+
+Why reverse is more effective:
+
+----
+Normal review                   Pre-mortem
+───────────────────────────     ───────────────────────────────
+Success bias develops            Imagining failure reduces bias
+"It'll work out"                  "If it failed, why?"
+Hard to find weaknesses          Weaknesses surface naturally
+Psychologically hard to          Hypothetical failure creates
+criticize in team setting        psychological safety
+----
+
+How to run a Pre-mortem:
+
+----
+1. "Assume this solution was actually deployed."
+2. "Six months have passed."
+3. "It failed. For what reasons?"
+4. Each person writes 3+ reasons individually (2 minutes)
+5. Small group share → extract top 3 most-cited failure reasons
+6. Can those reasons be addressed preemptively?
+----
+
+_TeamOrder case Pre-mortem examples:_
+
+----
+"Reasons TeamOrder's notification feature failed after 6 months"
+
+• Night-shift urgent SMS costs ran higher than expected — feature was turned off
+• Team members were receiving too many notifications and started turning them off
+• Background notification policy changed after an iOS update
+• Team leads didn't know what to do with team members who hadn't confirmed,
+  so they stopped using it
+• The factory's firewall was blocking FCM (discovered later)
+----
+
+What can be addressed preemptively now:
+* SMS costs → Set a monthly cap; let users set urgent flags themselves
+* Notification fatigue → Rate Control logic (analogical reasoning from Session 6)
+* Firewall → Confirm client network requirements as a Constraint (Session 2 FAC)
+
+'''
+
+=== 3. Fixed Case Exercise (30 minutes)
+
+
+==== Small Group Share Guide
+
+_Small Group Share (8 minutes)_
+
+Facilitator guide:
+----
+Core comparison points for this session
+────────────────────────────────────────
+"Did anyone check 'things I no longer need to build appeared' in PART 3?"
+  → This is the core conclusion of this session, and the entire workshop.
+    Ask them:
+    "What disappeared? How did you come to know it was okay for it to disappear?"
+
+"Did the solution become simpler?"
+  → For teams where it did: which session produced that simplification?
+    (Session 2 FAC? Session 4 layer choice? Session 5 Spike? Session 7 Risk?)
+
+"Among the Pre-mortem failure reasons,
+ are there any that could have been caught with Session 2–4 tools?"
+  → When this connection is visible, the entire workshop's learning
+    has been integrated.
+----
+
+'''
+
+=== 4. Real-Work Case Slot — Final Integration (25 minutes)
+
+Session 8's real-work case slot is different from usual.
+Instead of individual worksheet work, this is time for an integrated presentation of what participants applied to their real-work cases across Sessions 1–8.
+
+==== Worksheet B-8 | My Real-Work Case: Final Integration Presentation
+
+
+==== Debrief Guide
+
+=== 5. Debrief (10 minutes)
+
+_Anticipated difficulties and responses_
+
+----
+"I felt anxious that we were building too few features"
+  → This is the core moment of learning. Use the TeamOrder outcome
+    to directly show why "exactly what's needed" is a compliment.
+
+"Worksheet B doesn't feel complete"
+  → Completion is not the goal. What's sufficient is the trace
+    showing how problem understanding deepened across 8 sessions.
+
+"I'm not sure I can actually use the tools"
+  → Have them remember just one thing.
+    When you receive a requirement → pause just once → ask a question.
+    The rest attaches naturally through experience.
+----
+
+_Facilitator guide — core convergence of this session_
+
+----
+Converge to a single message that runs through all 8 sessions.
+
+"When you truly understand the problem, the solution actually becomes simpler."
+
+This is the conclusion of the entire workshop.
+
+Do you remember what you came up with in 30 seconds in Session 1?
+If the solution then and the solution now are different,
+ask where that difference came from.
+
+It might be that identifying Attributes in Session 2's FAC
+meant you didn't need to build unnecessary features.
+
+It might be that deciding "fix the problem, not the symptom"
+in Session 4's layer choice narrowed the scope.
+
+It might be that resolving technical uncertainty through
+Session 5's Spike meant you didn't spend two weeks
+going in the wrong direction.
+
+It might be that knowing "this doesn't need to be done now"
+from Session 7's risk identification enabled focus for the demo.
+
+All of this is the result of Problem Space exploration.
+Because we spent more time understanding, we could build less,
+more precisely, and deliver sooner.
+----
+
+'''
+
+=== 6. Workshop Closing (5 minutes)
+
+_Assignment Card #8 — This time, there is no assignment_
+
+----
+┌──────────────────────────────────────────────────┐
+│ Final Card                                       │
+│                                                  │
+│ There is no assignment.                          │
+│                                                  │
+│ Instead, take this one thing with you.           │
+│                                                  │
+│ The next time you receive a requirement,         │
+│ before moving to the Solution Space,             │
+│ pause just once and ask:                         │
+│                                                  │
+│ "What do I know right now?                       │
+│  And what do I not yet know?"                    │
+│                                                  │
+│ That question is this entire workshop.           │
+└──────────────────────────────────────────────────┘
+----
+
+'''

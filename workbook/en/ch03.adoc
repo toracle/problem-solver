@@ -1,0 +1,253 @@
+== Whoever Asks Designs — Context-Free Questions
+
+[quote]
+____
+_Core Question:_ What BizDev wants and what users need are different — how do you surface them?
+____
+
+_Core Concepts:_ Context-Free Questions · Black Box Test · Jobs-to-be-Done
+
+'''
+
+=== Worksheet A-3 | TeamOrder Case: Interview + Black Box
+
+_Exercise Setup_
+
+Pairs of two. Assign roles.
+
+* *Interviewer (as Seunghyun):* Interview Minjun using Context-Free Questions
+* *BizDev (as Minjun):* Receive the Minjun card below and answer only from that information
+
+[NOTE]
+====
+*Minjun Role Card (do not show to the interviewer)*
+
+You just came back from a conversation with Client A (a mid-sized manufacturer).
+What you know:
+
+* 3 team leads at the client each assign tasks to 5–10 team members
+* Currently: assign in the system, then send a separate Slack message
+* Team members miss tasks 1–2 times per week
+* Team leads frequently go out to the factory floor → use mobile
+* The demo will be shown to team leads (team members come later)
+
+What you don't know (answer "I'm not sure" if asked):
+
+* Notification response time requirements
+* Technical specs of the existing system
+* Budget
+* Team members' device environment
+====
+
+'''
+
+[sidebar]
+.Worksheet A-3 | Session 3 / TeamOrder Case
+--
+Name (Interviewer): pass:[________________________] +
+Name (BizDev): pass:[________________________]
+--
+
+*PART 1. Interview (15 minutes)*
+
+Use Context-Free Questions to interview Minjun. +
+Create at least 2 questions from each of the three categories below and actually use them.
+
+*[ Process Questions — how is it happening? ]*
+
+[cols="1,1", options="header"]
+|===
+| Question | What you discovered
+
+| Q: {nbsp} +
+A: {nbsp}
+| {nbsp}
+
+| Q: {nbsp} +
+A: {nbsp}
+| {nbsp}
+
+| Q: {nbsp} +
+A: {nbsp}
+| {nbsp}
+|===
+
+*[ Product Questions — what should it be? ]*
+
+[cols="1,1", options="header"]
+|===
+| Question | What you discovered
+
+| Q: {nbsp} +
+A: {nbsp}
+| {nbsp}
+
+| Q: {nbsp} +
+A: {nbsp}
+| {nbsp}
+
+| Q: {nbsp} +
+A: {nbsp}
+| {nbsp}
+|===
+
+*[ Meta-Questions — questions about the questioning ]* +
+(Try at least 1)
+
+[cols="1,1", options="header"]
+|===
+| Question | What you discovered
+
+| Q: {nbsp} +
+A: {nbsp}
+| {nbsp}
+|===
+
+'''
+
+*PART 2. Black Box (10 minutes)*
+
+Fill in based on what you discovered in the interview. +
+Mark anything still unknown as [?].
+
+Feature name:: pass:[________________________]
+Trigger (when does it start?):: pass:[________________________]
+Input (what goes in, who provides it?):: pass:[________________________]
+Output (what comes out, to whom?):: pass:[________________________]
+Edge cases (conditions where it doesn't work)::
+. pass:[________________________]
+. pass:[________________________]
+. pass:[________________________]
+
+'''
+
+*PART 3. Update FAC after interview (5 minutes)*
+
+Compare with your Session 2 worksheet.
+
+[cols="1,1", options="header"]
+|===
+| Newly filled in from the interview | Still marked [?]
+
+| {nbsp} | {nbsp}
+
+| {nbsp} | {nbsp}
+
+| {nbsp} | {nbsp}
+|===
+
+Most unexpected discovery from this interview: +
+pass:[________________________]
+
+Was there a question where you got stuck? What type was it? +
+pass:[________________________]
+
+'''
+
+_Small Group Share (5 minutes)_
+
+Groups that used the same role card compare their Black Boxes.
+
+.Comparison Points
+****
+"Same interview subject — how different are the Black Boxes?" +
+-> The direction of the questions was different. +
+   Trace backwards: which question led to which discovery?
+
+"Which team found the most edge cases — what questions did they ask?" +
+-> Teams that asked "what should this absolutely never do?" +
+   and "under what conditions does this fail?" find more edge cases.
+
+"What happened in teams that used a Meta-Question?" +
+-> 'Is there anything I might have missed?' pulls out the most new information. +
+   Bring this experience into the full-group share.
+****
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-3 | My Real-Work Case: Applying Context-Free Questions
+
+[sidebar]
+.Worksheet B-3 | Session 3 / My Real-Work Case (continued from Session 2)
+--
+Name: pass:[________________________]
+--
+
+Most important [?] item in my real-work case FAC: +
+(from Session 2 worksheet)
+
+pass:[________________________]
+
+'''
+
+Create Context-Free Questions to fill in this [?].
+
+*Process Questions (how is it currently happening?):*
+
+. Q1. pass:[________________________]
+. Q2. pass:[________________________]
+
+*Product Questions (what should it be?):*
+
+. Q1. pass:[________________________]
+. Q2. pass:[________________________]
+
+*Meta-Question (what might I be missing?):*
+
+. Q1. pass:[________________________]
+
+'''
+
+Who could actually be asked these questions?
+
+[cols="1,1", options="header"]
+|===
+| Target | When/How will you ask?
+
+| {nbsp} | {nbsp}
+|===
+
+'''
+
+Draw the Black Box for your case. +
+(Based on information currently available. Use [?] freely)
+
+Feature name:: pass:[________________________]
+Trigger:: pass:[________________________]
+Input:: pass:[________________________]
+Output:: pass:[________________________]
+Edge cases::
+. pass:[________________________]
+. pass:[________________________]
+
+'''
+
+=== 6. Assignment (5 minutes)
+
+_Assignment Card #3_
+
+[sidebar]
+.Assignment Card #3
+--
+This week, have a short conversation with a BizDev, product manager, or teammate.
+
+*Conversation target:* +
+Someone who could resolve one of the [?] items in your real-work case (see Worksheet B-3)
+
+*What to try:*
+
+. Use one of the Context-Free Questions naturally in the conversation
+. After the conversation, record what you discovered in Worksheet B — especially any unexpected answers
+. If possible, update the Black Box
+
+*Preview of next session:* +
+Understanding problem structure — symptoms, problems, root causes, and Domain Model
+--
+
+'''
+
+_(Continue to next session)_
+
+'''

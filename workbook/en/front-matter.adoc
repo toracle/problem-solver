@@ -1,0 +1,69 @@
+[quote]
+____
+_Audience:_ Fullstack engineers with 3–4 years of experience  |  _Structure:_ 8 sessions × 100 minutes
+____
+
+'''
+
+[discrete]
+=== How This Workbook Is Organized
+
+This workbook is the _participant_ material for the workshop.
+It is a space to write, fill in, and record during each session.
+
+----
+Worksheet A  Fixed case exercise forms provided for each session
+             The TeamOrder case is explored session by session using different tools
+
+Worksheet B  A form for carrying a single real-work case across all 8 sessions
+             Each session applies the new tool to your own real-work problem
+             At the end of Session 8, you will have one completed analysis
+
+Assignment   A short practical task to complete at work after each session
+Card
+----
+
+'''
+
+[discrete]
+=== TeamOrder Case Introduction
+
+This is the fixed case that runs through the entire workshop.
+
+----
+Company:  Enterprise SaaS startup, just post-Series A
+Team:     4 fullstack engineers, 1 BizDev
+
+Minjun (BizDev, 31)               Brings in client deals
+Jiyeon (Fullstack, 28, 3 yrs)     Confident building things fast
+Seunghyun (Fullstack, 32, 5 yrs)  Team senior / point-of-view character
+Hyuntae (Fullstack, 26, 1 yr)     Most junior. Asks what everyone else takes for granted
+
+─────────────────────────────────────────────────────────────────────────
+Starting requirement for Session 1:
+
+  Minjun: "Can you beef up the team collaboration features?
+           Notifications and task assignment. We need a demo next month."
+─────────────────────────────────────────────────────────────────────────
+----
+
+'''
+
+[discrete]
+=== Contents
+
+[cols="1,1,1", options="header"]
+|===
+| Session | Title | Core Concepts
+| 1 | Solution Addiction — The Habit of Skipping the Problem Space | Problem Space vs Solution Space · Einstellung Effect · Presumptive Architecture
+| 2 | The Anatomy of Ambiguity — A Language for Decomposing Requirements | Functions / Attributes / Constraints (FAC) · Three Sources of Ambiguity
+| 3 | Whoever Asks Designs — Context-Free Questions | Context-Free Questions · Black Box Test · Jobs-to-be-Done
+| 4 | Before Drawing the Map — Problem Structure and Domain Model | Symptom-Problem-Root Cause layers · Problem Framing · Domain Model
+| 5 | Walking Through the Fog — Living with Ambiguity | Resolvable vs Essential Ambiguity · Spike Solution · Technical Debt
+| 6 | I've Seen This Problem Before — Analogical Reasoning | Analogical Reasoning · Problem-Type Reduction · Trade-off Research
+| 7 | Where to Focus Your Energy — Risk-Driven Design | Quality Attributes · Engineering Risk · Risk-Driven Model
+| 8 | Seunghyun's Map — Validating and Integrating the Solution | Problem-Solution Fit · Pre-mortem · Integration Retrospective
+|===
+
+
+'''

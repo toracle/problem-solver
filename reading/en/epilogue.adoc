@@ -1,0 +1,164 @@
+== The Person Who Learned to Draw Maps
+
+[quote]
+____
+_"A teacher shows you the path. A mentor teaches you how to find one."_
+____
+
+'''
+
+=== The Story
+
+TeamOrder's notification feature moved beyond the demo and made it into production.
+
+Three months in, the expected happened. Two team leads asked to reduce their notification settings — too many were coming through. The "notification fatigue" failure scenario that had appeared in the Pre-mortem had become real. Because the team had anticipated it, they added priority filtering in one week.
+
+Six months in, users had grown to 150. It was time to pull out the scalability design that had been set aside in Session 7 as "low risk for now." Because the team had expected this too, they scheduled a review without alarm.
+
+One day Jiyeon posted on Slack:
+
+[quote]
+____
+Jiyeon: I noticed lately — I react differently to requirements than I used to.
+____
+[quote]
+____
+        I used to immediately think about DB design.
+____
+[quote]
+____
+        Now "what problem is this?" comes first.
+____
+
+Hyuntae replied:
+
+[quote]
+____
+Hyuntae: Same here. But doesn't that make you slower?
+____
+[quote]
+____
+         What do you think, Seunghyun?
+____
+
+Seunghyun replied:
+
+[quote]
+____
+Seunghyun: It feels slower at first. But the rework has decreased, hasn't it?
+____
+[quote]
+____
+           Not doing rework is ultimately faster.
+____
+
+Minjun jumped in later:
+
+[quote]
+____
+Minjun: Hey, now when I bring requirements,
+____
+[quote]
+____
+        I find myself thinking about "why this is needed" first.
+____
+[quote]
+____
+        Feels like I picked something up without realizing it.
+____
+
+'''
+
+=== Closing — To the Reader
+
+This workshop did not teach technology.
+
+FAC, Context-Free Questions, Black Box, Domain Model, Spike, analogical reasoning, Risk-Driven — these are all tools. Tools eventually become less useful. Better tools come along.
+
+But what lies behind the tools remains.
+
+The willingness to understand problems first. The patience to explore ambiguity rather than be unsettled by it. The ability to identify what not to build. And — the belief that moving in the right direction is ultimately faster than moving quickly.
+
+This does not emerge automatically from three or four years of experience. It requires deliberate practice. This workshop was the beginning of that practice.
+
+'''
+
+=== What Was Learned in This Workshop
+
+A final review of the tools and concepts covered across eight sessions.
+
+_Problem Space Exploration_
+
+[cols="1,1,1", options="header"]
+|===
+| Session | Tool | Core Question
+| 1 | Einstellung Effect, Presumptive Architecture awareness | Am I understanding the problem, or recognizing a pattern?
+| 2 | FAC (Functions / Attributes / Constraints) | Have I uncovered all three layers of the requirement?
+| 3 | Context-Free Questions, Black Box Test | Did I explore without presupposing a solution?
+| 4 | Symptom-Problem-Root Cause layers, Domain Model | Did I consciously choose which layer to solve?
+|===
+
+
+_Handling Ambiguity_
+
+[cols="1,1,1", options="header"]
+|===
+| Session | Tool | Core Question
+| 5 | Resolvable vs Essential diagnosis, Spike | Is this ambiguity resolvable through asking, or only knowable through doing?
+|===
+
+
+_Solution Space Exploration_
+
+[cols="1,1,1", options="header"]
+|===
+| Session | Tool | Core Question
+| 6 | Analogical reasoning, problem-type reduction, Trade-off research | Have I seen this structure somewhere before?
+| 7 | Engineering Risk identification, Quality Attributes, Risk-Driven design | Where should I focus my design energy?
+| 8 | Problem-Solution Fit, Pre-mortem | Is the problem I defined actually connected to the solution I built?
+|===
+
+
+'''
+
+=== So What Changes?
+
+Before this workshop:
+
+----
+Requirement received
+    ↓ (15 seconds)
+Enter Solution Space
+    ↓
+Design + Build
+    ↓
+"This isn't what I asked for"
+    ↓
+Rework
+----
+
+After this workshop:
+
+----
+Requirement received
+    ↓
+"What do I know right now?"
+    ↓
+Problem Space exploration (FAC, Context-Free Q, Domain Model...)
+    ↓
+Identify core + what can wait + what doesn't need to be built
+    ↓
+Build with focus
+    ↓
+Early delivery → Feedback → Validated expansion
+----
+
+Reducing rework is not the goal. Reducing rework is a byproduct. The goal — is getting users what they need, sooner.
+
+'''
+
+If Seunghyun's learning could be written in a single line:
+
+_"Spending more time on the problem is how you build the solution faster."_
+
+If that line comes to mind the next time you receive a requirement — this workshop succeeded.

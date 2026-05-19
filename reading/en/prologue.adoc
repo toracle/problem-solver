@@ -1,0 +1,113 @@
+== The Mapmaker
+
+[quote]
+____
+_"Giving someone a map is easy. Teaching them to draw one is hard. But only the latter shows them how to truly find their way."_
+____
+
+'''
+
+=== The Story
+
+When Seunghyun started his career, he believed that being fast was the same as being good.
+
+Whenever a requirement came in, he was the first to open his laptop. He took the speed at which structure formed in his mind as evidence of his ability. And that belief was not entirely wrong — he built things quickly, most of them worked, and his team recognized him for it.
+
+But somewhere past his third year, something strange began to happen.
+
+He found himself rebuilding things he had already built. Code he had worked hard on was discarded after a "this isn't what I asked for." Features he considered finished ended with "we don't actually need that anymore" two months later. Technically, he had built exactly what was requested — and yet, somehow, it kept turning out to be wrong.
+
+Then one day, a single sentence from Minjun became the starting point of this story.
+
+_"Can you beef up the team collaboration features? Notifications and task assignment. We need a demo next month."_
+
+The old Seunghyun would have been thinking WebSocket within fifteen seconds. And he was — but this time, something made him stop.
+
+_What do I actually know right now?_
+
+'''
+
+This workshop is the story of what Seunghyun learned, starting from that question, across eight sessions.
+
+It is not a story about technology. It is not about any particular framework or language.
+
+_It is a story about how to see problems._
+
+'''
+
+=== What This Series Covers
+
+People who build software move between two spaces.
+
+_Problem Space_ — What is the problem? Who is suffering? Why does this matter?
+
+_Solution Space_ — How do we solve it? What do we build? What technology do we use?
+
+The issue is that most engineers do not spend enough time in the Problem Space. The moment they hear a requirement, their brain automatically crosses into the Solution Space. The more experience they have, the faster and more natural that transition becomes.
+
+And most rework starts right there.
+
+'''
+
+This workshop teaches two things.
+
+_First_, tools for exploring the Problem Space deeply — a language for dissecting requirements, methods for handling ambiguity, techniques for grasping the structure of a problem.
+
+_Second_, and more importantly — when you understand a problem deeply, __the solution actually becomes simpler__.
+
+What must be achieved becomes clear. What can wait until later becomes visible. What does not need to be built at all becomes identifiable. As a result — you build less, build faster, and deliver to users sooner.
+
+Spending more time in the Problem Space may seem slow. But in practice, that exploration prevents rework in the Solution Space.
+
+'''
+
+=== How to Use This Guide
+
+Each episode is meant to be read the night before the corresponding session, or used as a review afterwards.
+
+As you read, put yourself in Seunghyun's position. There will be moments when Jiyeon's choices feel like something from your own past. There will be moments when Hyuntae's discoveries feel entirely new.
+
+The concept notes translate what happens in the story into theoretical language. If you read them again after completing the workshop exercises, they will read differently than the first time.
+
+That is the intention of this structure.
+
+'''
+
+=== Characters
+
+_Seunghyun_ (32, fullstack engineer, 5 years of experience)
+The point-of-view character. He wants to do good work, but keeps feeling like something is going slightly off. He is the most technically skilled person on the team, but lately he has been sensing — faintly — that skill alone is not enough.
+
+_Jiyeon_ (28, fullstack engineer, 3 years of experience)
+Confident in her ability to build things fast. When a requirement comes in, her hands move first. Nothing is wrong with that. She just doesn't know yet what she doesn't know.
+
+_Hyuntae_ (26, fullstack engineer, 1 year of experience)
+The team's most junior member. He doesn't know much — and precisely because of that, he asks about things everyone else takes for granted. His questions often land on what matters most.
+
+_Minjun_ (31, BizDev)
+The person who brings in client deals. He doesn't know much about technology, but his instincts about the field are sharp. The requirements he brings are always ambiguous. That's not his fault.
+
+'''
+
+=== Series Contents
+
+[cols="1,1,1", options="header"]
+|===
+| Session | Episode Title | Core Question
+| Prologue | _The Mapmaker_ | Why should I read this?
+| Session 1 | _Seunghyun's Thirty Seconds_ | Am I actually understanding the problem, or just recognizing a pattern?
+| Session 2 | _The Three Things Hidden in Minjun's Words_ | What does it mean for a requirement to be "clear"?
+| Session 3 | _Whoever Asks Designs_ | What BizDev wants and what users need are different things
+| Session 4 | _Before Drawing the Map_ | How do you know when you've understood a problem well enough?
+| Session 5 | _Walking Through the Fog_ | How do you handle ambiguity that cannot be resolved?
+| Session 6 | _I've Seen This Problem Before_ | You may not be seeing this problem for the first time
+| Session 7 | _Where to Focus Your Energy_ | Should you put the same effort into every part of a design?
+| Session 8 | _Seunghyun's Map_ | A solution that looks plausible is different from one that actually works
+| Epilogue | _The Person Who Learned to Draw Maps_ | After the workshop ends
+|===
+
+
+'''
+
+_First episode: Seunghyun's Thirty Seconds_
+'''

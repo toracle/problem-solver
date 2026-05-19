@@ -1,0 +1,173 @@
+== The Three Things Hidden in Minjun's Words
+
+[quote]
+____
+_"The requirement isn't unclear. There are just three different kinds of things mixed together."_
+____
+
+'''
+
+=== The Story
+
+Thursday morning.
+
+Seunghyun, Jiyeon, and Minjun gathered in a small meeting room. On one side of the whiteboard was the sentence from last time:
+
+_"Team collaboration features. Notifications and task assignment. Demo next month."_
+
+Jiyeon opened her laptop and said:
+
+"Seunghyun, I thought it through last night. I think SSE will work for the notifications, and adding an `assignee` field to tasks covers the basics. I'd guess we can have an MVP in about two weeks."
+
+Minjun nodded. "Oh, that's quick."
+
+Seunghyun started to say something but stopped. What Jiyeon said was not wrong — technically it was entirely feasible. But something felt missing.
+
+_We're sending notifications — which notifications? At what point? Who needs to receive them?_
+_We're assigning tasks — how are tasks currently assigned? What's frustrating about it?_
+_Demo — what exactly does the client want to see?_
+
+Seunghyun spoke up.
+
+"Minjun — hold on. Just one question. You said the client can't keep track of task assignments, right? Is the specific situation that a team lead assigns a task and the member doesn't know about it, or that the assignment isn't being made in the first place?"
+
+Minjun thought for a moment.
+
+"Ah — the assignment itself is happening. Inside the system. But when a task gets assigned, nothing goes out to the team member. The team lead has to send a separate Slack message saying 'can you take this?'"
+
+_Ah._ Seunghyun began to write.
+
+"So the notification is only needed when a task is assigned — or does it also need to go out when the status changes?"
+
+"Hmm... when assigned, and when a deadline is approaching, I guess."
+
+"What's the team lead's environment like? Desktop, or do they use mobile too?"
+
+"Oh, these are manufacturing folks — they're out on the floor a lot. Mobile would be good to have."
+
+Jiyeon quietly closed her laptop.
+
+"...SSE doesn't work when you're backgrounded on mobile."
+
+Silence.
+
+Seunghyun walked to the whiteboard. He began writing what Minjun had said, divided into three columns.
+
+----
+Functions         │ Attributes              │ Constraints
+──────────────────┼─────────────────────────┼──────────────────
+Notify on         │ Works in mobile         │ Demo next month
+task assignment   │ background              │
+                  │                         │ Keep existing
+Deadline reminder │ Delivered within        │ assignment UI (?)
+                  │ 1 minute                │
+      [?]         │         [?]             │      [?]
+----
+
+"Minjun, see all those question marks? Those are the things we don't know yet. If we start building without answering them, we're going to have to tear everything apart later."
+
+Minjun stared at the whiteboard for a while.
+
+"But... some of these are things I need to go back and ask the client about."
+
+"Exactly. On the Attributes side — how fast the notifications need to arrive, whether there should be a re-send if someone hasn't read it. Even if you asked me, I couldn't answer those. We need to go directly to the client's users."
+
+Jiyeon said:
+
+"So the two-week MVP..."
+
+Seunghyun smiled.
+
+"Is two weeks after we know what we're building."
+
+'''
+
+=== Concept Notes
+
+==== The Three Layers of a Requirement
+
+The three columns Seunghyun drew on the whiteboard come from the __FAC framework__footnote:[Gerald M. Weinberg & Donald C. Gause, _Exploring Requirements: Quality Before Design_, 1989. This book introduces the framework of separating requirements into three layers — Functions, Attributes, and Constraints. The FAC acronym originates here.] that Weinberg presents in _Exploring Requirements_.
+
+Every requirement looks like a single sentence on the surface — but in practice, it contains three distinct kinds of information mixed together.
+
+_Functions — What does it do?_
+
+The actions the system performs. These are the most visible, and the first to surface in conversation.
+
+"Send a notification." "Assign a task." "Show a list."
+
+Both BizDev and users naturally speak in Function language. So engineers tend to hear only Functions and stop there.
+
+_Attributes — How must it do it?_
+
+The quality criteria for a Function. "How quickly." "How reliably." "In what environment." "In what form."
+
+Attributes rarely surface first in conversation. The person speaking either takes them for granted and omits them, or hasn't thought them through clearly yet. But Attributes determine Architecture.
+
+The way Jiyeon's `SSE` choice fell apart — that was because she didn't know about the mobile background constraint, which was an Attribute.
+
+_Constraints — What cannot be touched?_
+
+The conditions a solution must respect. Technical (existing systems, infrastructure), business (budget, timeline), legal (regulations, contracts).
+
+Constraints are the hardest to uncover. They are so obvious to the people involved that they don't say them. And they're discovered latest — usually after the design is complete.
+
+----
+The later a constraint is discovered, the more exponentially expensive the rework becomes.
+----
+
+==== Ambiguity Comes from Three Places
+
+The reason filling in FAC is hard is that ambiguity comes from three different sources.
+
+First, _the language itself is ambiguous._ The phrase "fast notification" contains no measurement standard. This can be resolved with a question: "How fast do you mean?"
+
+Second, _different people interpret it differently._ The same word "notification" might make a BizDev picture a desktop popup, a developer think of a server push, and a user expect a text message. This can only be resolved by drawing the picture together.
+
+Third, _there are unstated assumptions._ Things like "without touching the existing screen" — things that go unsaid because they seem too obvious. These require direct questions to uncover. But how to uncover them — that is the subject of Session 3.
+
+==== "The Document Is Nothing; the Documenting Is Everything"
+
+The act itself of Seunghyun drawing three columns on the whiteboard was important.
+
+Weinberg says: the purpose of creating a requirements document is not to finish the document. It is that __the whole team ends up with the same picture__ through the process of making it.
+
+[TIP]
+====
+Drawing the three FAC columns on the whiteboard and filling in the question marks together is itself the act of aligning the team's understanding. Not the finished document — the process is the point.
+====
+
+While watching Seunghyun mark the question marks, Minjun made a discovery too. "Some of these are things I need to go back and ask the client about." The whiteboard had generated conversation.
+
+'''
+
+=== Try This Week
+
+The next time you receive a requirement, mentally unfold these three columns.
+
+_Functions_: What actions does this sentence describe?
+
+_Attributes_: Were quality criteria mentioned? If not, what criteria might influence the architecture?
+
+_Constraints_: Are there "obvious" things I'm already assuming? Are there unstated conditions the other person may have?
+
+In particular: _it is normal for the "?" column to outnumber the "confirmed" column._ Knowing what you don't know is the beginning.
+
+'''
+
+==== How FAC Creates Simplification
+
+FAC checking has one more important effect.
+
+In the process of filling in the "?" columns — "this is not something we need to build" starts to become visible.
+
+When Attributes become clear, features that don't need to meet that standard naturally drop out of scope. If "response time under one second" is confirmed as an Attribute, there's no reason to use WebSocket for secondary features that don't need real-time updates.
+
+When Constraints become clear, things that need to operate outside those conditions are no longer in scope for now. If a budget ceiling is confirmed as a Constraint, infrastructure beyond that range exits the conversation.
+
+Filling in the "?" columns is simultaneously work to find what needs to be built and work to find what doesn't. The deeper you explore the Problem Space — the narrower and clearer the Solution Space becomes. And that clarity makes faster delivery possible.
+
+'''
+
+_Next episode: Whoever Asks Designs — How to fill the FAC blanks using Context-Free Questions and the Black Box Test_
+'''

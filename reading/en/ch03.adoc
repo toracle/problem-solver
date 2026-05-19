@@ -1,0 +1,150 @@
+== Whoever Asks Designs
+
+[quote]
+____
+_"Direct questions narrow the answers. Good questions open what hasn't been seen yet."_
+____
+
+'''
+
+=== The Story
+
+Friday morning.
+
+Seunghyun, Jiyeon, and Minjun gathered in the meeting room again. This time, Minjun said he would connect them by video call with the client's point of contact — the team lead, Director Kim.
+
+The video connected. Jiyeon spoke first.
+
+"Hello, Director Kim. We'd like to ask about the notification feature. We were thinking it would be good to automate the manual Slack messages you've been sending. Would email notifications work for you, or would you prefer app push notifications?"
+
+Director Kim paused.
+
+"Hmm... email or app push... I'm not sure. Whatever's more convenient, I suppose."
+
+Jiyeon looked at Minjun. Minjun shrugged.
+
+Seunghyun quietly stepped in.
+
+"Director Kim, may I ask something different? Could you walk me through what happens when you assign tasks right now? I'd like to hear the full flow."
+
+Director Kim relaxed slightly.
+
+"Oh, sure. So when we're out on the floor, we log the assignment in the system, and then we message the team member on Slack — 'can you take this one?' But sometimes they miss it. When people are out on the floor, they don't check Slack much."
+
+_On the floor._ Seunghyun wrote it down.
+
+"Are your team members out on the floor a lot too?"
+
+"Yes, we're factory line supervisors. Everyone's out there with a tablet or just their phone."
+
+_Tablet or phone._ He wrote that down too.
+
+"What happens when someone misses a task?"
+
+"Line stoppage. If it doesn't get handled on time, production halts. Then it comes back on us."
+
+The room went quiet.
+
+Jiyeon was quickly revising something in her notes.
+
+Seunghyun continued.
+
+"Director Kim — may I ask this: is there anything I've missed? Any situation I might not have thought of?"
+
+Director Kim thought for a moment, then said:
+
+"Well... we also have a night shift. When urgent assignments come in at night, the message needs to go out even faster. That's when it becomes the biggest problem."
+
+Seunghyun stopped writing. _Urgent assignments on the night shift._ This was entirely unexpected.
+
+After the call ended, Jiyeon closed her laptop and said:
+
+"My first question was email or push notification — I can see now how narrow that question was."
+
+Seunghyun walked to the whiteboard and began writing.
+
+----
+Trigger: On task assignment / On urgent assignment (including nights)
+Input:   Team lead's assignment action (within the system)
+Output:  Immediate delivery to team member's device (tablet/phone)
+Edge:    Team member is offline
+         Urgent assignment during night shift while asleep
+----
+
+"Does it look different now?"
+
+Jiyeon nodded.
+
+"If I hadn't known about the line stoppage... I would have thought a one-minute delay in notification would be fine."
+
+Seunghyun added:
+
+"And email is off the table now. No one's going to be checking email while trying to prevent a line stoppage."
+
+'''
+
+=== Concept Notes
+
+==== Why Direct Questions Narrow Things Down
+
+Jiyeon's first question — "Would email work for you, or would you prefer app push?" — was not a bad question. It was just already assuming a solution.
+
+What that question presupposes:
+
+* Notifications are needed (true, but not yet confirmed)
+* Email and app push are the options (are there others?)
+* The person understands the difference between the two (she didn't)
+
+Weinberg calls questions like this __Context-Specific Questions__. They start from a specific context — in this case, notification technology — and keep the conversation within that context.
+
+By contrast, Seunghyun's "Could you walk me through what happens when you assign tasks?" assumes no solution at all. It explores the problem space itself. This is a __Context-Free Question__footnote:[Weinberg & Gause, _Exploring Requirements_, 1989. A Context-Free Question is designed to be open enough that the respondent can interpret it within any context they choose. "How do you currently handle this?" and "What would ideal look like?" are typical examples.].
+
+==== Meta-Questions — The Most Underrated Kind
+
+Seunghyun's last question — "Is there anything I've missed?" — was what surfaced the night shift urgent assignment scenario.
+
+That information could not have come from any other question. There was no reason to ask "do you operate a night shift?" beforehand.
+
+Meta-Questions are powerful for this reason: conversation naturally flows within the territory of what the questioner already knows. A Meta-Question __gives the other person permission to cross that boundary__.
+
+----
+Ordinary question: I ask from within what I know → they answer
+Meta-Question: I signal there's territory I don't know → they tell me
+----
+
+"Is there anything I've missed?" is the safest and most powerful question available in any situation.
+
+==== Black Box — Reaching Agreement Before Implementation
+
+What Seunghyun wrote on the whiteboard after the call was the core elements of a Black Box Template.
+
+Agreeing on the Black Box first produces two things.
+
+One: _the boundary gets agreed on before debating the implementation_. "What goes in and what must come out" gets settled before "how do we build it." Once that is agreed, the implementation method becomes the engineers' call.
+
+Two: _edge cases surface naturally_. The question "under what conditions does this function not work?" arises naturally from the Black Box boundary. What happens when a team member is offline in an environment where line stoppages occur — discovering edge cases like this during implementation is expensive.
+
+==== Ask About the Workaround
+
+There is one Process Question that Weinberg particularly emphasizes — keep it in mind.
+
+__"What workaround are you using right now?"__footnote:[Weinberg calls this a "Process Question" or "current solution question." It starts from the observation that people are already solving in behavior what they cannot express in words. Exploring Requirements, 1989.]
+
+People are already doing in action what they cannot express in words. The separate Slack message was the workaround. Knowing exactly what that workaround is reveals __the real problem__. If there is no workaround — the problem isn't urgent enough to prioritize.
+
+'''
+
+=== Try This Week
+
+The next time you have a requirements conversation, stay conscious of three things.
+
+_First._ Before you ask a question, check: is it already assuming a solution? "Would you prefer A or B?" presupposes that the answer is one of A or B.
+
+_Second._ When a conversation stalls, try: "How are you handling this right now?" The workaround will surface.
+
+_Third._ Before you close the conversation, say at least once: "Is there anything I've missed?" The most important thing may come out right there.
+
+'''
+
+_Next episode: Before Drawing the Map — How to distinguish symptoms, problems, and root causes, and draw a domain map of the problem space_
+'''

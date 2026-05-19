@@ -1,0 +1,176 @@
+== Before Drawing the Map
+
+[quote]
+____
+_"Navigate without a map, and you'll arrive somewhere you were never meant to go."_
+____
+
+'''
+
+=== The Story
+
+Monday afternoon.
+
+Seunghyun, Jiyeon, and the team's newest member Hyuntae gathered at the whiteboard. It was the first design session since the call with Director Kim.
+
+Jiyeon started drawing on the whiteboard.
+
+"Here's what I'm thinking — add a `status` column to the task table, fire an FCM push to the token when an assignment event occurs. For night shift, we add a `priority` flag."
+
+Hyuntae nodded. "Sounds clean."
+
+Seunghyun studied Jiyeon's diagram for a while. Something felt off. Not wrong, exactly, but.
+
+_Are we solving the right problem?_
+
+Seunghyun spoke up.
+
+"Jiyeon — hold on. Let's get clear on what we're trying to fix."
+
+"Team members missing tasks. Because there's no notification."
+
+"Missing tasks because there's no notification — that's right. But is that the symptom or the problem?"
+
+Jiyeon put down her pen.
+
+Seunghyun erased the whiteboard and drew three lines.
+
+----
+Symptom:      Team members miss tasks
+Problem:      No notification sent after assignment
+Root Cause:   The assignment workflow happens outside the system
+----
+
+"If we build the notification, we solve the 'problem' layer. But the root cause stays. The team lead enters it in the system, then sends a separate Slack message — that double-action is still there."
+
+Hyuntae asked. "So do we need to fix the root cause too?"
+
+"Not necessarily. For a demo next month, the notification might be enough. But it has to be a conscious decision. 'We are fixing the problem layer right now. The root cause comes later' — that has to be a decision, not an accident."
+
+Jiyeon thought for a moment.
+
+"So we might get a similar request again later."
+
+"We will. And we need to be ready for that. Or we need to talk to Minjun about whether to address the root cause now."
+
+Seunghyun erased the whiteboard again and started drawing something different.
+
+"Okay, before that — let's draw out who does what in this system. Before we write a line of code."
+
+----
+Team Lead  ─── Assigns Task ──→  Task
+                                  │
+                                  │ Status Change
+                                  ▼
+Team Member  ←── Notification ──  Assigned
+    │                              │
+    │ Acknowledges                 │
+    ▼                              ▼
+Acknowledged           In Progress / Done / Overdue
+----
+
+Hyuntae studied it, then said:
+
+"Seunghyun, do we actually need an 'Acknowledged' state? Can't we just send the notification?"
+
+Jiyeon jumped in.
+
+"But Director Kim said he wants to know if team members saw it. Don't you remember?"
+
+Hyuntae tilted his head. "Did he? I thought it was just a notification."
+
+Seunghyun watched quietly.
+
+_We had the same conversation — and three people understood it differently._
+
+"Someone here is treating 'Assigned' and 'Acknowledged' as the same thing. They're different. 'Assigned' means the team lead has assigned it. 'Acknowledged' means the team member has seen it. If they're the same, there's no need for an acknowledgement feature. If they're different, there is."
+
+Hyuntae said quietly:
+
+"That changes the DB design."
+
+"Right."
+
+The room went quiet. Jiyeon's original diagram had already become obsolete.
+
+'''
+
+=== Concept Notes
+
+==== Symptom, Problem, and Root Cause
+
+A doctor who hears a patient say "I have a headache" doesn't immediately prescribe pain medication. They first ask why it hurts — because the headache may be a symptom.
+
+The same distinction of layers exists in software development.
+
+A __Symptom__ is an observable outcome. "Team members miss tasks." It is where the pain is felt — but fixing the symptom is not the same as fixing the problem.
+
+A __Problem__ is the direct cause of the symptom. "No notification is sent after assignment." Fixing this makes the symptom disappear. But a deeper cause may remain.
+
+A __Root Cause__ is the deeper structure that generates the problem. "The assignment workflow happens outside the system." Fixing this can make multiple symptoms disappear at once.
+
+Which layer to address is a __conscious choice__ that depends on context. For a demo next month, fixing the problem layer is realistic. For a long-term product roadmap, the root cause might be within reach. The issue is — many teams fix the symptom layer _without realizing it_.
+
+[NOTE]
+====
+"Which layer are we fixing?" is not a technical decision — it is a **scope decision**. If the team doesn't explicitly share this choice, they can easily end up believing they're each solving a different layer.
+====
+
+==== The Same Phenomenon Frames Differently, Becomes a Different Problem
+
+The phenomenon of "team members miss tasks" becomes an entirely different problem depending on how you frame it.
+
+Framed as a notification problem — build notifications.
+Framed as a communication problem — redesign the process.
+Framed as a visibility problem — build a dashboard.
+Framed as an accountability problem — build an acknowledgement feature.
+
+A good engineer _recognizes that multiple frames are possible_, and chooses together with the team which frame to work from.
+
+==== Domain Model — Drawing the World Before Writing Code
+
+Fairbanks distinguishes three models surrounding software.footnote:[George Fairbanks, _Just Enough Software Architecture_, 2010. The distinction between Domain Model, Design Model, and Code Model is covered in detail in Chapter 3, "Model Kinds." The degree of alignment between these three models is presented as a key factor in architecture quality.]
+
+The Domain Model is __the real-world concepts__. People, actions, states, rules, objects. This is not code — it is an understanding of reality.
+
+The Design Model is __the structure of the software being built__. ERDs, APIs, system diagrams. This is the entry point to the Solution Space.
+
+The Code Model is __the actual implementation__.
+
+Most engineers skip the Domain Model and go straight to the Design Model. Just as Hyuntae treated "Assigned" and "Acknowledged" as the same thing — when the Domain Model is not aligned within the team, the same meeting produces different designs.
+
+__How do you know when the Domain Model has stabilized?__ When the team is speaking the same vocabulary. When "task" means the same thing to everyone. When "Assigned" and "Acknowledged" point to the same concept in every mind on the team. Until that point, even the most detailed ERD has a shaky foundation.
+
+'''
+
+=== Try This Week
+
+Before your next design meeting, ask the team this question.
+
+_"Are we fixing a symptom, or are we fixing the problem?"_
+
+And before you start designing, invest five minutes to align on domain vocabulary.
+
+**"What are the three most important concepts in this system?
+ What states can each of them be in?"**
+
+These two questions can prevent hours of rework later.
+
+'''
+
+==== Layer Selection Determines Scope
+
+The decision of "which layer to fix" naturally determines the scope of what needs to be built.
+
+If you decide to fix the symptom layer — everything related to the root cause layer is not yours to build right now. That comes later.
+
+If you decide to fix the problem layer — that decision defines this sprint's scope. Other root causes generating other symptoms do not need to be addressed now.
+
+Deeply understanding the Problem Space does not mean you build more. It means you can distinguish what needs to be built now from what doesn't. And the clearer "what needs to be built now" becomes, the faster you can complete it and deliver it to users first.
+
+Layer selection is not merely a decision about "what to fix." It is also a decision about "what to deliver now."
+
+'''
+
+_Next episode: Walking Through the Fog — The choice Cunningham made in front of irresolvable ambiguity_
+'''

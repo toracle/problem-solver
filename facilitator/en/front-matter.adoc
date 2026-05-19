@@ -1,0 +1,99 @@
+NOTE: This document is for instructors/facilitators only. Do not distribute to participants.
+
+
+[quote]
+____
+_This document is for instructors/facilitators only. Do not distribute to participants._
+____
+
+'''
+
+[discrete]
+=== Workshop Overview
+
+[cols="1,1", options="header"]
+|===
+| Item | Details
+| _Audience_ | Fullstack engineers with 3–4 years of experience
+| _Structure_ | 8 sessions × 100 minutes (excluding breaks)
+| _Format_ | Lecture + hands-on mixed
+| _Group size_ | 6–16 participants recommended
+| _Materials_ | Printed Worksheets A/B, whiteboard, role cards (Session 3)
+|===
+
+
+'''
+
+[discrete]
+=== Fixed Case Characters
+
+The TeamOrder case characters are referenced throughout the entire workshop.
+Familiarize yourself with these personas in advance.
+
+[cols="1,1,1,1", options="header"]
+|===
+| Character | Role | Personality | Function in Workshop
+| _Minjun_ | BizDev, 31 | Non-technical, sharp field instincts | Brings ambiguous requirements. Not acting in bad faith.
+| _Jiyeon_ | Fullstack 3 yrs, 28 | Confident building things fast | Easy for participants to project themselves onto. Archetypal "solution addict."
+| _Seunghyun_ | Fullstack 5 yrs, 32 | Reflective, team senior | Point-of-view character. Shows the progression of learning.
+| _Hyuntae_ | Fullstack 1 yr, 26 | Most junior, asks what others take for granted | Appears from Session 4. Reveals different levels of understanding within a team.
+|===
+
+
+[quote]
+____
+_Facilitator tip:_ Do not criticize the characters. Jiyeon jumping straight to coding, Hyuntae being confused — these mirror where participants currently are. Maintain the frame of "not wrong — there was another way," not "that was incorrect."
+____
+
+'''
+
+[discrete]
+=== Session Flow — Full Map
+
+----
+Session  Topic                                    Epistemological Nature
+──────────────────────────────────────────────────────────────────────────────
+1        Solution Addiction                        Awareness
+2        The Anatomy of Ambiguity                  Vocabulary Acquisition
+3        Whoever Asks Designs                      Skill Training
+4        Before Drawing the Map                    Structure Recognition
+─────────────────────────── ← Turning Point ───────────────────────────────
+5        Walking Through the Fog                   Paradigm Shift
+─────────────────────────── ← Entering Solution Space ─────────────────────
+6        I've Seen This Problem Before              Pattern Connection
+7        Where to Focus Your Energy                 Judgment Training
+8        Seunghyun's Map                            Integration
+──────────────────────────────────────────────────────────────────────────────
+----
+
+'''
+
+[discrete]
+=== Session Continuity — Cumulative Structure
+
+The core design principle of this workshop is _accumulation_.
+
+* The _TeamOrder case_ begins with one sentence in Session 1 and runs identically through Session 8
+* _Worksheet B_ deepens participants' real-work cases across all 8 sessions
+* Each session's assignment feeds into the next session's opening connection
+* _Sessions are not independent._ If a session is missed, the following session becomes difficult
+
+'''
+
+[discrete]
+=== Core Message — The Entire Workshop
+
+The one thing participants should take from this workshop:
+
+[quote]
+____
+_"Spending more time on the problem is how you build the solution faster."_
+____
+
+When the Problem Space is explored more thoroughly:
+* What must essentially be achieved becomes clear
+* What can wait becomes visible
+* What does not need to be built is identified
+* → Build less and more precisely, and deliver earlier
+
+'''

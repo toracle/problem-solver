@@ -1,0 +1,406 @@
+== Walking Through the Fog — Living with Ambiguity
+
+=== Time Allocation
+
+[cols="1,1,1", options="header"]
+|===
+| Order | Content | Time
+|  | 0. Connection from previous session | 5 min
+|  | 1. Opening provocation — Two kinds of not knowing | 10 min
+|  | 2. Concept explanation (R/E distinction, Cunningham, Spike, Schön) ★ 25 min for this session | 25 min
+|  | 3. Fixed case exercise — Worksheet A-5 | 30 min
+|  | 4. Real-work case slot — Worksheet B-5 | 15 min
+|  | 5. Debrief | 10 min
+|  | 6. Distribute Assignment Card #5 | 5 min
+|  | _Total_ | _100 min_
+|===
+
+
+=== Session Facilitation Notes
+
+* ★ This session inverts the premise of Sessions 1–4. Participants may feel uncomfortable. Acknowledge that the discomfort is normal.
+* ★ Make the distinction between "just build it" and a Spike clear. A Spike begins knowing its purpose (learning) and its outcome (to be discarded).
+* ★ Emphasize that misclassifying R/E is okay. Doing the Spike itself brings clarity.
+* ★ Many participants misunderstand the original meaning of Technical Debt (Cunningham). Explain sufficiently that it is not "bad code" — it is an "intentional epistemological choice."
+* ★ "Is this decision actually needed right now?" — point out that this judgment itself is a senior capability.
+
+=== Session Walkthrough
+
+[cols="1,1", options="header"]
+|===
+| _Session character_ | This session is the turning point that inverts the premise of Sessions 1–4. Allow sufficient time for concept explanation.
+|===
+
+
+'''
+
+=== 0. Connection from Previous Session (5 minutes)
+
+----
+The journey so far:
+  Session 1: I was jumping to the Solution Space too quickly
+  Session 2: Requirements are Functions / Attributes / Constraints
+  Session 3: Context-Free Questions fill in the blank columns
+  Session 4: Distinguish symptom/problem/root cause, draw the Domain Model
+
+Shared premise:
+  "Ambiguity → resolved → through questions"
+
+This session cracks that premise.
+
+Collecting Session 4 assignments:
+"When you showed your Domain Model to your team,
+ were there parts they understood differently?" → 2–3 people share briefly
+----
+
+'''
+
+=== 1. Opening Provocation (10 minutes)
+
+_"Two Kinds of Not Knowing Experiment"_
+
+Give participants two situations.
+
+[quote]
+____
+_Situation A_
+____
+[quote]
+____
+The client's BizDev says they don't know "how fast the notifications need to go."
+____
+[quote]
+____
+It seems like you could find out by asking the actual end users (team leads) at the client.
+____
+>
+[quote]
+____
+_Situation B_
+____
+[quote]
+____
+The team doesn't know "whether users will actually use this notification feature."
+____
+[quote]
+____
+No one has used a feature like this before, and the client isn't sure either.
+____
+
+Ask about both situations.
+
+[quote]
+____
+"Both situations involve 'not knowing.'
+____
+[quote]
+____
+Can they be solved the same way?
+____
+[quote]
+____
+Or do they need different approaches?
+____
+[quote]
+____
+Decide in 30 seconds."
+____
+
+After 30 seconds, have participants raise their hands. They will split between "same approach" and "different approach."
+
+[quote]
+____
+"Why did you think they're different? Why did you think they're the same?"
+____
+
+This discussion is the starting point for today's session.
+
+[quote]
+____
+"Situation A is an ambiguity you can resolve by asking.
+____
+[quote]
+____
+Situation B is an ambiguity nobody knows yet.
+____
+[quote]
+____
+Even if you ask, there is no answer.
+____
+>
+[quote]
+____
+Sessions 1–4 were tools for Situation A.
+____
+[quote]
+____
+Today we deal with Situation B."
+____
+
+'''
+
+=== 2. Concept Explanation (25 minutes)
+
+==== Concept 1 — Two Kinds of Ambiguity (10 minutes)
+
+There are two fundamentally different kinds of ambiguity.
+
+----
+┌─────────────────────────────────────────────────────────┐
+│  Resolvable Ambiguity                                   │
+│                                                         │
+│  • Someone knows the answer                             │
+│  • Asking or researching will produce an answer         │
+│  • The tools from Sessions 1–4 apply                   │
+│                                                         │
+│  Examples: "What is the response time requirement       │
+│             for notifications?"                         │
+│            "Is there a night shift?"                    │
+│            "What is the budget ceiling?"                │
+└─────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────┐
+│  Essential Ambiguity                                    │
+│                                                         │
+│  • Nobody knows yet                                     │
+│  • Asking yields no answer — reality hasn't             │
+│    been decided yet                                     │
+│  • You can only know by doing, by building,             │
+│    by putting it in front of users                      │
+│                                                         │
+│  Examples: "Will users actually use this feature?"      │
+│            "Will this approach fit our team's           │
+│             workflow?"                                  │
+│            "What notification format works in           │
+│             this environment?"                          │
+└─────────────────────────────────────────────────────────┘
+----
+
+Failing to distinguish these two leads to two mistakes.
+
+_Mistake 1 — Treating Essential Ambiguity as Resolvable:_
+Keep asking questions that have no answer. Delay decisions. Spend time waiting for complete information. "We'll know more if we research further."
+
+_Mistake 2 — Treating Resolvable Ambiguity as Essential:_
+Simply assume something you could find out by asking. "That's probably close enough." Rework later.
+
+_One diagnostic question:_
+
+[quote]
+____
+_"Is there an action I can take to learn this?"_
+____
+>
+[quote]
+____
+If yes → Resolvable. Take that action.
+____
+[quote]
+____
+If no (or still uncertain after acting) → Essential.
+____
+[quote]
+____
+A Cunningham strategy is needed.
+____
+
+'''
+
+==== Concept 2 — Cunningham's Approach: The Simplest Thing (10 minutes)
+
+Ward Cunningham created several core ideas in software development. He invented the Wiki and designed key practices of XP (Extreme Programming).
+
+One question Cunningham asked:
+
+[quote]
+____
+_"What is the simplest thing that could possibly work?"_
+____
+
+This question is frequently misunderstood. It does not mean "build the minimum feature."
+
+The precise meaning:
+
+[quote]
+____
+_"What is the smallest action that will reveal this ambiguity?"_
+____
+
+Facing Essential Ambiguity, Cunningham's strategy is — _not to complete, but to learn_. Through the smallest, fastest action, get feedback from reality. That feedback reduces the ambiguity.
+
+_Spike Solution (XP):_
+
+A Spike is _throwaway code written to explore a specific ambiguity_ before writing production code.
+
+----
+Purpose:  Does this technology meet this requirement?
+          Does this approach work in this environment?
+
+Method:   As simple, fast, and disposable as possible
+          Production quality not required
+
+Outcome:  Yes/No or new questions
+          Learning is the output, not the code
+----
+
+Example from the TeamOrder case:
+
+[quote]
+____
+"Does the user actually receive a background notification?"
+____
+[quote]
+____
+→ Verifying by reading documentation vs
+____
+[quote]
+____
+   Actually sending it to a device with a test app
+____
+
+This question can be partially answered by reading docs. But "does it arrive on a tablet with the screen off at a factory at night?" can only be known by trying it. That is a Spike.
+
+_Technical Debt — The Original Meaning (Cunningham)_
+
+Many people don't know the context in which Cunningham originally talked about Technical Debt.
+
+He was not using it as a metaphor for bad code.
+
+Cunningham's original meaning:
+
+[quote]
+____
+"A more refined design is needed than what we currently understand,
+____
+[quote]
+____
+ but we can't achieve that right now.
+____
+[quote]
+____
+ We build intentionally simply,
+____
+[quote]
+____
+ and refactor as learning accumulates.
+____
+[quote]
+____
+ This gap is the 'debt.'"
+____
+
+The key: _an intentional epistemological choice_.
+
+"Build without knowing now, fix when we do know" — that is taking on debt. It is not laziness. It is a mature strategy when facing Essential Ambiguity.
+
+In contrast, building carelessly because of ignorance is not debt. That is just bad code.
+
+'''
+
+==== Concept 3 — Reflection-in-Action (Schön) + Three Diagnostic Questions (5 minutes)
+
+Philosopher Donald Schön studied expert practice and found something important.
+
+Experts do not draw up a perfect plan before acting. _They think while acting, and they understand problems more deeply through the results of their actions._ He called this Reflection-in-Action.
+
+Not the architect who completes the blueprints before touching a brick — but the potter who understands the structure by feeling the clay.
+
+This is not immaturity. It is a mature epistemology for complex problems.
+
+_Three Diagnostic Questions — Integrated Summary:_
+
+----
+Facing this ambiguity — what will I do?
+
+Question 1: Is there an action I can take to learn this?
+             If yes → Resolvable → Weinberg strategy (questions, interviews)
+
+Question 2: Still uncertain even after acting?
+             → Essential → Cunningham strategy (Spike, minimum action)
+
+Question 3: Is this decision actually needed right now?
+             If not → Deferring the decision is the strategy
+             (Fairbanks's "Just Enough" spirit)
+----
+
+'''
+
+=== 3. Fixed Case Exercise (30 minutes)
+
+
+==== Small Group Share Guide
+
+_Small Group Share (5 minutes)_
+
+Facilitator guide:
+----
+Comparison Points
+────────────────
+"Did any teams classify the same ambiguity as R while another classified it as E?"
+  → Why they saw it differently is the key.
+    Is there anything classified as E where action is actually possible?
+    Conversely, is there anything classified as R that nobody actually knows?
+
+"What was most difficult when designing the Spike?"
+  → Setting the standard for "the simplest."
+    Guide participants to repeatedly ask
+    "Can this be done even more simply?"
+
+"Did anyone use the 'doesn't need to be decided now' column?"
+  → This judgment itself is an important capability.
+    Breaking free from the compulsion to resolve all ambiguity immediately.
+----
+
+'''
+
+=== 4. Real-Work Case Slot (15 minutes)
+
+==== Worksheet B-5 | My Real-Work Case: Reclassifying Ambiguity
+
+
+==== Debrief Guide
+
+=== 5. Debrief (10 minutes)
+
+_Facilitator guide — anticipated resistance and responses_
+
+----
+"If there's Essential Ambiguity, do we just build something?
+ Isn't this just saying 'let's hack it together'?"
+────────────────────────────────────────────────────────────
+No. There is a key difference.
+
+  Just building:  Build without recognizing the ambiguity
+  Spike:          Recognize the ambiguity, and intentionally
+                  build the minimum to explore it
+
+A Spike has a purpose — learning. And you know it will be discarded.
+Building without purpose is not a Spike.
+
+"What happens if we misdiagnose Resolvable vs Essential?"
+──────────────────────────────────────────────────────────
+That's fine. Doing the Spike itself makes it clearer whether
+something is Resolvable or Essential. The diagnosis doesn't
+have to be perfect. Starting is more important.
+
+"Is it a good thing to intentionally take on Technical Debt?"
+──────────────────────────────────────────────────────────────
+Not in every situation.
+The key is — 'do you know you're taking it on?'
+Debt taken on unknowingly and debt taken on knowingly are different.
+If you know, you can plan when to repay it.
+
+"Weinberg said to resolve ambiguity.
+ Cunningham says to carry it with you. Which is right?"
+────────────────────────────────────────────────────────
+Both are right. They're talking about different situations.
+Weinberg: resolvable ambiguity → resolve it
+Cunningham: irresolvable ambiguity → walk with it
+The diagnostic ability learned today is the tool for making that judgment.
+----
+
+'''
+
+
+
+'''

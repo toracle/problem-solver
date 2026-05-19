@@ -1,0 +1,259 @@
+== Where to Focus Your Energy — Risk-Driven Design
+
+[quote]
+____
+_Core Question:_ Should every requirement be designed to the same depth?
+____
+
+_Core Concepts:_ Quality Attributes · Engineering Risk · Risk-Driven Model
+
+'''
+
+=== Worksheet A-7 | TeamOrder Case: Risk Identification + Technique Mapping
+
+[sidebar]
+.Worksheet A-7 | Session 7 / TeamOrder Case
+--
+Name: pass:[________________________] +
+Date: pass:[________________________]
+--
+
+****
+TeamOrder current situation summary (accumulated from Sessions 1–6):
+
+* Core feature: task assignment notification + acknowledgement
+* Users: factory floor team leads (assigning) / team members (receiving, tablet/phone)
+* Environment: unstable Wi-Fi, power-saving mode, night shift operation
+* Notification channel: regular uses FCM app push, night shift urgent unresolved
+* Timeline: demo in 1 month
+****
+
+**PART 1. Identify potential failure risks (7 minutes)**
+
+Write down as many ways as possible this system could fail. +
+(No good or bad risks. Volume is the goal)
+
+1. ________________
+2. ________________
+3. ________________
+4. ________________
+5. ________________
+6. ________________
+7. ________________
+8. ________________
+
+**PART 2. Classify the risks (5 minutes)**
+
+Classify each risk above.
+
+[cols="3,1,3", options="header"]
+|===
+| Risk | E / PM | Quality Attribute (if applicable)
+
+| 1.
+| * [ ] E * [ ] PM
+|
+
+| 2.
+| * [ ] E * [ ] PM
+|
+
+| 3.
+| * [ ] E * [ ] PM
+|
+
+| 4.
+| * [ ] E * [ ] PM
+|
+
+| 5.
+| * [ ] E * [ ] PM
+|
+
+| 6.
+| * [ ] E * [ ] PM
+|
+
+| 7.
+| * [ ] E * [ ] PM
+|
+
+| 8.
+| * [ ] E * [ ] PM
+|
+|===
+
+E = Engineering Risk {nbsp}{nbsp}{nbsp} PM = Project Management Risk
+
+**PART 3. Prioritize + map techniques (10 minutes)**
+
+Choose the top 3 Engineering Risks and map the appropriate +
+exploratory/validation technique for each.
+
+**Risk #1 (most critical):** ________________
+
+If this risk materializes: ________________
+
+Response technique:
+
+* [ ] Prototype / Spike
+* [ ] Load / performance test
+* [ ] Architecture review
+* [ ] Security analysis (Threat model)
+* [ ] Real environment test
+* [ ] Diagramming / modeling
+* [ ] Other: ________________
+
+When and how will you use this technique: ________________
+
+'''
+
+**Risk #2:** ________________
+
+If this risk materializes: ________________
+
+Response technique:
+
+* [ ] Prototype / Spike
+* [ ] Load / performance test
+* [ ] Architecture review
+* [ ] Security analysis (Threat model)
+* [ ] Real environment test
+* [ ] Diagramming / modeling
+* [ ] Other: ________________
+
+When and how will you use this technique: ________________
+
+'''
+
+**Risk #3:** ________________
+
+If this risk materializes: ________________
+
+Response technique:
+
+* [ ] Prototype / Spike
+* [ ] Load / performance test
+* [ ] Architecture review
+* [ ] Security analysis (Threat model)
+* [ ] Real environment test
+* [ ] Diagramming / modeling
+* [ ] Other: ________________
+
+When and how will you use this technique: ________________
+
+**PART 4. "What doesn't need to be designed right now" (8 minutes)**
+
+Based on the risk checklist: +
+what has low enough risk for this demo (1 month) +
+that design energy doesn't need to be spent on it right now?
+
+(e.g., "Scalability -- only 15 users now, irrelevant for the demo")
+
+[cols="1,2"]
+|===
+| Item | Reason
+
+| 1.
+|
+
+| 2.
+|
+
+| 3.
+|
+|===
+
+When will you revisit these? ________________
+
+_Small Group Share (8 minutes)_
+
+Comparison Points
+──────────────────
+"Do different teams have different top-3 risks?"
+  → Same system, different risk priorities —
+    what contextual difference produced that judgment?
+    May be a demo perspective vs production perspective gap.
+
+"Are there cases where PM Risk and Engineering Risk are confused?"
+  → Most commonly mixed:
+    "We probably can't finish in a month" → PM Risk
+    "We probably can't guarantee night notification delivery" → Engineering Risk
+    Point out that the techniques for each are completely different.
+
+"Was 'no need to decide now' hard to fill in?"
+  → If yes — why was it hard?
+    How do you negotiate with the pressure to design everything perfectly?
+    This is the core mindset shift of this session.
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-7 | My Real-Work Case: Risk Identification + Design Energy Allocation
+
+[sidebar]
+.Worksheet B-7 | Session 7 / My Real-Work Case (continued from Session 6)
+--
+Name: pass:[________________________]
+--
+
+**Top 3 Engineering Risks in my case:**
+
+[cols="1a"]
+|===
+| {empty}1. ________________ +
+Quality Attribute: ________________ +
+Response technique: ________________
+
+| {empty}2. ________________ +
+Quality Attribute: ________________ +
+Response technique: ________________
+
+| {empty}3. ________________ +
+Quality Attribute: ________________ +
+Response technique: ________________
+|===
+
+**Looking back:**
+
+Where did I actually spend design energy when working on this case?
+
+Part where I spent the most design time: ________________
+
+Part where I moved through fastest: ________________
+
+From a Risk-Driven perspective -- is there an inversion needed? +
+(Something heavily designed with low risk / +
+ Something quickly passed over with high risk)
+
+pass:[________________]
+
+'''
+
+=== 6. Assignment (5 minutes)
+
+_Assignment Card #7_
+
+[sidebar]
+.Assignment Card #7
+--
+Choose the most important Engineering Risk +
+in your real-work case:
+
+. Actually apply the response technique. +
+  (Spike, prototype, diagramming, etc.)
+. Record whether the risk was reduced, or +
+  whether new risks were discovered.
+. Add "risk response result" to Worksheet B.
+
+Preview of next session: +
+Seunghyun's map -- verifying the solution against the original problem +
+and integrating everything (final session)
+--
+
+'''
+
+_(Continue to next session)_
+
+'''

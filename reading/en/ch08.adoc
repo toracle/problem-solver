@@ -1,0 +1,176 @@
+== Seunghyun's Map
+
+[quote]
+____
+_"A map is not the territory. But a good map tells you simultaneously where you need to go — and where you don't."_
+____
+
+'''
+
+=== The Story
+
+The night before the demo.
+
+Seunghyun stood alone in front of the whiteboard.
+
+He looked back over the past month. It had started with a single sentence from Minjun — the TeamOrder notification feature. He remembered thinking about WebSocket within fifteen seconds of first hearing it.
+
+What had been built now was three things.
+
+`FCM` app push and acknowledgement. Night shift urgent `SMS` channel. Notification channel interface.
+
+That was everything.
+
+Compared to everything that had come to mind at the beginning, it was far less. No real-time dashboard. No notification history page. No `Kafka`. The `Kafka` that Jiyeon had wanted to try was nowhere to be found.
+
+_Is this right?_
+
+Seunghyun began writing on the whiteboard.
+
+----
+What we understood from Minjun's words at the start:
+  "Team members miss tasks and the line stops"
+  "Team lead assigns tasks then has to separately message on Slack"
+  "Field usage — tablet/phone. Night shift exists"
+
+What we built:
+  FCM + acknowledgement → Eliminate "separate messages," reduce "misses"
+  SMS fallback → Cover night shift urgent cases
+  Channel abstraction → Minimize changes when adding channels later
+
+What we did NOT build and why:
+  Notification history → Team lead wanted "did they see it now," not a past log
+  Real-time dashboard → Outside demo scope, low risk
+  Kafka → Excessive infrastructure for a 15-person team, zero risk now
+  Auto reports → Not in requirements. Not a Function in FAC
+----
+
+After writing, Seunghyun stared at it for a long time.
+
+_I can see why each of the things we didn't build was okay not to build._
+
+Not building notification history was not laziness. It was because — from the Context-Free Questions in Session 3, what the team lead wanted was "did the team member see it" — current receipt status, not a real-time history of the past.
+
+Not having Kafka was not a technology choice. It was because — the risk check in Session 7 had confirmed there was no risk for a 15-person team right now.
+
+Not having auto reports was because — when FAC was filled in during Session 2, it was never in the Functions list.
+
+_Because we understood the problem, we could see what didn't need to be built._
+
+And because there was so much that didn't need to be built — we could focus on the three things that genuinely mattered. They could be completed within a month.
+
+Seunghyun put down the marker.
+
+Tomorrow at the demo, he would show the team lead these three things. Only three. But Seunghyun knew those three things mapped precisely to what the team lead had said — "I want to stop the line stoppages."
+
+'''
+
+The day after the demo.
+
+A Slack message came from Minjun.
+
+[quote]
+____
+Minjun: Oh wow. Team lead said they want to deploy this right away.
+____
+[quote]
+____
+       "It has exactly what we need and nothing more," they said.
+____
+
+Jiyeon replied:
+
+[quote]
+____
+Jiyeon: Really?? I was worried there weren't enough features.
+____
+
+Seunghyun replied:
+
+[quote]
+____
+Seunghyun: "Exactly what we need" is a compliment.
+____
+[quote]
+____
+           It means we knew what was needed.
+____
+
+Hyuntae posted last:
+
+[quote]
+____
+Hyuntae: But when do we get to use Kafka?
+____
+
+'''
+
+=== Concept Notes
+
+==== When You Understand the Problem, the Solution Becomes Simpler
+
+This is the single proposition that runs through the entire workshop.
+
+[NOTE]
+====
+When you fully explore the Problem Space, the Solution Space does not become **wider — it becomes narrower**. You don't see more things to build. You see the things you don't need to build.
+====
+
+At first, this may seem counterintuitive. Deeply understanding a problem takes more time, and it seems like it would delay entry into the Solution Space.
+
+But in practice, the opposite is true.
+
+When you fully explore the Problem Space, three things become clear.
+
+_First, what must essentially be achieved becomes visible._ What the team lead wanted was "confirmation that team members received their tasks." When that is clear — everything that is not that becomes non-essential.
+
+_Second, what can wait becomes visible._ Things with low risk, things users don't need right this moment. Not building these things now is not laziness — it is judgment.
+
+_Third, what does not need to be built at all becomes identifiable._ Things that were never in FAC's Functions list. Concepts that don't appear in the Domain Model. Things that weren't failure causes in the Pre-mortem. When these become clear, scope naturally contracts.
+
+When these three things are visible — what needs to be built becomes simple. And simple things can be built and delivered to users first.
+
+The reason TeamOrder's three features could reach a demo in one month was not that the rest was lazily skipped. It was that understanding the problem deeply revealed that the rest didn't need to be built.
+
+==== Problem-Solution Fit
+
+While building a solution — or after — there is something that must be confirmed.
+
+Are the problem I defined and the solution I built actually connected?
+
+This is Problem-Solution Fit.
+
+The way to check is simple. What would the user have done without this solution? If the workaround is still there — you missed the core. If the problem can still occur even with this solution — something essential is missing.
+
+What Seunghyun did when he wrote "what we built" and "what we understood from the original problem" side by side and compared them — that was exactly this check.
+
+==== Pre-mortem — Finding Weaknesses Without Optimism Bias
+
+Pre-mortem is a technique proposed by Gary Klein.footnote:[Gary Klein, "Performing a Project Premortem," _Harvard Business Review_, 2007. Klein is a decision psychologist who studied how experts form intuitive judgments. Pre-mortem is a technique for removing success bias by imagining future failure before a plan is complete.] It asks: "Assume we failed six months from now — what would the reason be?"
+
+Where an ordinary review looks for "why this will succeed," a Pre-mortem looks for "why this will fail." Without the optimism bias, weaknesses surface more naturally.
+
+The failure reasons that come out of a Pre-mortem are — mostly things that should have been discovered in the Problem Space. A Constraint that wasn't known (Session 2). An Essential Ambiguity that was never Spiked (Session 5). A risk that was underestimated (Session 7). So a Pre-mortem serves as a final check — and as a way to confirm whether the tools from this workshop actually worked.
+
+'''
+
+=== What to Take from This Session
+
+The workshop is ending.
+
+You take the tools with you. FAC, Context-Free Questions, Black Box, layer analysis, Domain Model, Resolvable vs Essential, Spike, analogical reasoning, Risk-Driven design.
+
+But you don't need to pull out all of these tools every time.
+
+There is one habit that all these tools point toward.
+
+When you receive a requirement — before crossing into the Solution Space, pause just once and ask:
+
+_"What do I know right now? And what do I still not know?"_
+
+That question opens the Problem Space. That exploration simplifies the solution. That simplicity enables faster delivery to users.
+
+'''
+
+_Epilogue: The Person Who Learned to Draw Maps — TeamOrder six months later, and what this workshop left behind_
+'''

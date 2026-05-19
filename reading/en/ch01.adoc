@@ -1,0 +1,160 @@
+== Seunghyun's Thirty Seconds
+
+[quote]
+____
+_"The more experience you have, the faster the answer comes. The trouble is, the answer comes before the question."_
+____
+
+'''
+
+=== The Story
+
+Monday, 3 p.m.
+
+Minjun returned from a client meeting and walked back into the office. Before he even set his laptop bag down, a Slack message came through.
+
+[quote]
+____
+Minjun: Hey Seunghyun, I'm back. Talked to the client — they want us to beef up the team collaboration features. Notifications and task assignment. Need to show them a demo next month.
+____
+
+Seunghyun read the message. And stopped.
+
+_Right. Notifications. Task assignment._
+
+Something in his mind began to run on its own. Notifications meant `WebSocket` or `SSE`. Or maybe `Firebase`. Task assignment meant an `assignee` column, or a separate `assignment` table. If real-time updates were needed, a `pub/sub` architecture would fit. Next month was one month away. One month meant...
+
+Fewer than fifteen seconds had passed, and Seunghyun already had a rough structure sketched in his head.
+
+From the next desk, Jiyeon swiveled her chair and said:
+
+"Did you see that? The notification feature. I've been wanting to try Kafka — maybe this is the moment."
+
+Seunghyun started to answer, then stopped.
+
+_Hold on._
+
+Something felt off. It had been less than thirty seconds since the message arrived. And already, he and Jiyeon were both talking about technology — without asking Minjun a single question.
+
+_What do I actually know right now?_
+
+Seunghyun read the Slack message again.
+
+"Team collaboration features."
+"Notifications and task assignment."
+"Demo next month."
+
+Three sentences. That was everything.
+
+_I don't know the client's team size. I don't know why they're asking to improve notifications. I don't know what the current notification setup looks like. I don't know how task assignment is currently handled. I don't know what needs to be shown in the demo._
+
+And yet he had been thinking about WebSocket within fifteen seconds.
+
+Seunghyun got up from his desk and walked over to Minjun.
+
+"Minjun — how does that team actually work right now? When you say they want stronger notifications, what specific situation is that coming from?"
+
+Minjun opened his laptop and answered.
+
+"Oh, right — so, the team lead assigns tasks and the team members never find out. They have to separately message on Slack to tell them, which is a huge hassle."
+
+_Ah._
+
+Seunghyun thought to himself.
+
+_This isn't a problem with notification technology. The problem is that the task assignment workflow never connects to the system in the first place._
+
+Whether WebSocket was needed was still unknown. Maybe a single email notification would be enough. Maybe what came first wasn't notifications at all, but the task assignment screen itself.
+
+In those thirty seconds, Seunghyun had learned something.
+
+What he had felt as "understanding the problem" had actually been __recognizing a pattern__.
+
+'''
+
+=== Concept Notes
+
+==== Why We Reach for an Answer in Thirty Seconds
+
+What happened to Seunghyun is not unusual. The more experience an engineer has, the faster and more naturally it occurs.
+
+In psychology, this is called the __Einstellung Effect__footnote:[The Einstellung (German for "attitude" or "setting") Effect. First systematized in Luchins (1942) through the water-jar experiment, it describes the cognitive phenomenon where a previously successful solution blocks the recognition of more efficient alternatives. Abraham S. Luchins, _Mechanization in Problem Solving_, 1942.] — a previously successful solution sits ready in the mind, and when a similar signal arrives, it fires automatically. It is a mechanism the brain creates for efficiency.
+
+The problem is that this mechanism __blocks us from seeing new problems clearly__. Even when a better solution is right in front of us, the familiar answer arrives first, and we stop looking. And ironically, the more experience you have, the more strongly this effect operates.
+
+----
+Less experience → fewer patterns → slower but exploratory
+More experience → richer patterns → faster but automatic
+                                     ↑
+                              this is the trap
+----
+
+==== Presumptive Architecture — The Default in Your Head
+
+Software architecture researcher George Fairbanks describes this with the concept of __Presumptive Architecture__footnote:[George Fairbanks, _Just Enough Software Architecture_, 2010. The term refers to architecture patterns automatically selected as a "default" without explicit analysis — the architectural choices developers reach for instinctively based on past experience.].
+
+Every developer carries an unconscious default: "for this kind of situation, use this architecture."
+
+* Real-time notifications → `pub/sub`
+* Batch processing → queue
+* Search → Elasticsearch
+* High volume → `Kafka`
+
+These defaults are not wrong. For the right situation, they're a perfect fit. But whether they fit the problem at hand — that is still unknown.
+
+The real danger of Presumptive Architecture comes when it is used without distinguishing _assumption (assumption) from analysis (analysis)_. Like when Jiyeon said "I've been wanting to try Kafka" — when a technology choice comes before problem analysis.
+
+==== Problem Space and Solution Space
+
+Polya describes problem-solving as moving through two spaces.footnote:[George Pólya, _How to Solve It_, 1945. A classic work systematizing strategies for mathematical problem-solving, presenting a four-stage framework: understand → plan → execute → review. Widely applied to software design as well.]
+
+[cols="1,1", options="header"]
+|===
+| Problem Space | Solution Space
+| "What is the problem?" | "How do we solve it?"
+| "Who is suffering?" | "What do we build?"
+| "Why is this a problem?" | "What technology do we use?"
+| "Is this really the problem?" | "How do we design the structure?"
+| _Tools: questions, observation, interviews_ | _Tools: design, code, diagrams_
+|===
+
+
+Both spaces must be visited. This is not an argument against entering the Solution Space. The key is that __the transition must be conscious__.
+
+Seunghyun's automatic WebSocket thought was an unconscious, automatic transition. His walk over to Minjun was a conscious reversal of that move.
+
+==== The Paradox of Experience
+
+There is a reason engineers at three to four years of experience are especially prone to this trap.
+
+Someone with one year of experience asks a lot of questions because they don't know much. Someone with ten years has accumulated enough experience to question their own patterns. But someone at three to four years has learned enough patterns that answers come before questions — and those answers seem quite plausible.
+
+This is the paradox of experience.
+
+The goal of this workshop is not to discard experience. It is __to treat experience as assumption__. The intuition that says "this looks like a pub/sub problem" is valid. The practice is building the muscle to pause in the Problem Space before that intuition solidifies into "this _is_ a pub/sub problem."
+
+[NOTE]
+====
+Experience is an asset. The moment you treat patterns that emerge from experience as _assumptions_ rather than _analysis_, you start using that asset more effectively.
+====
+
+Seunghyun's thirty seconds was the beginning of that practice.
+
+'''
+
+=== Try This Week
+
+Try these two things consciously this week.
+
+_First._ When you receive a requirement or a work assignment, ask yourself:
+_"Am I understanding the problem, or am I recognizing a pattern?"_
+
+_Second._ Set aside the solution that just came to mind, and generate at least five Problem Space questions. "What do I still not know?"
+
+If that feels awkward and uncomfortable, you're doing it right.
+
+'''
+
+_Next episode: The Three Things Hidden in Minjun's Words — How to dissect requirements into Functions, Attributes, and Constraints_
+
+'''

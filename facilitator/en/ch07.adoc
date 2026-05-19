@@ -1,0 +1,379 @@
+== Where to Focus Your Energy — Risk-Driven Design
+
+=== Time Allocation
+
+[cols="1,1,1", options="header"]
+|===
+| Order | Content | Time
+|  | 0. Connection from previous session | 5 min
+|  | 1. Opening provocation — Two teams' story | 10 min
+|  | 2. Concept explanation (Quality Attributes, Risk-Driven 3-step, Cunningham connection) | 22 min
+|  | 3. Fixed case exercise — Worksheet A-7 | 30 min
+|  | 4. Real-work case slot — Worksheet B-7 | 20 min
+|  | 5. Debrief + simplification flywheel | 10 min
+|  | 6. Distribute Assignment Card #7 | 3 min
+|  | _Total_ | _100 min_
+|===
+
+
+=== Session Facilitation Notes
+
+* ★ This session is most important for participants who feel the strongest pressure to "design everything perfectly."
+* ★ Confusion between Engineering Risk and PM Risk comes up frequently. Make it clear that "the timeline is tight" is a PM Risk.
+* ★ Some participants will find it difficult to fill in the PART 4 "doesn't need to be done now" column. Emphasize that it means "planning when to revisit" — not "never doing it."
+* ★ Make sure to cover the "design simplification flywheel" at the end. This is the bridge to Session 8.
+
+=== Session Walkthrough
+
+=== 0. Connection from Previous Session (5 minutes)
+
+----
+The journey so far:
+  Sessions 1–4: Tools for deep exploration of Problem Space
+  Session 5:    Two types of ambiguity and Spike
+  Session 6:    Finding already-solved structures through analogical reasoning
+
+We're now entering the Solution Space in earnest.
+If Sessions 1–6 were about understanding "what to build,"
+Sessions 7–8 are about "how to build it."
+
+But — how much effort should we put into "how"?
+Do we need to design everything perfectly?
+
+Collecting Session 6 assignments:
+"When you applied a principle imported from an analogous case
+ to your own case — what changed?"
+→ 2–3 people share briefly
+----
+
+'''
+
+=== 1. Opening Provocation (10 minutes)
+
+_"Two Teams' Story"_
+
+Present briefly on slide or verbally.
+
+[quote]
+____
+_Team A_
+____
+[quote]
+____
+Starting a new feature, they spent 3 weeks writing architecture documents.
+____
+[quote]
+____
+They drew every component, every API, every data flow.
+____
+[quote]
+____
+When development started, two major assumptions were already wrong.
+____
+
+[quote]
+____
+_Team B_
+____
+[quote]
+____
+Starting a new feature, they said "let's just build it" and started coding immediately.
+____
+[quote]
+____
+3 weeks later — performance issues hit.
+____
+[quote]
+____
+The architecture had to be completely reworked.
+____
+
+Ask participants:
+
+[quote]
+____
+"Which team got it right?"
+____
+
+A moment later:
+
+[quote]
+____
+"Both were wrong.
+____
+[quote]
+____
+Team A over-designed,
+____
+[quote]
+____
+Team B under-designed.
+____
+>
+[quote]
+____
+Fairbanks asked about the middle path between these two extremes.
+____
+[quote]
+____
+'How much should you design?'
+____
+>
+[quote]
+____
+His answer — in proportion to the risk."
+____
+
+'''
+
+=== 2. Concept Explanation (22 minutes)
+
+==== Concept 1 — Quality Attributes vs Functionality (7 minutes)
+
+The key distinction must be pinned down precisely first.
+
+----
+Functionality
+─────────────
+"What the system does"
+Examples: Sends a notification, assigns a task, shows a list
+
+→ Can be accumulated sprint by sprint
+→ Relatively easy to add later
+
+
+Quality Attributes (the "-ilities")
+────────────────────────────────────
+"How well the system does it"
+Examples: Performance, Availability, Security,
+          Scalability, Modifiability
+
+→ Secured through architectural decisions
+→ Very expensive to change later
+→ Unlike functionality, they trade off against each other
+----
+
+Why this distinction matters:
+
+----
+Cost of adding functionality later:          Linear
+Cost of adding a Quality Attribute later:    Exponential
+----
+
+Adding Consistency later could require changing the DB schema, API structure, and cache strategy entirely. If considered from the start, a single design decision might have been enough.
+
+Quality Attributes in the TeamOrder case:
+
+[cols="1,1,1", options="header"]
+|===
+| Quality Attribute | Meaning in TeamOrder | Risk if neglected
+| _Reliability_ | Night-shift urgent notifications must definitely arrive | Line stoppage
+| _Performance_ | Notification delivery delay must be within acceptable range | Team member is slow to respond
+| _Modifiability_ | Notification channels must be addable later | Full rework when adding email/SMS
+| _Usability_ | Must be easy to confirm in the field | Notification received but no action taken
+|===
+
+
+Weinberg's Attributes (Session 2) reappear here. Attributes not surfaced in Session 2 become design risks in Session 7.
+
+'''
+
+==== Concept 2 — Risk-Driven Model (Fairbanks) (10 minutes)
+
+Fairbanks's central question:
+
+[quote]
+____
+_"How much software architecture should you do?"_
+____
+
+His answer: _In proportion to the risk._
+
+----
+Risk-Driven Model — 3-step loop
+
+┌─────────────────────────────────────────────────┐
+│                                                 │
+│  1. Identify failure risks                      │
+│     "If this fails, does the project die?"      │
+│                                                 │
+│           ↓                                     │
+│                                                 │
+│  2. Choose techniques matched to the risk       │
+│     Engineering risk → only Engineering         │
+│     techniques are effective                    │
+│                                                 │
+│           ↓                                     │
+│                                                 │
+│  3. Stop when risk is sufficiently reduced      │
+│     "Just Enough" — design is a means,         │
+│     not an end in itself                        │
+│                                                 │
+└─────────────────────────────────────────────────┘
+----
+
+_Engineering Risk vs Project Management Risk_
+
+This distinction is the most practical part for engineers at 3–4 years of experience.
+
+----
+Engineering Risk                   Project Management Risk
+─────────────────────────────────  ───────────────────────────────────
+Problems of system analysis/       Problems of schedule, team size,
+design/implementation              and priorities
+
+"Performance won't meet           "We probably can't finish in 3 weeks"
+ requirements"
+"Can't guarantee data             "The team doesn't know this
+ consistency"                      technology"
+"There's a security               "Requirements keep changing"
+ vulnerability"
+
+→ Resolved with Engineering        → Resolved with PM techniques
+  techniques                         (schedule adjustment, training,
+  (prototype, load testing,           process improvement, etc.)
+   threat modeling, etc.)
+----
+
+_When risk type ≠ technique type, the technique is ineffective:_
+
+Drawing class diagrams for a performance risk is ineffective. Performance risks require techniques like load testing or queuing analysis. Drawing architecture diagrams for a schedule risk is also ineffective.
+
+_Practical risk identification checklist:_
+
+----
+If any of the following are "YES," treat as an Engineering Risk
+
+□ Does this system have demanding response time requirements?
+□ Is data consistency critical to this system?
+□ Does it handle security-sensitive data?
+□ Is there a possibility of sudden traffic growth?
+□ Do multiple teams touch the same component?
+□ Does a failure in one component cascade to full system failure?
+□ Are significant feature additions/changes expected later?
+□ Is integration with external systems/services complex?
+----
+
+'''
+
+==== Concept 3 — Connection to Cunningham (5 minutes)
+
+Point out where the Risk-Driven Model and Session 5's Cunningham meet.
+
+Fairbanks's "stop when risk is reduced" shares the same spirit as Cunningham's "What is the simplest thing that could possibly work?"
+
+----
+Low-risk areas:
+  Elaborate design is actually wasteful
+  → Cunningham: Simplest Thing
+  → Fairbanks: Stop designing
+
+High-risk areas:
+  Insufficient design is the cause of failure
+  → Fairbanks: Choose techniques matched to risk
+  → Cunningham: Explore quickly with Spike
+----
+
+Conclusion: _"How much to design" is judged not by "how complete do we want it" but by "where are the failure risks."_
+
+'''
+
+=== 3. Fixed Case Exercise (30 minutes)
+
+
+==== Small Group Share Guide
+
+_Small Group Share (8 minutes)_
+
+Facilitator guide:
+----
+Comparison Points
+────────────────
+"Do teams have different top 3 risks?"
+  → Same system, different risk priorities —
+    what contextual difference drove that judgment?
+    It may be the difference between demo perspective
+    vs live service perspective.
+
+"Are there cases where PM Risk and Engineering Risk were confused?"
+  → Most commonly mixed:
+    "I don't think we can build this in a month" → PM Risk
+    "I don't think we can guarantee night-shift notification delivery" → Engineering Risk
+    Point out that the techniques for addressing these two are completely different.
+
+"Was the PART 4 decision — 'doesn't need to be done now' — difficult to make?"
+  → If difficult — why?
+    How do they reconcile with the pressure to "design everything perfectly"?
+    This is the core shift in perception this session aims for.
+----
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-7 | My Real-Work Case: Risk Identification + Design Energy Allocation
+
+
+==== Debrief Guide
+
+=== 5. Debrief (10 minutes)
+
+_Facilitator guide — anticipated resistance and responses_
+
+----
+"You can't know all the risks in advance."
+────────────────────────────────────────────
+True. You can't know them completely.
+But keep two things in mind.
+
+First, focusing on the risks you can know is where to start.
+Risks you can't know are discovered and addressed during operation.
+
+Second, Session 6's analogical reasoning helps here.
+Systems with similar structures tend to produce familiar risks —
+"Prototypical Risks." Knowing recurring risk patterns from
+the same type of problem reduces blind spots.
+
+"How do you define Quality Attributes numerically?"
+──────────────────────────────────────────────────────
+We come back to Session 2's Attributes.
+Quantifying "response time" as a Quality Attribute
+as "95th percentile under 200ms" is exactly what
+Session 3's Context-Free Questions extracted.
+An Attribute without a number cannot be verified.
+
+"Won't things we skip now become harder later?"
+──────────────────────────────────────────────────
+They might. That's why PART 4 asks "when will we revisit this."
+"Not doing it now" is not "never doing it."
+Monitor for when the risk grows,
+and re-invest at that point.
+----
+
+_The Design Simplification Flywheel_
+
+----
+One more key outcome of the Risk-Driven approach to cover before closing.
+
+The clearer it becomes what "doesn't need to be done now,"
+the more you can focus on "what must be done now."
+
+Focus enables → completing that faster.
+Completing faster enables → delivering to users sooner.
+Delivering sooner enables → receiving real feedback sooner.
+Having feedback enables → knowing more precisely what to build next.
+
+Problem Space exploration and Risk-Driven design may seem like
+they slow things down, but they actually make this flywheel possible.
+
+Of course, deferred things eventually come back.
+But by then — the core is already in users' hands.
+And extending a validated core is far safer
+than building everything from scratch without validation.
+----
+
+'''
+
+
+
+'''

@@ -1,0 +1,169 @@
+== Solution Addiction — The Habit of Skipping the Problem Space
+
+[quote]
+____
+_Core Question:_ Am I understanding the problem, or recognizing a pattern?
+____
+
+_Core Concepts:_ Problem Space vs Solution Space · Einstellung Effect · Presumptive Architecture
+
+'''
+
+=== 3. Fixed Case Exercise
+
+==== Worksheet A-1 | TeamOrder Case: Drawing the Map in My Head
+
+'''
+
+[sidebar]
+.Worksheet A-1 | Session 1 / TeamOrder Case
+--
+Name: pass:[________________________] +
+Date: pass:[________________________]
+--
+
+[quote, Minjun]
+____
+Can you beef up the team collaboration features? Notifications and task assignment.
+Demo next month.
+____
+
+*PART 1. What's in my head right now (3 minutes, no filtering)*
+
+Write down everything that comes to mind the moment you hear this requirement. +
+(Technology, structure, time estimates — anything)
+
+pass:[________________________] +
+pass:[________________________] +
+pass:[________________________] +
+pass:[________________________]
+
+*PART 2. Classification (5 minutes)*
+
+Sort what you wrote above into two columns.
+
+[cols="1,1", options="header"]
+|===
+| Problem Space (related to understanding the problem) | Solution Space (related to solving it)
+
+| {nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp}
+| {nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp} +
+{nbsp}
+|===
+
+*PART 3. My Presumptive Architecture (5 minutes)*
+
+"I assumed this is a pass:[________________] kind of system."
+
+What is the basis for that assumption?
+
+* [ ] I've built something similar before
+* [ ] This is how the team usually handles these cases
+* [ ] I know this technology well
+* [ ] It just came to mind naturally
+* [ ] Other: pass:[_______________]
+
+If this assumption were wrong, what would change?
+
+pass:[________________________] +
+pass:[________________________] +
+pass:[________________________]
+
+*PART 4. Remaining questions in the Problem Space (10 minutes)*
+
+Write down as many things as possible that you still don't know — things you'd need to ask about. +
+(No good or bad questions. Volume is the goal.)
+
+ 1.
+ 2.
+ 3.
+ 4.
+ 5.
+ 6.
+ 7.
+ 8.
+ 9.
+ 10.
+ ...
+
+Total count: pass:[______]
+
+'''
+
+=== 4. Real-Work Case Slot
+
+==== Worksheet B-1 | Register Your Real-Work Case
+
+[sidebar]
+.Worksheet B | My Real-Work Case (used across all 8 sessions)
+--
+Name: pass:[________________________]
+--
+
+Pick one requirement or request you received in the last three months — +
+something that still feels unclear, +
+or where you finished and thought "that wasn't what they wanted."
+
+Case title (one line): +
+pass:[________________________]
+
+Original requirement (as close to verbatim as possible): +
+pass:[________________________] +
+pass:[________________________] +
+pass:[________________________]
+
+'''
+
+Applying Session 1:
+
+What Solution Space items came to mind when you first heard it: +
+pass:[________________________]
+
+What was your Presumptive Architecture at the time? +
+pass:[________________________]
+
+Looking back now, questions you should have asked:
+
+ 1.
+ 2.
+ 3.
+
+'''
+
+=== 6. Assignment
+
+_Assignment Card #1_
+
+[sidebar]
+.Assignment Card #1
+--
+From a requirement or work assignment you receive this week, choose one:
+
+. Write down the Solution Space items that came +
+to mind the moment you heard it.
+
+. From that requirement, write a list of +
+things you still don't know. (At least 5)
+
+. Either add that case to Worksheet B, or +
+continue with the case you already registered.
+
+Preview of next session: +
+The anatomy of requirements -- Functions, Attributes, Constraints
+--
+
+
+'''
+
+_(Continue to next session)_
+
+'''

@@ -1,0 +1,226 @@
+== The Anatomy of Ambiguity — A Language for Decomposing Requirements
+
+[quote]
+____
+_Core Question:_ What does it mean for a requirement to be "clear"?
+____
+
+_Core Concepts:_ Functions / Attributes / Constraints (FAC) · Three Sources of Ambiguity
+
+'''
+
+=== Worksheet A-2 | TeamOrder Case: Dissecting Ambiguity
+
+'''
+
+[sidebar]
+.Worksheet A-2 | Session 2 / TeamOrder Case
+--
+Name: pass:[________________________] +
+Date: pass:[________________________]
+--
+
+[quote, Minjun]
+____
+Can you beef up the team collaboration features?
+Notifications and task assignment.
+Demo next month.
+____
+
+[Additional context -- what came out of Session 1's questions to Minjun]
+
+[quote, Minjun]
+____
+When the team lead assigns a task, the team members never find out.
+They have to send a separate Slack message, and it's such a hassle.
+____
+
+*PART 1. Finding the Sources of Ambiguity (7 minutes)*
+
+Find all the ambiguous parts in the two statements above and mark them. +
+Then classify what type of ambiguity each one is.
+
+[cols="2,3", options="header"]
+|===
+| Ambiguous expression | Type (linguistic / between interpreters / missing context)
+
+| 1. | {nbsp}
+| 2. | {nbsp}
+| 3. | {nbsp}
+| 4. | {nbsp}
+| 5. | {nbsp}
+| 6. | {nbsp}
+|===
+
+*PART 2. FAC Breakdown (10 minutes)*
+
+Separate what can be read from Minjun's words +
+from what is still undetermined (?).
+
+[cols="1,2,2", options="header"]
+|===
+| | Stated (Confirmed) | ? (Still Unknown)
+
+| Functions (what it does)
+| {nbsp} +
+{nbsp} +
+{nbsp}
+| {nbsp} +
+{nbsp} +
+{nbsp}
+
+| Attributes (how it does it)
+| {nbsp} +
+{nbsp} +
+{nbsp}
+| {nbsp} +
+{nbsp} +
+{nbsp}
+
+| Constraints (conditions/limits)
+| {nbsp} +
+{nbsp} +
+{nbsp}
+| {nbsp} +
+{nbsp} +
+{nbsp}
+|===
+
+Are the "?" columns larger than the "confirmed" columns?
+
+* [ ] Yes (Normal. More exploration is needed)
+* [ ] No (You may have filled it in too quickly — review again)
+
+*PART 3. What's the most dangerous gap? (5 minutes)*
+
+From the "?" items, choose the one where starting development +
+without knowing it carries the highest risk of rework or failure.
+
+Most dangerous gap: +
+pass:[________________________]
+
+Why: +
+pass:[________________________] +
+pass:[________________________]
+
+Who needs to be asked, and what question, to resolve this? +
+pass:[________________________] +
+pass:[________________________]
+
+'''
+
+_Small Group Share (8 minutes)_
+
+Groups of 3–4 compare PART 2 results.
+
+.Comparison Points
+****
+"Is there a case where different things were written in the same column?" +
+-> That difference is itself an example of between-interpreter ambiguity.
+
+"Did anyone classify an Attribute as a Function?" +
+-> Invite discussion about why they classified it that way.
+
+"Is the Constraints column the most empty?" +
+-> It usually is. Constraints are the hardest to surface. +
+   Ask "why didn't this one come to mind?" as a meta-question.
+****
+
+**Full Group Share (7 minutes)**
+
+Collect each group's "most dangerous gap" onto the board.
+If different groups chose different things -- why is the core of the discussion.
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-2 | My Real-Work Case: FAC Breakdown
+
+[sidebar]
+.Worksheet B-2 | Session 2 / My Real-Work Case (continued from Session 1)
+--
+Name: pass:[________________________]
+--
+
+Real-work case from Session 1: +
+(Write the title again)
+
+pass:[________________________]
+
+'''
+
+Break down the original requirement using FAC.
+
+[cols="1,2,2", options="header"]
+|===
+| | Stated (Confirmed) | ? (Still Unknown)
+
+| Functions
+| {nbsp} +
+{nbsp}
+| {nbsp} +
+{nbsp}
+
+| Attributes
+| {nbsp} +
+{nbsp}
+| {nbsp} +
+{nbsp}
+
+| Constraints
+| {nbsp} +
+{nbsp}
+| {nbsp} +
+{nbsp}
+|===
+
+'''
+
+Looking back:
+
+Which FAC item did I miss when I first received this case? +
+pass:[________________________]
+
+What actually happened (or almost happened) when we proceeded without knowing it? +
+pass:[________________________] +
+pass:[________________________]
+
+If I had had this tool at the time, what would I have asked first? +
+pass:[________________________] +
+pass:[________________________]
+
+'''
+
+=== 6. Assignment (5 minutes)
+
+_Assignment Card #2_
+
+[sidebar]
+.Assignment Card #2
+--
+Take one requirement you received this week +
+and break it down using a FAC table.
+
+Pay particular attention to:
+
+. Attributes column -- Is a quality standard ("how it should be done") +
+stated explicitly? +
+If not, what question could surface one?
+
+. Constraints column -- Has "what cannot be touched" +
+been stated? +
+Does anything feel like an unstated assumption?
+
+. Add the result to Worksheet B. +
+You'll continue using it next session.
+
+Preview of next session: +
+Questions for filling FAC -- how should you ask?
+--
+
+'''
+
+_(Continue to next session)_
+
+'''

@@ -1,0 +1,34 @@
+== Operational Tips — Overall
+
+=== Establishing Psychological Safety
+
+The opening provocations in this workshop ask participants to reflect on their existing habits.
+If an atmosphere of criticism or "you were wrong" develops, learning closes down.
+Maintain the frame: "The choice wasn't wrong — there was another way."
+
+=== When Participants Get Stuck
+
+The most common points where participants get stuck on worksheets:
+
+[cols="1,1", options="header"]
+|===
+| Stuck point | Facilitator intervention
+| Attributes column is empty in FAC | Ask "Why would it matter to know this?"
+| State isn't surfacing in the Domain Model | Prompt "List all the states this concept can be in"
+| R/E classification is difficult | Ask "Is there an action you can take right now to find out?"
+| No analogies come to mind | First have them "abstract this problem's structure in one sentence"
+| Too many risks are surfacing | Narrow with "Which of these could kill the project?"
+|===
+
+
+=== Managing Worksheet B
+
+Worksheet B carries the same case through all 8 sessions.
+Remind participants to "take out your Worksheet B" at the start of each session.
+Participants who didn't register a case in Session 1 can register in Session 2.
+
+=== Assignment Card Connections
+
+Each session opens with 5 minutes where 2–3 people briefly share results from the previous session's assignment.
+Keep it voluntary rather than forced, but make sure to surface interesting cases when they appear.
+This sharing is what creates the workshop's sense of being grounded in real work.

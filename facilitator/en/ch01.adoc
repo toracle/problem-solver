@@ -1,0 +1,143 @@
+== Solution Addiction — The Habit of Skipping the Problem Space
+
+=== Time Allocation
+
+[cols="1,1,1", options="header"]
+|===
+| Order | Content | Time
+|  | 0. Connection from previous session | 5 min
+|  | 1. Opening provocation — The 30-second experiment | 10 min
+|  | 2. Concept explanation (Einstellung, Presumptive Architecture, Problem/Solution Space) | 20 min
+|  | 3. Fixed case exercise — Worksheet A-1 | 30 min
+|  | 4. Real-work case slot — Worksheet B-1 | 20 min
+|  | 5. Debrief | 10 min
+|  | 6. Distribute Assignment Card #1 | 5 min
+|  | _Total_ | _100 min_
+|===
+
+
+=== Session Facilitation Notes
+
+* ★ Session 1 is an awareness session. Establish a "no right or wrong" atmosphere first.
+* ★ When writing Solution Space items on the board after the "30-second experiment," do not criticize them. Let participants discover together "why is this in the Solution Space."
+* ★ Make it clear that Presumptive Architecture is not bad. The difference between "using it knowing it's an assumption" and "using it thinking it's a fact."
+* ★ For groups that generated few Problem Space questions, ask "why didn't more come up?" The volume comparison itself is learning material.
+
+=== 0. Connection from Previous Session (5 minutes)
+
+Since this is Session 1, show the full workshop map.
+
+----
+What we will do across 8 sessions:
+
+"What should we do with that one sentence Minjun brought us?"
+
+— Start building right away?
+— Or is something else needed first?
+----
+
+'''
+
+=== 1. Opening Provocation (10 minutes) — "The 30-Second Experiment"
+
+Without slides or preamble, distribute paper and say:
+
+[quote]
+____
+"Minjun just said this:
+____
+[quote]
+____
+'Can you beef up the team collaboration features? Notifications and task assignment. Demo next month.'
+____
+[quote]
+____
+In the next 30 seconds, write down everything that comes to mind."
+____
+
+After 30 seconds, ask a few people to read what they wrote.
+
+_Typical responses:_
+----
+"Real-time notifications with WebSocket"
+"If we use Kafka for event processing"
+"Create a separate notifications table"
+"Firebase Cloud Messaging"
+"Add an assignee column for task assignment"
+----
+
+Write these on the board and say:
+
+[quote]
+____
+"Everything written here is in the Solution Space.
+____
+[quote]
+____
+Is there even one thing from the Problem Space?"
+____
+
+Brief silence. This is the entire argument of this session.
+
+'''
+
+=== 2. Concept Explanation (20 minutes)
+
+_Concept 1 — Einstellung Effect (10 minutes)_
+
+The phenomenon where familiar solutions block better ones.
+This effect grows stronger with more experience.
+Explicitly explain why engineers at 3–4 years are particularly at risk.
+
+_Concept 2 — Presumptive Architecture (5 minutes)_
+
+Every developer carries an unconscious architecture default.
+This itself is not bad.
+Emphasize the difference between "using it knowing it's an assumption" and "using it thinking it's fact."
+
+_Concept 3 — Problem Space vs Solution Space (5 minutes)_
+
+Both spaces must be visited.
+Key: the transition must be _conscious_.
+The problem is automatic switching.
+
+'''
+
+=== Small Group Share Guide
+
+----
+Comparison Points
+──────────────────
+"Same requirement — did Problem/Solution classification differ?"
+  → That difference is itself an example of between-interpreter ambiguity.
+
+"Is Presumptive Architecture bad?"
+  → No. Using it knowing it's an assumption is the key.
+
+"We didn't generate many Problem Space questions"
+  → Why didn't more come up? What kinds of questions were blocked?
+----
+
+'''
+
+=== 5. Debrief Guide (10 minutes)
+
+----
+Anticipated resistance and responses
+────────────────────────────────────
+"Some of the classifications felt ambiguous"
+  → Good. Those boundary cases are the topic of next session.
+
+"Fewer Problem Space questions came up than I expected"
+  → Why didn't more come up? What kinds of questions were blocked?
+
+"I thought I knew it, but when I wrote it down I realized how much I don't know"
+  → This is today's core experience.
+
+"Is Presumptive Architecture bad?"
+  → No. The difference between using it knowing it's an assumption
+     and using it thinking it's a fact.
+----
+
+
+'''

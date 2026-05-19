@@ -1,0 +1,36 @@
+= Seeing the Problem: Reading Guide
+Jeongsoo Park <toracle@gmail.com>
+:subtitle: Problem Space / Solution Space Training Workshop
+:doctype: book
+:toc: left
+:toc-title: Contents
+:toclevels: 3
+:sectnums:
+:chapter-label: Chapter
+:lang: en
+:encoding: UTF-8
+:icons: font
+:source-highlighter: rouge
+
+
+include::front-matter.adoc[]
+
+include::prologue.adoc[]
+
+include::ch01.adoc[]
+
+include::ch02.adoc[]
+
+include::ch03.adoc[]
+
+include::ch04.adoc[]
+
+include::ch05.adoc[]
+
+include::ch06.adoc[]
+
+include::ch07.adoc[]
+
+include::ch08.adoc[]
+
+include::epilogue.adoc[]

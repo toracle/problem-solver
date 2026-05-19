@@ -1,0 +1,324 @@
+== Before Drawing the Map — Problem Structure and Domain Model
+
+=== Time Allocation
+
+[cols="1,1,1", options="header"]
+|===
+| Order | Content | Time
+|  | 0. Connection from previous session | 5 min
+|  | 1. Opening provocation — The headache analogy | 10 min
+|  | 2. Concept explanation (3 layers, Problem Framing, Domain Model) | 20 min
+|  | 3. Fixed case exercise — Worksheet A-4 | 30 min
+|  | 4. Real-work case slot — Worksheet B-4 | 20 min
+|  | 5. Debrief | 10 min
+|  | 6. Distribute Assignment Card #4 | 5 min
+|  | *Total* | *100 min*
+|===
+
+=== Session Facilitation Notes
+
+- ★ Don't give the answer in the layer classification exercise. The goal is the team agreeing on "which layer we're trying to fix."
+- ★ In the Domain Model sketch, State design varies the most. If different groups drew 'Assigned' and 'Acknowledged' differently, bring it into the full comparison.
+- ★ 'Do we always have to fix the root cause?' is an important question. Emphasize that it's a "conscious choice." It foreshadows Session 5's Spike and Session 7's Risk.
+- ★ Repeatedly point out that the Domain Model is a "team vocabulary alignment process," not a "document."
+
+=== Session Walkthrough
+
+=== 0. Connection from Previous Session (5 minutes)
+
+----
+Last session:
+Context-Free Questions filled the FAC blanks.
+Black Box agreed on the system's boundaries.
+
+Collecting Session 3 assignments:
+"What happened when you actually used a question?"
+→ 2–3 people share briefly
+→ Especially bring up any "unexpected discoveries"
+
+This session:
+We asked enough. We listened enough.
+But — do we understand the right problem?
+Having asked doesn't mean you've understood.
+----
+
+'''
+
+=== 1. Opening Provocation (10 minutes)
+
+_"The Headache Analogy"_
+
+Write briefly on slide or by speaking.
+
+[quote]
+____
+_Someone complains of a headache every morning._
+____
+[quote]
+____
+_They go to a doctor who prescribes painkillers._
+____
+[quote]
+____
+_The painkiller relieves the headache._
+____
+[quote]
+____
+_But the next morning, the headache comes back._
+____
+
+[quote]
+____
+_The headache is a symptom._
+____
+[quote]
+____
+_The real cause turned out to be — chronic sleep deprivation and too much caffeine._
+____
+
+[quote]
+____
+_The painkiller fixed the symptom, but not the problem._
+____
+
+After a moment, ask:
+
+[quote]
+____
+"Has anything like this happened to you in software development?
+____
+[quote]
+____
+ A time when you built what was asked, and a similar request came in again later."
+____
+
+Ask participants to raise their hands. Most will.
+
+[quote]
+____
+"That's because you fixed the symptom.
+____
+[quote]
+____
+This session covers — how to distinguish symptoms from problems from root causes,
+____
+[quote]
+____
+and how to know when you've understood a problem well enough."
+____
+
+'''
+
+=== 2. Concept Explanation (20 minutes)
+
+==== Concept 1 — The Three Layers of a Problem (10 minutes)
+
+Every problem situation has three layers.
+
+----
+Surface
+  │
+  ▼
+┌─────────────────────────────────────────────────┐
+│  Symptom                                         │
+│  What's observable. Where the pain is felt.      │
+│  "Users are churning"                            │
+│  "Team members miss tasks"                       │
+│  "Data is wrong"                                 │
+└─────────────────────────────────────────────────┘
+  │ Why?
+  ▼
+┌─────────────────────────────────────────────────┐
+│  Problem                                         │
+│  The direct cause of the symptom.                │
+│  "Onboarding is too long"                        │
+│  "No notification after assignment"              │
+│  "No validation in the input screen"             │
+└─────────────────────────────────────────────────┘
+  │ Why?
+  ▼
+┌─────────────────────────────────────────────────┐
+│  Root Cause                                      │
+│  The deeper cause generating the problem.        │
+│  "No value demonstration for new users"          │
+│  "Assignment workflow happens outside system"    │
+│  "No owner for data entry"                       │
+└─────────────────────────────────────────────────┘
+----
+
+Why does the distinction matter?
+
+----
+Fixing at symptom layer:
+  Painkiller → Symptom temporarily disappears → Problem remains, symptom recurs
+
+Fixing at problem layer:
+  Add notification → This problem is solved → Root cause remains, other problems emerge
+
+Fixing at root cause layer:
+  Bring assignment workflow fully into system → Multiple symptoms disappear at once
+----
+
+But this doesn't mean you always have to dig to the root cause. _Which layer to address is a conscious choice_. It's okay to decide to fix the symptom layer for a demo next month — as long as you know that is the decision you're making.
+
+'''
+
+_Problem Framing — How you frame it changes the solution_
+
+How you frame the same phenomenon changes the shape of the Problem Space.
+
+----
+Phenomenon: "Team members miss tasks"
+
+Frame A (seen as a notification problem):
+  → Strengthen notification system
+  → Technical solution emerges
+
+Frame B (seen as a communication problem):
+  → Redesign assignment process
+  → Organizational/process solution emerges
+
+Frame C (seen as a visibility problem):
+  → Let team lead see team members' current tasks
+  → Dashboard solution emerges
+
+Frame D (seen as an accountability problem):
+  → Assignment acknowledgement feature
+  → Different kind of technical solution emerges
+----
+
+Which frame is "right" is not currently known. But _the most dangerous thing is having only one frame_. Recognizing that multiple frames are possible is the first practice.
+
+'''
+
+==== Concept 2 — Domain Model vs Design Model (Fairbanks) (10 minutes)
+
+Fairbanks distinguishes three models surrounding software.
+
+----
+Domain Model  ←── Belongs to Problem Space
+     │
+     │  (this is the Bridge)
+     ▼
+Design Model  ←── Starting point of Solution Space
+     │
+     ▼
+Code Model    ←── Actual implementation
+----
+
+_Domain Model — Real-world concepts_
+
+The _real-world people, actions, rules, and states_ that this system deals with.
+
+Domain Model elements in the TeamOrder case:
+
+----
+People (Actors):  Team lead / Team member / Client admin
+Actions:          Task assignment / Task acknowledgement / Task completion / Urgent assignment
+States:           Unassigned / Assigned / Acknowledged / In Progress / Done / Overdue
+Rules:            Night shift urgents delivered immediately / Re-notify if unacknowledged / Deadline reminders
+Objects:          Task / Team / Production line / Deadline
+----
+
+_Design Model — The structure of the software being built_
+
+ERD, API design, system diagrams. From here, you're in the Solution Space.
+
+The mistake most engineers make:
+
+----
+Requirement received
+     │
+     │ ← This is skipped
+     ▼
+Domain Model (understanding reality)
+     │
+     │ ← This is also skipped
+     ▼
+Design Model (ERD, API)  ← This is where they start
+----
+
+What happens when the Domain Model is skipped?
+
+The design diverges from the real-world concepts. During development, "how do we handle this case?" questions keep repeating. Most of those questions belong in the Domain Model layer.
+
+_The time to move to the Design Model is when the Domain Model has sufficiently stabilized._
+
+How do you know? When the team is speaking the same domain vocabulary. When "task" and "to-do" aren't used interchangeably. When "Assigned" and "Acknowledged" are distinct.
+
+'''
+
+=== 3. Fixed Case Exercise (30 minutes)
+
+
+==== Small Group Share Guide
+
+_Small Group Share (7 minutes)_
+
+Pin or draw each group's Domain Model side by side on the board.
+
+Facilitator guide:
+----
+Comparison Points
+──────────────────
+"How differently was State drawn across groups?"
+  → State design varies the most.
+    Teams that treated 'Assigned' and 'Acknowledged' as the same vs different.
+    This difference will completely change DB design and API design later.
+
+"How many Rules were found?"
+  → Did any teams include the night shift urgent rule?
+    Teams that didn't — reflect on why it was left out.
+
+"How different is the Domain Model from the current design (if any)?"
+  → Large gaps are future rework points.
+----
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-4 | My Real-Work Case: Layer Analysis + Domain Model
+
+----
+
+
+==== Debrief Guide
+
+=== 5. Debrief (10 minutes)
+
+_Facilitator guide — anticipated resistance and responses_
+
+----
+"The symptom/problem/root cause boundary feels fuzzy."
+────────────────────────────────────────────────────────
+True. This boundary genuinely shifts with perspective.
+'No notification after assignment' could be a symptom
+or a problem depending on who you ask.
+What matters is not "exact classification" —
+it's that the team collectively recognizes
+"which layer are we trying to fix."
+
+"Do we always need to draw a Domain Model?
+ Even for a small feature?"
+────────────────────────────────────────
+You don't need to pull out the tool every time.
+The goal is not a 'Domain Model document' —
+it's that 'domain vocabulary is aligned within the team.'
+Naturally asking in Slack, "wait, 'Assigned' and 'Acknowledged'
+are different things, right?" — that is also Domain Model work.
+
+"Isn't it always better to fix the root cause?"
+──────────────────────────────────────────────────
+True. This is also the topic of Sessions 5 and 7.
+With one month to demo, fixing the problem layer may be realistic.
+What matters — is knowing that it is a choice.
+"We are currently fixing the symptom.
+ The root cause comes in Q2." — as a decision.
+----
+
+'''
+
+
+
+'''

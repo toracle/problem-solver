@@ -1,0 +1,298 @@
+== Whoever Asks Designs — Context-Free Questions
+
+=== Time Allocation
+
+[cols="1,1,1", options="header"]
+|===
+| Order | Content | Time
+|  | 0. Connection from previous session | 5 min
+|  | 1. Opening provocation — Two types of questions | 10 min
+|  | 2. Concept explanation (Context-Free Q 3 categories, Black Box) | 20 min
+|  | 3. Fixed case exercise — Interview roleplay + Worksheet A-3 | 30 min
+|  | 4. Real-work case slot — Worksheet B-3 | 20 min
+|  | 5. Debrief | 10 min
+|  | 6. Distribute Assignment Card #3 | 5 min
+|  | _Total_ | _100 min_
+|===
+
+
+=== Session Facilitation Notes
+
+* ★ Show the Minjun role card only to the participant playing Minjun, before the interview roleplay. Asymmetric information is the key.
+* ★ If unexpected information like "night shift" surfaces from a team that used a Meta-Question, bring it into the full group share. This experience demonstrates the effect of Meta-Questions.
+* ★ If "this feels awkward" resistance arises: remind them that the goal is "getting this information naturally within normal conversation."
+* ★ If a team found many edge cases in the Black Box, have them trace back which questions produced them.
+
+=== Session Walkthrough
+
+=== 0. Connection from Previous Session (5 minutes)
+
+----
+Last session:
+Requirements are made of Functions / Attributes / Constraints.
+And having more "?" than "confirmed" items is normal.
+
+Collecting Session 2 assignments:
+"When you tried to fill in the Attributes or Constraints columns,
+ what questions got blocked?" → 2–3 people share briefly
+
+This session:
+How to generate questions that fill those blank columns.
+Are there good questions and bad questions?
+If so, what's the difference?
+----
+
+'''
+
+=== 1. Opening Provocation (10 minutes)
+
+_"Two Types of Questions Experiment"_
+
+Give participants a scenario.
+
+[quote]
+____
+_You just heard this from BizDev:_
+____
+[quote]
+____
+_"Please make the dashboard more intuitive."_
+____
+>
+[quote]
+____
+_You can now ask BizDev one question._
+____
+[quote]
+____
+_What question would you ask? Write it down. (1 minute)_
+____
+
+After 1 minute, classify the questions that came in into two groups on the board.
+Don't tell participants in advance — let them find the pattern as you classify.
+
+Typical questions that come in:
+----
+Group A (narrowing questions)
+─────────────────────────────────────────────────────────
+"Which menu should appear first?"
+"Should we change the chart colors?"
+"Should we improve loading speed?"
+"What layout change would work well?"
+
+Group B (opening questions)
+─────────────────────────────────────────────────────────
+"What is most frustrating about the current dashboard?"
+"In what situations do you typically use the dashboard?"
+"If it were intuitive, what would it look like?"
+"Is there anything the current dashboard can't help you do?"
+----
+
+After classifying, say:
+
+[quote]
+____
+"Group A is already assuming a solution.
+____
+[quote]
+____
+'Should we change the chart colors?' presupposes the problem is the chart colors.
+____
+[quote]
+____
+Group B is still in the problem space.
+____
+>
+[quote]
+____
+Weinberg gave Group B a specific name:
+____
+[quote]
+____
+Context-Free Questions — questions that don't presuppose a context (solution)."
+____
+
+'''
+
+=== 2. Concept Explanation (20 minutes)
+
+==== Concept 1 — Context-Free Questions (12 minutes)
+
+A concept Weinberg presents in _Exploring Requirements_.
+Context-Free Questions are _general-purpose questions_ applicable to any domain or product. Because they presuppose no specific solution, they allow exploration without narrowing the problem space.
+
+They fall into three categories.
+
+_① Process Questions — How is it happening?_
+
+Questions to understand the current situation and flow.
+
+----
+"How are you currently handling this problem?"
+"Who is doing this task? How many people?"
+"When does this problem feel most acute?"
+"What happens if this isn't resolved?"
+"Is there a workaround you're using right now?"
+----
+
+The last question in particular — _"What workaround are you using right now?"_ — is what Weinberg emphasizes as the most powerful. A workaround is a clue to the real need. People are already doing in action what they cannot express in words.
+
+_② Product Questions — What should it be?_
+
+Questions to understand expectations and boundaries for the system.
+
+----
+"What must this system absolutely do?"
+"What must it never do?"
+"What state would let you say 'this worked'?"
+"What single missing thing would be most valuable?"
+"Who judges whether this was successful?"
+----
+
+"What must it never do?" is particularly important. It rarely surfaces in requirements conversations, but it frequently becomes the Constraint that trips things up later.
+
+_③ Meta-Questions — Questions about the questioning_
+
+The category Weinberg often describes as the most powerful.
+
+----
+"Would you be okay with me asking you questions like this?"
+"Is there anything I might be missing?"
+"Can I check that I've understood correctly?"
+"Could you connect me with someone who knows more about this?"
+"Are any of my questions heading in the wrong direction?"
+----
+
+Why Meta-Questions are powerful: they give the other person _permission to correct the direction of the conversation_. When an engineer is operating under a wrong assumption, the other person can naturally correct it.
+
+'''
+
+==== Concept 2 — Black Box Test (8 minutes)
+
+If Context-Free Questions have been used to explore sufficiently, the next step is agreeing on the _boundary_ of the system.
+
+Weinberg describes this as the _Black Box Test_ — agreeing first on only what is visible from the outside, before discussing how to implement the inside.
+
+----
+┌─────────────────────────────────────────────┐
+│                                             │
+│  Trigger ──→ [   Black Box   ] ──→ Output   │
+│                                             │
+│                  ↕ Edge conditions          │
+│                                             │
+└─────────────────────────────────────────────┘
+----
+
+_Black Box Template:_
+
+[cols="1,1,1", options="header"]
+|===
+| Item | Question | Notes
+| _Name_ | What do you call this feature/system in one word? | Agreeing on a name is the first alignment
+| _Trigger_ | When does this feature start? | What event activates it?
+| _Input_ | What goes in? Who provides it? | People, data, system events
+| _Output_ | What must come out? To whom? | User screen, data, external system
+| _Edge Cases_ | Conditions where it fails or doesn't work | The part most often omitted
+|===
+
+
+Why the Black Box Test is useful:
+* Boundary can be agreed on without debating implementation
+* "What happens in this case?" edge case questions surface naturally from the boundary
+* Requirements can be confirmed in language both BizDev and users understand
+
+'''
+
+==== Brief Connection — Jobs-to-be-Done (supplementary concept, 3 minutes)
+
+Deliver Christensen's perspective in one line.
+
+[quote]
+____
+_"People don't buy products. They 'hire' products to accomplish a Job."_
+____
+
+"Please build a notification feature" is a _feature request_.
+"Please eliminate the situation where the team lead assigns but the team member doesn't know" is a _Job_.
+
+The same Job can be completed in multiple ways. It might not require notifications at all. Context-Free Questions are the tool for finding the Job behind a feature request.
+
+'''
+
+=== 3. Fixed Case Exercise (30 minutes)
+
+
+==== Small Group Share Guide
+
+_Small Group Share (5 minutes)_
+
+Groups that used the same role card compare their Black Boxes.
+
+Facilitator guide:
+----
+Comparison Points
+──────────────────
+"Same interview subject — how different are the Black Boxes?"
+  → The direction of the questions was different.
+    Trace backwards: which question led to which discovery?
+
+"Which team found the most edge cases — what questions did they ask?"
+  → Teams that asked "what should it never do?" and
+    "under what conditions does this fail?" find more edge cases.
+
+"What happened in teams that used a Meta-Question?"
+  → 'Is there anything I might have missed?' pulls out the most new information.
+    Bring this experience into the full group share.
+----
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-3 | My Real-Work Case: Applying Context-Free Questions
+
+----
+┌─────────────────────────────────────────────────────────────┐
+
+
+==== Debrief Guide
+
+=== 5. Debrief (10 minutes)
+
+_Facilitator guide — anticipated resistance and responses_
+
+----
+"Context-Free Questions feel too basic.
+ Wouldn't it be strange to ask these in real work?"
+────────────────────────────────────────────────────────
+True. The goal is not to recite these questions verbatim.
+The goal is to hold these categories in mind
+and get this information naturally within normal conversation.
+Just as Seunghyun didn't say to Minjun
+"I'll now ask you Process Questions."
+
+"What if BizDev says they don't know?"
+────────────────────────────────────────
+'I don't know' is also information.
+'Who do you think would know?' is the next question.
+And if nobody knows — that itself is the topic of Session 5.
+It may be Essential Ambiguity.
+
+"There are too many edge cases in the Black Box. We're stuck."
+──────────────────────────────────────────────────────────────
+That's a good sign. Finding more edge cases means fewer surprises later.
+You don't have to resolve all of them.
+'We now know about this' is what matters.
+
+"I'm not good at interviewing. It's too awkward."
+──────────────────────────────────────────────────
+Just remember one Meta-Question.
+'Is there anything I might have missed?'
+That one question draws out the most.
+----
+
+'''
+
+
+
+'''

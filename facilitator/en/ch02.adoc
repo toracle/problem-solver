@@ -1,0 +1,292 @@
+== The Anatomy of Ambiguity — A Language for Decomposing Requirements
+
+=== Time Allocation
+
+[cols="1,1,1", options="header"]
+|===
+| Order | Content | Time
+|  | 0. Connection from previous session | 5 min
+|  | 1. Opening provocation — Translation experiment | 10 min
+|  | 2. Concept explanation (FAC triangle, sources of ambiguity) | 20 min
+|  | 3. Fixed case exercise — Worksheet A-2 | 30 min
+|  | 4. Real-work case slot — Worksheet B-2 | 20 min
+|  | 5. Debrief | 10 min
+|  | 6. Distribute Assignment Card #2 | 5 min
+|  | _Total_ | _100 min_
+|===
+
+
+=== Session Facilitation Notes
+
+* ★ In the "translation experiment," when different answers appear, ask "is there anything wrong here?" and wait briefly. The silence is the learning moment.
+* ★ It is natural for the Attributes column to be empty. Emphasize that it only surfaces when you actively draw it out.
+* ★ The Constraints column will be hardest. Guide participants that it means "finding unstated assumptions."
+* ★ "The document is nothing; the documenting is everything" — point out that the whiteboard work itself is the team alignment process.
+
+=== Session Walkthrough
+
+=== 0. Connection from Previous Session (5 minutes)
+
+Bring up the key from Session 1's assignment on the board or slide.
+
+----
+Last session:
+"Am I understanding the problem, or recognizing a pattern?"
+
+Collecting Session 1 assignments:
+"From the requirement you received this week, how many
+ Problem Space questions did you generate?" → 2–3 people share briefly
+
+This session:
+Being able to generate questions is good.
+But which questions are effective?
+You need to know where the ambiguity is to ask good questions.
+----
+
+'''
+
+=== 1. Opening Provocation (10 minutes)
+
+_"The Translation Experiment"_
+
+Put one sentence on the slide or board.
+
+[quote]
+____
+_"Please make it easier for users to log in."_
+____
+
+Ask participants:
+
+[quote]
+____
+"Write down specifically what this sentence means.
+____
+[quote]
+____
+If you were turning this into a development task, what tasks would it create?
+____
+[quote]
+____
+1 minute, work individually."
+____
+
+After 1 minute, ask 3–4 people to read their answers.
+
+Typical responses:
+----
+A: "Add social login (Google, LinkedIn)"
+B: "Improve login form UI, reduce input fields"
+C: "Simplify the password recovery process"
+D: "Auto-login / Remember me feature"
+E: "Improve login error messages"
+----
+
+Write these side by side on the board and say:
+
+[quote]
+____
+"We read the same sentence, and five different tasks appeared.
+____
+[quote]
+____
+Is any of these wrong?"
+____
+
+Brief silence.
+
+[quote]
+____
+"None of them are. All could be right, and all could be wrong.
+____
+[quote]
+____
+Because no one yet knows which of these the original sentence means.
+____
+[quote]
+____
+This is ambiguity."
+____
+
+'''
+
+=== 2. Concept Explanation (20 minutes)
+
+==== Concept 1 — Three Sources of Ambiguity (8 minutes)
+
+Weinberg explains that ambiguity in requirements comes from three different places.
+
+_① Linguistic Ambiguity_
+When the word itself carries no measurement standard.
+
+----
+"Fast response"          → How fast? 200ms? 2 seconds?
+"Easy to use"            → For whom? In what situation?
+"Secure"                 → From what threats? To what level?
+"Better"                 → By what measure?
+----
+
+These words have a standard in the speaker's mind. But that standard wasn't transmitted.
+
+_② Between-Interpreter Ambiguity_
+When different people picture different things from the same word.
+
+----
+"Enhanced notifications"
+  BizDev imagined:          Popup on client team lead's PC
+  Backend developer:        Email / Slack webhook
+  Frontend developer:       In-app badge, red dot
+  User (team member):       Can't we just get a text?
+----
+
+Talking in the same language, but describing entirely different things. Everyone has experienced what happens when development starts in this state.
+
+_③ Missing Context Ambiguity_
+When there are unstated assumptions.
+
+----
+"It should work just like it does now"  → Do you know how it works now?
+"Obviously that wouldn't be done"       → What's obvious?
+"While keeping the existing approach"   → What is the existing approach?
+"Build it quickly"                      → How quickly? What can be sacrificed?
+----
+
+These assumptions go unsaid by the speaker because they're too obvious to them. But they're unknowable to the listener.
+
+'''
+
+==== Concept 2 — Functions / Attributes / Constraints Triangle (12 minutes)
+
+Weinberg sees all requirements as actually composed of three different categories.
+
+----
+           Functions
+           (what it does)
+               △
+              / \
+             /   \
+            /     \
+           /       \
+Attributes ─────── Constraints
+(how it must do it)  (what cannot be touched)
+----
+
+[cols="1,1,1,1", options="header"]
+|===
+| Category | Definition | Typical expression | Common trap
+| _Functions_ | Actions the system performs | "Process a payment," "send a notification," "assign a task" | Take note only of these and stop
+| _Attributes_ | Quality criteria for those actions | "Under 200ms," "99.9% availability," "on mobile too" | These cause rework later
+| _Constraints_ | Conditions the solution must respect | "PCI-DSS compliance," "budget of $200K," "cannot change existing DB" | Only discovered after design is done
+|===
+
+
+Why does this distinction matter?
+
+_If only Functions are heard:_
+"Send a notification" → Think any method will do
+→ Implement via email
+→ Later: "it needs to be real-time" (an Attribute) surfaces
+→ Rework
+
+_If Attributes are heard first:_
+"In real-time, on all platforms, within 1 second" → Attributes determine Architecture
+→ WebSocket considered from the start
+
+_If Constraints are discovered late:_
+Design is complete → "Oh, by the way, the client's network blocks WebSocket"
+→ Full redesign
+
+Conclusion: _Attributes and Constraints only surface if you actively draw them out._
+Both BizDev and users naturally speak in Function language.
+Engineers must extract them through questions.
+
+'''
+
+_"The document is nothing; the documenting is everything" (Weinberg)_
+
+Deliver one of Weinberg's most important insights briefly.
+
+[quote]
+____
+_"The document is nothing; the documenting is everything."_
+____
+
+The purpose of creating a requirements document is not _to store the document_.
+The purpose is _for the team to arrive at the same mental model_ through the process of creating it.
+
+The act of filling in the FAC triangle aligns the team's understanding.
+The conversation matters more than the output.
+
+'''
+
+=== 3. Fixed Case Exercise (30 minutes)
+
+
+==== Small Group Share Guide
+
+_Small Group Share (8 minutes)_
+
+Groups of 3–4 compare PART 2 results.
+
+Facilitator guide:
+----
+Comparison Points
+──────────────────
+"Is there a case where different things were written in the same column?"
+  → That difference is itself an example of between-interpreter ambiguity.
+
+"Did anyone classify an Attribute as a Function?"
+  → Invite discussion about why they classified it that way.
+
+"Is the Constraints column the most empty?"
+  → It usually is. Constraints are the hardest to surface.
+     Ask "why didn't this one come to mind?" as a meta-question.
+----
+
+_Full Group Share (7 minutes)_
+
+Collect each group's "most dangerous gap" onto the board.
+If different groups chose different things — why is the core of the discussion.
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+
+
+==== Debrief Guide
+
+=== 5. Debrief (10 minutes)
+
+_Facilitator guide — anticipated resistance and responses_
+
+----
+"The boundary between Attributes and Functions is confusing"
+────────────────────────────────────────────────────────────
+That is normal. The boundary genuinely shifts depending on context.
+"Real-time" can be an Attribute or a core Function depending on the situation.
+What matters is not the classification itself, but whether
+the team has the same understanding of that item.
+
+"The Constraints column is hard to fill in"
+────────────────────────────────────────────
+Constraints are the hardest to surface.
+The reason is that stakeholders don't say them because they're "obvious."
+Next session (Session 3) covers the questioning techniques for drawing these out.
+
+"Once FAC is all filled in, can we start development?"
+────────────────────────────────────────────────────────
+If all "?" become "confirmed," yes.
+But some "?" may stay even after asking.
+That's what Session 5 (living with ambiguity) covers.
+For now, the goal is simply knowing what you don't know.
+
+"Do we really have to do all this every time? It seems like it would take too long"
+───────────────────────────────────────────────────────────────────────────────────
+It takes time at first. But the goal is to use these tools
+naturally within conversation.
+The final goal is not "filling in a FAC table" —
+it's "automatically checking these three things in your head."
+----
+
+'''

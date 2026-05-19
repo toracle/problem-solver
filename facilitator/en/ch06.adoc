@@ -1,0 +1,315 @@
+== I've Seen This Problem Before — Analogical Reasoning
+
+=== Time Allocation
+
+[cols="1,1,1", options="header"]
+|===
+| Order | Content | Time
+|  | 0. Connection from previous session | 5 min
+|  | 1. Opening provocation — Same problem, different domain | 10 min
+|  | 2. Concept explanation (Analogical Reasoning, Reduction, Business Research) | 20 min
+|  | 3. Fixed case exercise — Worksheet A-6 | 30 min
+|  | 4. Real-work case slot — Worksheet B-6 | 20 min
+|  | 5. Debrief | 10 min
+|  | 6. Distribute Assignment Card #6 | 5 min
+|  | _Total_ | _100 min_
+|===
+
+
+=== Session Facilitation Notes
+
+* ★ The essence of analogical reasoning is "importing the principle," not "copying the solution." Remind participants who confuse the two repeatedly.
+* ★ When completely different domain analogies surface from the same problem — affirm both. More is learned from the differences.
+* ★ In business research, emphasize that the goal is reading Trade-offs, not a feature list. Make participants ask "what did this service sacrifice?"
+* ★ Point out that "the way experience accumulates" is this capability. It can be trained.
+
+=== Session Walkthrough
+
+=== 0. Connection from Previous Session (5 minutes)
+
+----
+The journey so far:
+  Session 1: Recognizing the premature jump to Solution Space
+  Session 2: Decomposing requirements with FAC
+  Session 3: Exploring with Context-Free Questions
+  Session 4: Symptom/problem/root cause, Domain Model
+  Session 5: Resolvable vs Essential, Spike
+
+This session is the final layer of Problem Space exploration.
+After understanding the problem thoroughly — we now ask:
+"Has a problem of this kind already been solved somewhere in the world?"
+
+Collecting Session 5 assignments:
+"When you looked back for an experience where you had to just try something —
+ was that ambiguity R or E?" → 2–3 people share briefly
+----
+
+'''
+
+=== 1. Opening Provocation (10 minutes)
+
+_"Same Problem, Different Domain Experiment"_
+
+Put two situations side by side on a slide.
+
+----
+Situation A                       Situation B
+────────────────────────────────  ────────────────────────────────
+Delivery app                      Social media feed
+When an order comes in, it must   Too many followed accounts to
+be automatically assigned to the  show all posts.
+nearest available courier.        Which ones do you show first?
+Some couriers may already
+be busy.
+----
+
+Ask participants:
+
+[quote]
+____
+"Does anyone see these two problems as the same kind of problem?
+____
+[quote]
+____
+ In what way do you think they're similar?"
+____
+
+A moment later, give a hint.
+
+[quote]
+____
+"Both are about — how to allocate limited resources (couriers, screen space)
+____
+[quote]
+____
+ across multiple requests (orders, posts).
+____
+[quote]
+____
+ The domain is different, but the _structure_ is the same."
+____
+
+Continue:
+
+[quote]
+____
+"The TeamOrder notification priority problem has the same structure.
+____
+[quote]
+____
+ How to deliver multiple notifications
+____
+[quote]
+____
+ to limited attention (team members' attention).
+____
+>
+[quote]
+____
+ Pólya asked this.
+____
+[quote]
+____
+ 'Do you know a related problem?'
+____
+[quote]
+____
+ If someone has already solved a problem with a similar structure,
+____
+[quote]
+____
+ we can learn from their solution."
+____
+
+'''
+
+=== 2. Concept Explanation (20 minutes)
+
+==== Concept 1 — Analogical Reasoning (10 minutes)
+
+One of the things Pólya emphasized most in _How to Solve It_.
+
+[quote]
+____
+_"Do you know a related problem?"_
+____
+
+There is no need to treat a problem as if you're seeing it for the first time. If the _structure_ of this problem resembles a known problem in another domain, you can bring in the logic of that solution.
+
+Three steps of analogical reasoning:
+
+----
+Step 1: Extract the structure
+  What is the core structure of this problem?
+  (Abstract the actors, actions, relationships, constraints)
+
+Step 2: Search for analogous problems
+  Is there a problem in another domain that resembles this structure?
+
+Step 3: Import the principle
+  Apply the solution principle of the analogous problem to this problem
+  (the principle, not the solution itself)
+----
+
+_TeamOrder case application example:_
+
+----
+Step 1 — Extract the structure:
+  "Delivering messages to multiple recipients,
+   where recipients' states (online/offline/sleep) are uncertain,
+   and message urgency varies"
+
+Step 2 — Search for analogous problems:
+  • Hospital ER triage — sequencing by patient urgency
+  • Air traffic control — priority communication among multiple aircraft
+  • Email spam filter — sorting by importance
+  • TCP retransmission — retry mechanism when packet not acknowledged
+  • Twitter notification batching — critical notifications immediately,
+    rest bundled
+
+Step 3 — Import the principle:
+  TCP retransmission principle:
+    "Retransmit if no delivery confirmation received"
+    → Re-notify if team member notification acknowledgement is absent
+  Triage principle:
+    "Use different channels based on urgency"
+    → Night-shift urgents via separate channel (SMS/call),
+      regular via app push
+----
+
+An important caveat: _This is not copying the solution._ It is importing the principle. Not using TCP as-is, but bringing the logical structure of "retry if no acknowledgement."
+
+'''
+
+==== Concept 2 — Reduction (5 minutes)
+
+Reduction is mapping a complex problem onto a known _problem type_.
+
+----
+"What kind of problem is this, fundamentally?"
+----
+
+Commonly used problem-type vocabulary:
+
+[cols="1,1,1", options="header"]
+|===
+| Problem type | Core structure | Typical examples
+| _Matching problem_ | Optimally connecting set A to set B | Courier-order, job-seeker-hiring
+| _Trust problem_ | Building trust between strangers | Used goods marketplace, accommodation sharing
+| _Cold Start problem_ | Recommendations with no initial data | New user, new product
+| _Visibility problem_ | One side doesn't know the other's state | Team task status, logistics location
+| _Rate Control problem_ | Requests exceed processing capacity | API throttling, notification fatigue
+| _Consistency problem_ | Data diverges across multiple locations | Distributed systems, multi-device
+|===
+
+
+TeamOrder case: _A combination of Visibility problem + Rate Control problem_
+
+The team lead doesn't know whether team members have seen their assignments (Visibility), and too many notifications get ignored (Rate Control).
+
+Knowing these two problem types means — there are validated solution patterns for each type.
+
+'''
+
+==== Concept 3 — Business Research: Reading Trade-offs (5 minutes)
+
+When researching competing or similar services, simply listing features isn't very useful.
+
+From Cunningham's perspective — other services already have _the results of exploring Essential Ambiguity through action_ embedded in their products.
+
+What you should read is _the Trade-offs they chose_.
+
+----
+Business research question frame:
+
+"What did this service prioritize above all else?"
+"What did it sacrifice?"
+"Why did they choose this approach?"
+"What type of user/environment is it optimized for?"
+"In what situations does this design fail?"
+----
+
+Example: Slack's notification design
+* Top priority: Message delivery reliability + notification customization
+* What was sacrificed: Simplicity (settings are too complex)
+* Optimized environment: Desktop-centric knowledge workers
+* Where it fails: Field workers, users who don't configure notifications
+
+TeamOrder's users are field workers. This is where you can see why Slack's design doesn't work for them.
+
+'''
+
+=== 3. Fixed Case Exercise (30 minutes)
+
+
+==== Small Group Share Guide
+
+_Small Group Share (10 minutes)_
+
+Facilitator guide:
+----
+Comparison Points
+────────────────
+"Did different teams find analogies from entirely different domains?"
+  → The same problem can generate analogies from completely different domains.
+    If one team found hospital triage and another found TCP retransmission,
+    both are correct. And the principles extracted from each will differ.
+    List those differences on the board.
+
+"Where did things get stuck when importing the principle?"
+  → Check: "Were they trying to copy the solution or import the principle?"
+    The former usually ends with "it doesn't fit our situation."
+
+"How did reading Trade-offs in business research
+ differ from a simple feature comparison?"
+  → Surface this question to help participants articulate
+    the difference in research perspective.
+----
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-6 | My Real-Work Case: Applying Analogical Reasoning
+
+
+==== Debrief Guide
+
+=== 5. Debrief (10 minutes)
+
+_Facilitator guide — anticipated resistance and responses_
+
+----
+"Finding analogies feels like it would take too long."
+────────────────────────────────────────────────────
+It does at first. But this is training.
+After doing it a few times, you'll start to hear a problem
+and automatically think "I've seen this structure somewhere."
+That moment is one of the shifts from 3–4 years of experience
+to 5–6 years.
+
+"Can't analogies be wrong?"
+────────────────────────────────────────────────────
+Yes. Analogical reasoning can be wrong.
+But discovering that "it was wrong" is also learning.
+Finding that "unlike TCP, our problem can't force
+acknowledgement" can lead to a deeper understanding
+of the problem itself.
+
+"Can't you only use analogies from domains you already know?
+ How do you find them from unfamiliar domains?"
+────────────────────────────────────────────────────────────
+Two approaches.
+First, search using problem-type vocabulary.
+Terms like "Visibility problem solution" and
+"notification fatigue pattern" as search queries.
+Second, people with different experiences within a team
+can surface different analogies. This is why teams with
+diverse backgrounds have an advantage.
+----
+
+'''
+
+
+
+'''

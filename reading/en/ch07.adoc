@@ -1,0 +1,189 @@
+== Where to Focus Your Energy
+
+[quote]
+____
+_"If you invest equally in everything, you have nothing left for what matters most."_
+____
+
+'''
+
+=== The Story
+
+Monday morning.
+
+It was design review time. Jiyeon put her architecture diagrams from the previous week on the screen.
+
+Component diagrams, sequence diagrams, ERD, a draft API spec. You could tell at a glance how much effort had gone into it.
+
+Hyuntae said:
+
+"Wow, very detailed."
+
+Jiyeon asked carefully.
+
+"What do you think, Seunghyun?"
+
+Seunghyun looked at the screen for a long time. Something felt off — not wrong, but.
+
+"Jiyeon, how long did this take to put together?"
+
+"...Two days."
+
+"Notification delivery guarantee — the fallback when FCM fails — where is that in here?"
+
+Jiyeon pointed around the diagram.
+
+"Here... ah, that's not in there yet."
+
+"What about when a night shift urgent goes undelivered and the team lead needs to be notified?"
+
+"That's not there either..."
+
+"The acknowledgement timeout handling?"
+
+Jiyeon went quiet.
+
+Seunghyun said gently.
+
+"This is well drawn. But the things we need to worry about most are missing. And the component structure — that's low risk right now. How we partition things can be changed later. But notification delivery guarantees — those are expensive to change after the fact."
+
+Hyuntae jumped in.
+
+"I was wondering about that too. What happens if a push doesn't go through?"
+
+Seunghyun wrote on the whiteboard in a small list.
+
+----
+Engineering Risk List:
+1. Notification not delivered (network/power-saving)    → Reliability risk
+2. Night shift urgent acknowledgement failure            → Reliability risk
+3. Handling when no acknowledgement arrives             → Reliability risk
+4. Performance when team grows from 15 to 150 members  → Performance risk
+5. Code change scope when adding notification channels → Modifiability risk
+----
+
+"Out of these five, can you see which ones need design energy right now?"
+
+Jiyeon read through them slowly.
+
+"1, 2, 3 are important for the demo too. If the line stops during the demo, it's over."
+
+"Right."
+
+"4... the demo has 15 people, so isn't that fine for now?"
+
+"Right. Low risk currently. But when it reaches 150 members, we'll need to revisit it. No need to do it now."
+
+"5?"
+
+Seunghyun thought for a moment.
+
+"This is in the middle. We're considering adding SMS as a channel — so some degree of channel abstraction now makes sense. But it doesn't need to be perfect — just enough that adding SMS later isn't painful."
+
+Jiyeon was writing notes.
+
+"So out of the two days I spent drawing all that, what we actually need right now is..."
+
+"How to handle 1, 2, 3. And the level of channel abstraction for 5. That's it. Everything else — later."
+
+Hyuntae asked:
+
+"What about the other diagrams?"
+
+Seunghyun smiled.
+
+"Discard them. For now. Draw them again when they're needed."
+
+Jiyeon said quietly:
+
+"Two days..."
+
+"Those two days weren't wasted. You now have the whole structure in your head. But from now on — whenever you draw, ask: what risk does this lower?"
+
+'''
+
+That afternoon.
+
+Jiyeon focused on just three things.
+
+First, retry logic when `FCM` delivery fails — how many retries, and at what intervals.
+Second, the trigger condition for `SMS` fallback when a night shift urgent flag is present.
+Third, an interface abstracting the notification channel — making app push and `SMS` share the same interface.
+
+At six in the evening, she sent a message on Slack.
+
+[quote]
+____
+Jiyeon: Finished three things today.
+____
+[quote]
+____
+       Got two days' worth done in one day.
+____
+
+'''
+
+=== Concept Notes
+
+==== Functionality and Quality Attributes Accumulate Differently
+
+Software has two kinds of attributes.
+
+__Functionality__ is "what the system does." Send a notification. Assign a task. You can layer these on with each sprint, and they're relatively easy to add later.
+
+__Quality Attributes__ are "how well the system does it." Reliability, performance, security, modifiability. These are secured through architectural decisions. Adding them later may require touching the entire system.
+
+Jiyeon's two-day diagrams showed the functional structure in detail — but did not address the most critical quality attribute: notification delivery reliability. Component structure can be changed later. But failure-handling for notification delivery is expensive if it was never considered from the start.
+
+==== Risk-Driven Model — Design in Proportion to Risk
+
+George Fairbanks answered the question that software architects are most often asked.footnote:[George Fairbanks, _Just Enough Software Architecture_, 2010. "Risk-Driven Model" is the central argument of this book — that design effort should be proportional to the size of the risk. It offers a pragmatic approach to finding "just enough" design, from the perspective that both over-design and under-design are waste.]
+
+_"How much software architecture should you do?"_
+
+His answer: in proportion to risk. Design deeply where risk is high; minimize or defer design where risk is low.
+
+This is not laziness. It is focusing on what matters most within limited time.
+
+What Seunghyun did was exactly that. He listed five Engineering Risks and distinguished what was important right now (1, 2, 3), what could wait (4), and what was in the middle (5). As a result, Jiyeon finished two days of work in one day.
+
+==== Engineering Risk and PM Risk Use Different Tools
+
+There is an important distinction.
+
+__Engineering Risk__ is the possibility of technical failure in system analysis, design, or implementation. Notifications aren't delivered. Data consistency breaks. A security vulnerability exists. This is resolved through engineering methods — Spikes, prototypes, load tests, architecture reviews.
+
+__Project Management Risk__ is a problem of timeline, team, or prioritization. We won't finish in a month. The team doesn't know this technology. This is resolved through PM methods — schedule adjustment, training, scope reduction.
+
+The key: _the type of risk and the type of technique must match._ Drawing a Gantt chart to address a performance risk is ineffective. Drawing an architecture diagram to address a team scheduling problem is equally ineffective.
+
+==== The Decision to "Not Do This Now"
+
+The most practical insight from Fairbanks's Risk-Driven Model is this.
+
+Low-risk things don't need to be designed right now. And that is not "never do it" — it is "revisit when the risk grows."
+
+Deeply designing the scalability of a system that currently has 15 users is waste. When signals appear that it might reach 150, that is the appropriate time to invest.
+
+The reason this judgment is hard is that engineers have an instinct to design perfectly. The Risk-Driven Model gives that instinct a criterion: __"What risk does this design reduce?"__
+
+'''
+
+=== Try This Week
+
+Before your next design session, ask this question first.
+
+_"Where in this system is the failure most likely?"_
+
+Once you have an answer — focus your design energy there. Leave everything else simple for now, and revisit when the risk grows.
+
+When someone brings a long diagram to a design meeting, ask:
+
+_"What risk does this diagram reduce?"_
+
+If there is an answer, it's good design. If there isn't — it may be time to reconsider whether it's needed right now.
+
+'''
+
+_Next episode: Seunghyun's Map — Verifying the solution against the original problem, and integrating everything learned across eight sessions_
+'''

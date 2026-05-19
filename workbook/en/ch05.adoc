@@ -1,0 +1,250 @@
+== Walking Through the Fog — Living with Ambiguity
+
+[quote]
+____
+_Core Question:_ How do you handle ambiguity that cannot be resolved?
+____
+
+_Core Concepts:_ Resolvable vs Essential Ambiguity · Spike Solution · Technical Debt
+
+'''
+
+=== Worksheet A-5 | TeamOrder Case: Ambiguity Diagnosis and Spike Design
+
+[sidebar]
+.Worksheet A-5 | Session 5 / TeamOrder Case
+--
+Name: pass:[________________________] +
+Date: pass:[________________________]
+--
+
+Current state of the TeamOrder case (accumulated from Sessions 1–4):
+
+* Domain Model roughly sketched
+* Black Box draft exists
+* Some FAC Attributes still [?]
+* Goal: demo in one month
+
+**PART 1. List the ambiguities (5 minutes)**
+
+Write down all the ambiguities in this case that are still unresolved.
+
+1. +++______________________________+++
+2. +++______________________________+++
+3. +++______________________________+++
+4. +++______________________________+++
+5. +++______________________________+++
+6. +++______________________________+++
+
+**PART 2. Diagnosis — Resolvable vs Essential (8 minutes)**
+
+Apply the diagnostic question to each ambiguity.
+
+Diagnostic question: +
+"Is there an action I can take to find this out?"
+
+[cols="3,1,3", options="header"]
+|===
+| Ambiguity | Type | Basis
+
+| 1.
+| * [ ] R * [ ] E
+|
+
+| 2.
+| * [ ] R * [ ] E
+|
+
+| 3.
+| * [ ] R * [ ] E
+|
+
+| 4.
+| * [ ] R * [ ] E
+|
+
+| 5.
+| * [ ] R * [ ] E
+|
+
+| 6.
+| * [ ] R * [ ] E
+|
+|===
+
+R = Resolvable (can be resolved by asking/investigating) +
+E = Essential (only knowable through trying/building)
+
+**PART 3. Spike Design (12 minutes)**
+
+Choose the most important item from those classified as Essential +
+and design a Spike for it.
+
+Ambiguity to explore: +
++++______________________________+++
+
+What is the simplest exploratory action? +
+(knowing it will be thrown away, as fast as possible, as minimal as possible)
+
++++______________________________+++ +
++++______________________________+++
+
+If this Spike succeeds, what state are we in? +
+(what do we need to know to say "it worked"?)
+
++++______________________________+++
+
+If this Spike fails, what state are we in? +
+(what negative outcome lets us say "that's a no"?)
+
++++______________________________+++
+
+Estimated time: * [ ] 1–2 hours * [ ] Half a day * [ ] A full day * [ ] More
+
+What decision can we make based on the Spike result? +
++++______________________________+++ +
++++______________________________+++
+
+**PART 4. "Does this decision actually need to be made right now?" check (5 minutes)**
+
+From the remaining Essential ambiguities, +
+which ones do NOT need to be decided right now?
+
+(One month to demo. Does this ambiguity affect the demo?)
+
+[cols="3,2,3", options="header"]
+|===
+| Ambiguity | Needs decision now? | Reason
+
+|
+| * [ ] Yes * [ ] No
+|
+
+|
+| * [ ] Yes * [ ] No
+|
+
+|
+| * [ ] Yes * [ ] No
+|
+|===
+
+_Small Group Share (5 minutes)_
+
+----
+Comparison Points
+──────────────────
+"Is there an ambiguity one team classified R and another classified E?"
+  → Why they saw it differently is the key.
+    Was there anything classified E where action was actually possible?
+    Conversely, was anything classified R that nobody actually knows?
+
+"What was the hardest part of designing the Spike?"
+  → Pinning down what "simplest" means.
+    Repeatedly ask: "Can this be made even simpler?"
+
+"Did people use the 'no decision needed right now' column?"
+  → This judgment is itself an important capability.
+    Moving away from the compulsion to resolve all ambiguity immediately.
+----
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-5 | My Real-Work Case: Reclassifying Ambiguities
+
+[sidebar]
+.Worksheet B-5 | Session 5 / My Real-Work Case (continued from Session 4)
+--
+Name: pass:[________________________]
+--
+
+List of unresolved ambiguities in my case +
+(transfer the [?] items from Sessions 2–4 worksheets here):
+
+1. +++______________________________+++
+2. +++______________________________+++
+3. +++______________________________+++
+4. +++______________________________+++
+5. +++______________________________+++
+
+Diagnose each ambiguity.
+
+[cols="3,1,3", options="header"]
+|===
+| Ambiguity | R / E | Diagnostic basis
+
+| 1.
+| * [ ] R * [ ] E
+|
+
+| 2.
+| * [ ] R * [ ] E
+|
+
+| 3.
+| * [ ] R * [ ] E
+|
+
+| 4.
+| * [ ] R * [ ] E
+|
+
+| 5.
+| * [ ] R * [ ] E
+|
+|===
+
+Choose one from those classified as Essential:
+
+How did you handle it at the time?
+
+* [ ] Made an assumption and moved on
+* [ ] Kept asking but got no answer
+* [ ] Just built it to find out
+* [ ] Deferred the decision
+* [ ] Other: +++______________________________+++
+
+Looking back, what approach would have been best? +
++++______________________________+++ +
++++______________________________+++
+
+If you were to design a Spike for that Essential Ambiguity, +
+what would the simplest exploratory action be? +
++++______________________________+++
+
+'''
+
+=== 6. Assignment (5 minutes)
+
+_Assignment Card #5_
+
+[sidebar]
+.Assignment Card #5
+--
+This is a retrospective assignment.
+
+Look for an experience within the last 6 months +
+where you "only found out by doing."
+
+Write down:
+
+1. Was that ambiguity Resolvable or Essential?
+
+2. How did you handle it at the time? +
+   (Assumption / asking / just building / deferring)
+
+3. If you had designed a Spike, how would you have done it? +
+   Design the "simplest exploratory action" now.
+
+Preview of next session: +
+I've seen this problem before — +
+analogical reasoning and business research
+--
+
+'''
+
+_(Continue to next session)_
+
+'''

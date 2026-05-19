@@ -1,0 +1,187 @@
+== I've Seen This Problem Before — Analogical Reasoning
+
+[quote]
+____
+_Core Question:_ You may not be seeing this problem for the first time — who has already solved it?
+____
+
+_Core Concepts:_ Analogical Reasoning · Problem-Type Reduction · Trade-off Research
+
+'''
+
+=== Worksheet A-6 | TeamOrder Case: Analogical Reasoning + Problem-Type Mapping
+
+[sidebar]
+.Worksheet A-6 | Session 6 / TeamOrder Case
+--
+Name: pass:[________________________] +
+Date: pass:[________________________]
+--
+
+Core problem structure of TeamOrder (review): +
+"Reliably deliver urgent task notifications with varying priority levels +
+to field workers in an unreliable network/power-saving environment, +
+and allow the team lead to confirm receipt."
+
+**PART 1. Analogical Reasoning (15 minutes)**
+
+Find problems with a similar structure in a different domain. +
+Extract the principle that could be learned from each.
+
+Analogous case 1: +
+ Domain: +++______________________________+++ +
+ What makes it similar: +++______________________________+++ +
+ Solving principle used in that case: +++______________________________+++ +
+ What can be imported into TeamOrder: +++______________________________+++
+
+Analogous case 2: +
+ Domain: +++______________________________+++ +
+ What makes it similar: +++______________________________+++ +
+ Solving principle used in that case: +++______________________________+++ +
+ What can be imported into TeamOrder: +++______________________________+++
+
+Analogous case 3: +
+ Domain: +++______________________________+++ +
+ What makes it similar: +++______________________________+++ +
+ Solving principle used in that case: +++______________________________+++ +
+ What can be imported into TeamOrder: +++______________________________+++
+
+**PART 2. Problem-Type Mapping (5 minutes)**
+
+Reduce the core problem of TeamOrder to a problem type. +
+(Multiple selections allowed)
+
+* [ ] Matching
+* [ ] Trust
+* [ ] Cold Start
+* [ ] Visibility
+* [ ] Rate Control
+* [ ] Consistency
+* [ ] Other: +++______________________________+++
+
+Known solution patterns for the selected type(s): +
++++______________________________+++ +
++++______________________________+++
+
+**PART 3. Business Research (10 minutes)**
+
+Choose one service that deals with a similar notification/task assignment problem +
+and analyze it from a Trade-off perspective. +
+(e.g., Slack, Asana, PagerDuty, Naver Works, Kakao Work, etc.)
+
+ Service analyzed: +++______________________________+++
+
+ What this service prioritized above all else: +
+ +++______________________________+++
+
+ What it gave up (or where it is weak): +
+ +++______________________________+++
+
+ Type of user/environment it is optimized for: +
+ +++______________________________+++
+
+ Why this service's design doesn't fit +
+ TeamOrder's users (factory floor workers): +
+ +++______________________________+++
+
+ One way TeamOrder should differ from this service: +
+ +++______________________________+++
+
+_Small Group Share (10 minutes)_
+
+----
+Comparison Points
+──────────────────
+"Did different teams find analogous cases in entirely different domains?"
+  → The same problem can yield analogies from completely different places.
+    If one team found hospital triage and another found TCP retransmission,
+    both are valid. The principles they extracted will differ.
+    List those differences on the board.
+
+"Where did you get stuck when importing the principle?"
+  → Check: were you trying to copy the solution, or import the principle?
+    The former almost always ends with "that doesn't fit our situation."
+
+"How was reading Trade-offs different from simply listing features?"
+  → Bring out this question to get participants to articulate the difference
+    in research perspective.
+----
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-6 | My Real-Work Case: Applying Analogical Reasoning
+
+[sidebar]
+.Worksheet B-6 | Session 6 / My Real-Work Case (continued from Session 5)
+--
+Name: pass:[________________________]
+--
+
+The core problem structure of my case in one sentence: +
+(based on Session 4 Domain Model + Session 5 ambiguity diagnosis)
+
++++______________________________+++ +
++++______________________________+++
+
+Find 2 or more analogous cases with a similar structure in a different domain.
+
+Analogous case 1: +
+ Domain / Service: +++______________________________+++ +
+ Similar structure: +++______________________________+++ +
+ Principle to import: +++______________________________+++
+
+Analogous case 2: +
+ Domain / Service: +++______________________________+++ +
+ Similar structure: +++______________________________+++ +
+ Principle to import: +++______________________________+++
+
+If you were to reduce your case to a problem type:
+
+ Problem type: +++______________________________+++
+
+ Commonly used solution patterns for this type: +
+ +++______________________________+++
+
+Looking back:
+
+Did you use analogical reasoning when you first received this case?
+
+* [ ] Yes — what analogous case did you reference? +++______________________________+++
+* [ ] No — would the cases you found now have helped at the time? +++______________________________+++
+
+Most useful analogous case and why: +
++++______________________________+++
+
+'''
+
+=== 6. Assignment (5 minutes)
+
+_Assignment Card #6_
+
+[sidebar]
+.Assignment Card #6
+--
+For your real-work case:
+
+1. Take the most useful analogous case you found +
+   and actually apply its principle to your case. +
+   Add "result of applying the imported principle" +
+   to Worksheet B.
+
+2. (Optional) Find a service or open-source project +
+   that deals with a similar problem. +
+   Write 2–3 sentences about it from a Trade-off +
+   perspective rather than a feature list.
+
+Preview of next session: +
+How deep should you design — +
+exploring the Solution Space with Risk-Driven thinking
+--
+
+'''
+
+_(Continue to next session)_
+
+'''

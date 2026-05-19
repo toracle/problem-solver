@@ -1,0 +1,216 @@
+== I've Seen This Problem Before
+
+[quote]
+____
+_"There are no truly new problems. There are only problems in new packaging."_
+____
+
+'''
+
+=== The Story
+
+Thursday lunch.
+
+The team was seated at a table in the cafeteria. How to handle night shift urgent notifications was still unresolved. The Spike had confirmed that FCM alone was not enough. So what now?
+
+Jiyeon was stirring her soup and said:
+
+"Night shift urgents... in the end, it's a message that someone absolutely has to receive. Because if they miss it, the line stops."
+
+Hyuntae said:
+
+"Isn't that kind of like PagerDuty? On-call notifications."
+
+Seunghyun put down his spoon.
+
+"Right. Wait — let's think about how PagerDuty solves this."
+
+Jiyeon pulled out her phone.
+
+"PagerDuty... sends an alert, and if there's no acknowledgement within a certain time, it escalates to the next person. And eventually it even makes a phone call."
+
+Seunghyun nodded.
+
+"That's the core of it. If there's no acknowledgement, retry. And with each retry, switch the channel. This is structurally the same as `TCP` retransmission."
+
+Hyuntae's eyes went wide.
+
+"`TCP`... like if a packet doesn't arrive, resend it? That's the same as notifications?"
+
+"Same structure. The channel is different — but no delivery confirmation means retry; increase the retry interval; if all else fails, switch to a different channel. That logic."
+
+Jiyeon summed it up.
+
+"So for us — send app push, no acknowledgement in five minutes, send again, for night shift urgents also send `SMS`."
+
+"That's the right direction. But if there are twelve team members, it's different from PagerDuty where the escalation target is one person. If our assigned member doesn't receive it, what do we do? Do we reverse-notify the team lead?"
+
+Hyuntae thought for a moment.
+
+"That's a Visibility problem. The team lead doesn't know whether the member received it."
+
+Seunghyun smiled for the first time.
+
+"That's right, Hyuntae. That's the second structure in this problem."
+
+Walking out of the cafeteria, Jiyeon said:
+
+"Seunghyun, we're still building a notification feature, right? Not implementing TCP retransmission."
+
+Seunghyun answered as they walked.
+
+"Obviously. We're not using TCP itself — we're using the principle. The logic of 'no confirmation, retry.' The implementation is entirely our own."
+
+'''
+
+That afternoon.
+
+Seunghyun posted links to Kakao Work and Naver Works on Slack.
+
+[quote]
+____
+Seunghyun: Services in a similar position to us. Not the feature list —
+____
+[quote]
+____
+           Let's look at the Trade-offs they chose.
+____
+[quote]
+____
+           What did Kakao Work give up to get what it got?
+____
+[quote]
+____
+           What kind of user is Naver Works optimized for?
+____
+[quote]
+____
+           Take an hour each, use them, and write 2-3 sentences.
+____
+
+An hour later, Jiyeon posted her findings.
+
+[quote]
+____
+Jiyeon: Kakao Work went all-in on Kakao ecosystem integration.
+____
+[quote]
+____
+        Notification customization is almost nonexistent.
+____
+[quote]
+____
+        Easy if you have a Kakao account, awkward without one.
+____
+[quote]
+____
+        → Might not fit enterprise-only environments like our client.
+____
+>
+[quote]
+____
+        Naver Works has strong groupware features.
+____
+[quote]
+____
+        Designed for companies with formal approval hierarchies.
+____
+[quote]
+____
+        But you get so many notifications you start ignoring them (personal experience).
+____
+[quote]
+____
+        → Doesn't solve notification fatigue.
+____
+
+Seunghyun replied:
+
+[quote]
+____
+Seunghyun: Good. So you can see where we can differentiate.
+____
+[quote]
+____
+           "Only the notifications field workers actually need — delivered reliably."
+____
+[quote]
+____
+           That's our design direction.
+____
+
+'''
+
+=== Concept Notes
+
+==== Polya's Question
+
+George Polya wrote the book _How to Solve It_ footnote:[George Pólya, How to Solve It, Princeton University Press, 1945. A classic in mathematics education, presenting a four-stage problem-solving framework (understand → plan → execute → review) along with specific thinking strategies including "searching for related problems," "generalization," and "specialization."] while studying methods of mathematical problem-solving. One of the most powerful questions he offered was:
+
+_"Do you know a related problem?"_
+
+This question, which started in mathematics, applies equally to software design.
+
+You do not need to solve every problem from scratch. If the __structure__ of this problem resembles a known problem from elsewhere, you can borrow the __logic__ of that solution. This is analogical reasoning.
+
+That is what Seunghyun did. He connected the notification problem to the logical structure of TCP retransmission. He connected it to PagerDuty's escalation pattern. The domains were entirely different, but the structure of _retry when delivery is not confirmed_ was the same.
+
+==== The Three Steps of Analogical Reasoning
+
+Analogical reasoning proceeds in three steps.
+
+_First, extract the structure._ What remains when you strip away the domain-specific details? Remove "team member," "notification," and "factory" from the problem — and what remains is: "in an environment where receiver state is uncertain, reliably deliver messages of varying urgency and confirm receipt."
+
+_Second, search for related problems._ Is this structure present in a different domain? TCP retransmission, PagerDuty escalation, hospital triage, air traffic control priority communication.
+
+_Third, import the principle back._ The principle of the related solution — not the solution itself. Not implementing TCP, but the logic of "retry with a different channel if no confirmation."
+
+==== Reduction — What Kind of Problem Is This?
+
+Sometimes it is faster to __reduce__ the problem to a problem-type vocabulary rather than searching for a specific analogy.
+
+The moment you say "this is a Visibility problem," the team can reference known solution patterns for Visibility problems — state sharing, real-time synchronization, acknowledgement requests. The trade-offs each pattern carries are already known.
+
+When Hyuntae said "that's a Visibility problem," it was not a simple observation. That single statement had already opened a range of possible solution directions.
+
+==== Reading Trade-offs, Not Feature Lists
+
+When researching similar services, simply listing their features is not particularly useful. Knowing that a feature exists tells you nothing about why that design was chosen.
+
+From Cunningham's perspective, a product that is already live is the result of numerous Spikes and Essential Ambiguity explorations. The evidence of that exploration is embedded in the Trade-offs they selected.
+
+Jiyeon's observation that Naver Works notifications are so numerous you start ignoring them — that is Trade-off reading. They prioritized completeness over notification frequency. And the result was notification fatigue. We can make a different choice.
+
+==== How Experience Accumulates
+
+One of the abilities that distinguishes engineers at five or six years from those at three or four is analogical reasoning.
+
+Accumulating experience is not simply having done more things. It is __beginning to see already-solved structures in new problems__. When you receive a new problem and "I've seen this structure somewhere" surfaces automatically — that is how experience becomes a knowledge asset.
+
+This ability can be trained. Start by asking, each time you encounter a problem:
+
+[TIP]
+====
+Analogical reasoning is "structure recognition," not "memory recall." You don't need to know `PagerDuty` to use the escalation pattern. The core is the ability to recognize the structure of "retry if no confirmation." Strip away the domain, and the structure becomes visible.
+====
+
+_"What kind of problem is this? Have I seen this structure somewhere?"_
+
+'''
+
+=== Try This Week
+
+The next time you receive a new requirement, invest five minutes before you start designing.
+
+_First._ Extract the core structure of the problem in one sentence. Strip out as much domain-specific language as you can.
+
+_Second._ Ask: "I've seen this structure somewhere — where?" Look across other services, other technologies, other domains.
+
+_Third._ From the related case you find, take the principle — not the solution. "What logic did they use to solve this?"
+
+Those five minutes can reduce the scatter of design directions down the road.
+
+'''
+
+_Next episode: Where to Focus Your Energy — How to allocate design effort using a risk-driven approach_
+'''

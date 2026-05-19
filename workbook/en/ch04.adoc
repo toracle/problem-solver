@@ -1,0 +1,217 @@
+== Before Drawing the Map — Problem Structure and Domain Model
+
+[quote]
+____
+_Core Question:_ How do you know when you've understood a problem well enough?
+____
+
+_Core Concepts:_ Symptom-Problem-Root Cause layers · Problem Framing · Domain Model
+
+'''
+
+=== Worksheet A-4 | TeamOrder Case: Layer Analysis + Domain Model
+
+[sidebar]
+.Worksheet A-4 | Session 4 / TeamOrder Case
+--
+Name: pass:[________________________] +
+Date: pass:[________________________]
+--
+
+_What we know so far (summary from Sessions 1–3):_
+
+* Team lead assigns task in system, then separately messages on Slack
+* Team members use tablets/phones on the factory floor
+* Missing a task causes a line stoppage
+* Night shift urgent assignment cases exist
+* Demo scheduled for team leads next month
+
+'''
+
+*PART 1. Layer Classification (8 minutes)*
+
+Classify the phenomena below as symptom / problem / root cause. +
+(There may not be one right answer — discuss with your team)
+
+[cols="3,1,2", options="header"]
+|===
+| Phenomenon | Layer | Reason
+
+| Team members miss tasks
+| {nbsp}
+| {nbsp}
+
+| Team lead sends a separate Slack message after assignment
+| {nbsp}
+| {nbsp}
+
+| Line stoppages occur
+| {nbsp}
+| {nbsp}
+
+| Team members don't check Slack much on the floor
+| {nbsp}
+| {nbsp}
+
+| The assignment workflow happens outside the system
+| {nbsp}
+| {nbsp}
+|===
+
+Which layer should we address, given the demo purpose and one-month timeline? +
+
+Selected layer:: pass:[________________________]
+Reason:: pass:[________________________]
+
+'''
+
+*PART 2. Problem Framing (7 minutes)*
+
+Write at least 2 ways the phenomenon "team members miss tasks" could be viewed through a different frame.
+
+Frame 1:: pass:[________________________]
+Solution that comes from this frame::: pass:[________________________]
+
+Frame 2:: pass:[________________________]
+Solution that comes from this frame::: pass:[________________________]
+
+Frame 3 (if any):: pass:[________________________]
+Solution that comes from this frame::: pass:[________________________]
+
+Which frame did the team choose? Why? +
+pass:[________________________]
+
+'''
+
+*PART 3. Domain Model Sketch (15 minutes)*
+
+Sketch the Domain Model for the TeamOrder case. +
+Fill in the categories below, or draw freely in the box.
+
+Actors (who is involved?):: pass:[________________________]
+Actions (what actions take place?):: pass:[________________________]
+States (what states can a task be in?):: pass:[________________________]
+Rules (what rules must be respected?):: pass:[________________________]
+Objects (key concepts/items the system handles):: pass:[________________________]
+
+'''
+
+_Check: Is the whole team using the same vocabulary?_
+
+Were there concepts that were confusing or named differently by different people? +
+pass:[________________________]
+
+What definition did you agree to use? +
+pass:[________________________]
+
+'''
+
+_Small Group Share (7 minutes)_
+
+Pin or draw each group's Domain Model side by side on the board.
+
+.Comparison Points
+****
+"How differently was State drawn across groups?" +
+-> State design varies the most. +
+   Teams that treated 'Assigned' and 'Acknowledged' as the same vs different — +
+   this difference will completely change DB design and API design later.
+
+"How many Rules were found?" +
+-> Did any teams include the night shift urgent rule? +
+   Teams that didn't — reflect on why it was left out.
+
+"How different is the Domain Model from your current design (if any)?" +
+-> Large gaps are future rework points.
+****
+
+'''
+
+=== 4. Real-Work Case Slot (20 minutes)
+
+==== Worksheet B-4 | My Real-Work Case: Layer Analysis + Domain Model
+
+[sidebar]
+.Worksheet B-4 | Session 4 / My Real-Work Case (continued from Session 3)
+--
+Name: pass:[________________________]
+--
+
+Classify the phenomena observed in your case by layer.
+
+[cols="3,2,1", options="header"]
+|===
+| Observed phenomenon | Symptom/Problem/Root Cause | Confidence (High/Medium/Low)
+
+| 1. {nbsp}
+| {nbsp}
+| {nbsp}
+
+| 2. {nbsp}
+| {nbsp}
+| {nbsp}
+
+| 3. {nbsp}
+| {nbsp}
+| {nbsp}
+
+| 4. {nbsp}
+| {nbsp}
+| {nbsp}
+|===
+
+Which layer did we actually fix?
+
+* [ ] Symptom layer
+* [ ] Problem layer
+* [ ] Root cause layer
+
+Was that choice conscious, or did you realize it in hindsight? +
+pass:[________________________]
+
+'''
+
+Sketch the Domain Model for your case.
+
+Actors:: pass:[________________________]
+Actions:: pass:[________________________]
+States:: pass:[________________________]
+Rules:: pass:[________________________]
+Objects:: pass:[________________________]
+
+'''
+
+_Reflection:_
+
+What is the gap between the Domain Model you just drew and the actual design/implementation? +
+pass:[________________________]
+
+What problems did (or might) that gap create? +
+pass:[________________________]
+
+'''
+
+=== 6. Assignment (5 minutes)
+
+_Assignment Card #4_
+
+[sidebar]
+.Assignment Card #4
+--
+Refine the Domain Model of your real-work case.
+
+*Specifically check:*
+
+. States — Did you list all the states the core concept (e.g., task, order, user) can be in?
+. Rules — Are there real-world rules that aren't reflected in the system?
+. Show your Domain Model to one teammate and ask "does this look right?" Record any parts they understood differently.
+
+*Preview of next session:* +
+Living with ambiguity — how do you handle ambiguity that cannot be resolved? (Cunningham)
+--
+
+'''
+
+_(Continue to next session)_
+
+'''

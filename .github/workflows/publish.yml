@@ -32,14 +32,28 @@ jobs:
         with:
           path: build/
 
+      - name: Rename PDFs for release
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          mkdir -p release
+          cp build/reading.pdf        release/problem-solver-reading-en.pdf
+          cp build/workbook.pdf       release/problem-solver-workbook-en.pdf
+          cp build/facilitator.pdf    release/problem-solver-facilitator-en.pdf
+          cp build/ko/reading.pdf     release/problem-solver-reading-ko.pdf
+          cp build/ko/workbook.pdf    release/problem-solver-workbook-ko.pdf
+          cp build/ko/facilitator.pdf release/problem-solver-facilitator-ko.pdf
+
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            build/reading.pdf
-            build/workbook.pdf
-            build/facilitator.pdf
+            release/problem-solver-reading-en.pdf
+            release/problem-solver-workbook-en.pdf
+            release/problem-solver-facilitator-en.pdf
+            release/problem-solver-reading-ko.pdf
+            release/problem-solver-workbook-ko.pdf
+            release/problem-solver-facilitator-ko.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

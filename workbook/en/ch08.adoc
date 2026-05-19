@@ -1,0 +1,347 @@
+== Seunghyun's Map — Validating and Integrating the Solution
+
+[quote]
+____
+_Core Question:_ A solution that looks plausible is different from one that actually works
+____
+
+_Core Concepts:_ Problem-Solution Fit · Pre-mortem · Integration Retrospective
+
+'''
+
+=== Worksheet A-8 | TeamOrder Case: Problem-Solution Fit + Pre-mortem
+
+[sidebar]
+.Worksheet A-8 | Session 8 / TeamOrder Case
+--
+Name: pass:[________________________] +
+Date: pass:[________________________]
+--
+
+****
+TeamOrder final solution (conclusions from Sessions 1–7):
+
+* Regular task assignment → FCM app push (with acknowledgement)
+* Night shift urgent → SMS fallback (automatic switch if unacknowledged)
+* Notification channel interface abstraction
+* Demo scope: the three items above
+* Scalability design: deferred until after demo
+****
+
+**PART 1. Problem-Solution Fit Check (10 minutes)**
+
+Compare the problem definition from Sessions 1–4 with the current solution.
+
+[cols="2,1,2", options="header"]
+|===
+| From the problem definition | Addressed in the solution? | How it was addressed
+
+| Team members miss tasks causing line stoppage
+| * [ ] Addressed * [ ] Partially * [ ] Not addressed
+|
+
+| Separate message required after assignment
+| * [ ] Addressed * [ ] Partially * [ ] Not addressed
+|
+
+| Night shift urgent assignment case
+| * [ ] Addressed * [ ] Partially * [ ] Not addressed
+|
+
+| Team lead doesn't know if member received it
+| * [ ] Addressed * [ ] Partially * [ ] Not addressed
+|
+
+| Mobile/tablet environment
+| * [ ] Addressed * [ ] Partially * [ ] Not addressed
+|
+|===
+
+Among the things "not built" — items to revisit later: +
+(items deferred in Session 7 PART 4)
+
+[cols="1,1"]
+|===
+| Item | Expected review point
+
+| 1.
+|
+
+| 2.
+|
+
+| 3.
+|
+|===
+
+**PART 2. Pre-mortem (12 minutes)**
+
+[quote]
+"We showed the TeamOrder notification feature in the demo +
+ and deployed it to production. +
+ Three months passed. It failed."
+
+What might the reasons be? Write as many as you can. (3 minutes individual work)
+
+1. ________________
+2. ________________
+3. ________________
+4. ________________
+5. ________________
+
+Top 3 failure reasons that came up most in the small group:
+
+1. ________________
+2. ________________
+3. ________________
+
+From these, what can be addressed proactively right now:
+
+[cols="1,1", options="header"]
+|===
+| Failure reason | Response approach
+
+|
+|
+
+|
+|
+|===
+
+**PART 3. Compare Session 1 to Now (8 minutes)**
+
+Do you remember the "things you thought of within 30 seconds" in Session 1? +
+(Or look back at Session 1 Worksheet A-1 Part 1)
+
+What you thought of in 30 seconds back then: ________________
+
+Comparing with the solution now:
+
+The same: ________________
+
+What changed (added, removed, or modified): ________________
+
+As a result of understanding the problem more deeply:
+
+* [ ] The solution became simpler
+* [ ] The solution became more complex
+* [ ] There are things that no longer need to be built
+* [ ] Some of what I first thought was wrong
+* [ ] Other: ________________
+
+The single biggest thing that changed in me during this workshop: ________________
+
+_Small Group Share (8 minutes)_
+
+Key comparison point for this session
+────────────────────────────────────────
+"Did anyone check 'there are things that no longer need to be built' in PART 3?"
+  → This is the core conclusion of this session and the entire workshop.
+    Ask them:
+    "What disappeared? How did you come to know it was okay for it to go?"
+
+"Did the solution become simpler?"
+  → For teams where it did: which session produced that simplification?
+    (Session 2 FAC? Session 4 layer selection? Session 5 Spike? Session 7 Risk?)
+
+"Among Pre-mortem failure reasons, +
+ are there things that could have been caught by Session 2–4 tools?"
+  → If that connection is visible, the workshop's learning has been integrated.
+
+---
+
+=== 4. Real-Work Case Slot — Final Integration (25 minutes)
+
+Session 8's real-work case slot is different from usual.
+This is the time to pull out Worksheets B-1 through B-7 and assemble one completed analysis of the case.
+
+==== Worksheet B-8 | My Real-Work Case: Final Integration Canvas
+
+[sidebar]
+.Worksheet B-8 | Session 8 / My Real-Work Case -- Completed
+--
+Name: pass:[________________________]
+--
+
+**Case title:** ________________
+
+**Original requirement (from Session 1):** ________________
+
+**Problem Understanding (Problem Space exploration results)**
+
+FAC Summary (Session 2): +
+{nbsp}{nbsp}Functions: ________________ +
+{nbsp}{nbsp}Attributes (key): ________________ +
+{nbsp}{nbsp}Constraints (key): ________________
+
+Resolution layer (Session 4): +
+{nbsp}{nbsp}* [ ] Symptom {nbsp} * [ ] Problem {nbsp} * [ ] Root Cause {nbsp}{nbsp}{nbsp} Reason for choice: ________________
+
+Domain Model key elements (Session 4): +
+{nbsp}{nbsp}Key States: ________________ +
+{nbsp}{nbsp}Key Rules: ________________
+
+Key ambiguities and how they were handled (Session 5): +
+{nbsp}{nbsp}Resolved as Resolvable: ________________ +
+{nbsp}{nbsp}Spiked as Essential: ________________ +
+{nbsp}{nbsp}Deferred: ________________
+
+Problem-type reduction (Session 6): ________________
+
+'''
+
+**Solution (Solution Space exploration results)**
+
+Top 3 Engineering Risks (Session 7):
+
+1. ________________
+2. ________________
+3. ________________
+
+What will be built now: ________________
+
+What will be built later + review point: ________________
+
+What was decided not to build + reason: ________________
+
+'''
+
+**Problem-Solution Fit Check (Session 8):**
+
+Is the core of the problem reflected in the solution? {nbsp} * [ ] Yes {nbsp} * [ ] Partially {nbsp} * [ ] No
+
+Is there anything among the things not built that is actually needed right now? ________________
+
+'''
+
+**Retrospective:**
+
+Compared to when you first received this case, +
+how did understanding the problem change the solution?
+
+What became simpler: ________________
+
+What disappeared (things you came to know didn't need to be built): ________________
+
+What became clearer: ________________
+
+**Presentation (optional, 10 minutes)**
+
+Volunteers present their completed case in about 5 minutes.
+
+Suggested structure:
+
+. What was the original requirement
+. The biggest thing that changed as you understood the problem
+. What you decided to build and what you decided not to build
+. One thing you learned from this case
+
+---
+
+=== 6. Workshop Closing (5 minutes)
+
+**Assignment Card #8 -- This one isn't an assignment**
+
+[sidebar]
+.Final Card
+--
+No assignment.
+
+Instead, take this one thing with you.
+
+The next time you receive a requirement, +
+before crossing into the Solution Space, +
+pause just once and ask:
+
+"What do I know right now? +
+{nbsp}And what do I still not know?"
+
+That question is this entire workshop.
+--
+
+'''
+
+== Appendix: My Real-Work Case — 8-Session Cumulative Record
+
+Worksheet B deepens the same case progressively across 8 sessions.
+This page is a space to organize key discoveries from each session at a glance.
+
+=== After Session 1 — Discovery Notes
+
+****
+Tools applied: Problem Space vs Solution Space · Einstellung Effect · Presumptive Architecture
+
+What I discovered: ________________
+
+What changed (problem understanding, solution direction): ________________
+****
+
+=== After Session 2 — Discovery Notes
+
+****
+Tools applied: Functions / Attributes / Constraints (FAC) · Three Sources of Ambiguity
+
+What I discovered: ________________
+
+What changed (problem understanding, solution direction): ________________
+****
+
+=== After Session 3 — Discovery Notes
+
+****
+Tools applied: Context-Free Questions · Black Box Test · Jobs-to-be-Done
+
+What I discovered: ________________
+
+What changed (problem understanding, solution direction): ________________
+****
+
+=== After Session 4 — Discovery Notes
+
+****
+Tools applied: Symptom-Problem-Root Cause layers · Problem Framing · Domain Model
+
+What I discovered: ________________
+
+What changed (problem understanding, solution direction): ________________
+****
+
+=== After Session 5 — Discovery Notes
+
+****
+Tools applied: Resolvable vs Essential Ambiguity · Spike Solution · Technical Debt
+
+What I discovered: ________________
+
+What changed (problem understanding, solution direction): ________________
+****
+
+=== After Session 6 — Discovery Notes
+
+****
+Tools applied: Analogical Reasoning · Problem-Type Reduction · Trade-off Research
+
+What I discovered: ________________
+
+What changed (problem understanding, solution direction): ________________
+****
+
+=== After Session 7 — Discovery Notes
+
+****
+Tools applied: Quality Attributes · Engineering Risk · Risk-Driven Model
+
+What I discovered: ________________
+
+What changed (problem understanding, solution direction): ________________
+****
+
+=== After Session 8 — Discovery Notes
+
+****
+Tools applied: Problem-Solution Fit · Pre-mortem · Integration Retrospective
+
+What I discovered: ________________
+
+What changed (problem understanding, solution direction): ________________
+****

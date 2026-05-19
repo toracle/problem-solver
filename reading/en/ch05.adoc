@@ -1,0 +1,202 @@
+== Walking Through the Fog
+
+[quote]
+____
+_"Those who wait for every fog to lift never depart. Some fogs only clear as you walk through them."_
+____
+
+'''
+
+=== The Story
+
+Wednesday morning.
+
+The team was stuck.
+
+The technical review meeting had been going on for two hours. On the board were three versions of the notification architecture diagram — Jiyeon's version, Hyuntae's version, and a combined version.
+
+The sticking point was the same in all three.
+
+"Can we reliably deliver notifications to mobile in the background?"
+
+Jiyeon said:
+
+"`FCM` supports background push. Android handles it natively, and for `iOS` you just need to configure `APNs`."
+
+Hyuntae pushed back.
+
+"But this is a factory environment. If the Wi-Fi drops or the power-saving mode is aggressive, it might not get through. I've seen that happen."
+
+"That's not a typical case."
+
+"Is a factory floor a typical environment?"
+
+Seunghyun looked at both of them. They were both saying something true. And neither had certainty.
+
+_This is not a problem that talking will solve._
+
+They had read the FCM documentation. They had read Stack Overflow. But there was no source that clearly answered "will push notifications arrive overnight on a factory floor tablet in aggressive power-saving mode?" Some threads said yes, others said no.
+
+Seunghyun erased the board.
+
+"Hold on. Let's think about what we're actually doing here."
+
+Both looked at him.
+
+"We've been talking for two hours trying to answer this question — but it's not a question that gets answered by talking. The documentation won't answer it either. We have to try it."
+
+Hyuntae asked.
+
+"So what do we do?"
+
+"Let's do the simplest thing. Build a test app. Throwaway. Just the FCM setup and a push-sending function. That's it. Then test it on a real tablet — power-saving mode on, Wi-Fi throttled. As close to a real factory environment as we can get."
+
+"That's... probably half a day of work."
+
+"Right. Half a day. Faster and more definitive than two more hours of talking."
+
+Jiyeon asked quietly.
+
+"And if it fails? If the push doesn't arrive?"
+
+Seunghyun answered.
+
+"That's also an answer. Then we know FCM alone won't cut it, and we find another way. Failure isn't the problem. Continuing to build while staying in the dark — that's the problem."
+
+Hyuntae stood up.
+
+"I'll do it. I think I can get it done by this afternoon."
+
+'''
+
+That evening at six.
+
+Hyuntae sent a message on Slack.
+
+[quote]
+____
+Hyuntae: Results are in.
+____
+[quote]
+____
+Wi-Fi normal, no power-saving → Received as expected
+____
+[quote]
+____
+Weak Wi-Fi, light power-saving → Delayed but received
+____
+[quote]
+____
+Heavy power-saving (max battery saver) → Not received
+____
+[quote]
+____
+Wi-Fi disconnected + power-saving → Completely unreceived
+____
+[quote]
+____
+Conclusion: `FCM` alone cannot guarantee night shift urgent cases.
+____
+[quote]
+____
+But for regular assignment notifications, it looks okay.
+____
+
+Seunghyun replied:
+
+[quote]
+____
+Seunghyun: Perfect. Now we know.
+____
+[quote]
+____
+Night shift urgents need separate handling. Regular uses FCM.
+____
+[quote]
+____
+Half a day ended a two-hour argument.
+____
+
+Jiyeon responded:
+
+[quote]
+____
+Jiyeon: But wasn't this throwaway code?
+____
+[quote]
+____
+Hyuntae: Yes. But without it, I think we'd still be in that meeting.
+____
+
+'''
+
+=== Concept Notes
+
+==== Two Kinds of Not Knowing
+
+What the team faced in this story was a situation where __two kinds of not knowing__ were mixed together.
+
+Whether `FCM` supports background notifications — that can be confirmed by reading documentation. This is __Resolvable Ambiguity__.
+
+But whether notifications actually arrive on a specific factory-floor device in power-saving mode — that requires trying it. Documentation covers the general case, not this specific environment. This is __Essential Ambiguity__.
+
+For two hours, the team was treating Essential Ambiguity as if it were Resolvable. They kept asking a question that had no answer through discussion. What Seunghyun did was separate the two.
+
+==== What "Simplest Thing" Actually Means
+
+Ward Cunningham's question — "What is the simplest thing that could possibly work?" — is often misunderstood.footnote:[Ward Cunningham is a software engineer who established many of the core practices of Extreme Programming (XP) and is also the inventor of the wiki concept and the notion of Technical Debt. This question is widely cited in the XP community as a principle of design simplicity.]
+
+It does not mean "build only the minimum."
+
+The precise meaning is:
+
+_"What is the smallest action that will make this ambiguity visible?"_
+
+The test app Hyuntae built was not production code. He knew it would be thrown away going in. Just FCM configuration, just the push function. The purpose was __learning__, and half a day was enough.
+
+This is a __Spike Solution__footnote:[An XP (Extreme Programming) practice systematized by Ron Jeffries and others. "Spike" is a metaphor drawn from the act of driving a spike — a piercing exploration of uncertainty. It refers to throwaway exploration code created to probe technical or design ambiguity. Kent Beck, _Extreme Programming Explained_, 2000.]. An `XP` practice for exploring specific technical or design ambiguity through throwaway exploratory code. The output is not code — it is learning.
+
+Jiyeon's question — "But wasn't this throwaway code?" — had already been answered by Hyuntae. Without it, the two-hour argument would have continued.
+
+==== Technical Debt — A Misunderstood Concept
+
+When Ward Cunningham first talked about Technical Debt, many people missed what he actually meant.
+
+It was not a metaphor for bad code.
+
+Cunningham's intent was this:
+
+A more sophisticated design is needed than what we currently understand — but we can't know that sophistication yet. So we intentionally build something simple, learn through using it, and refactor based on what we've learned. The gap between the current design and the ideal design is the "debt."
+
+The key is that it is __intentional__. Building something while uninformed is incurring debt. Building something carelessly without awareness — that is not debt, that is just bad design.
+
+If the team decided to handle the night shift urgent alert with FCM for now and add separate handling later — they are consciously taking on debt. "We know this is not the perfect solution. We will fix it later." That declaration is what makes debt manageable.
+
+==== Knowing Through Doing
+
+Philosopher Donald Schön studied expert practitioners and found something they all had in common.footnote:[Donald A. Schön, _The Reflective Practitioner: How Professionals Think in Action_, 1983. Through observation of practitioners across architecture, engineering, medicine, and other fields, Schön argues that "Reflection-in-Action" is the core of professional expertise.]
+
+They did not form a perfect plan before acting. They thought while acting, and through the results of their actions, they came to understand problems more deeply. He called this __Reflection-in-Action__.
+
+Seunghyun stopping the two-hour meeting and starting the test — that was it. Not more discussion, but the smallest action for the fastest learning.
+
+This is not a sign of immaturity. It is a mature epistemology in the face of a complex problem.
+
+'''
+
+=== Try This Week
+
+The next time your team is going in circles with the same question, try this.
+
+_First._ Stop and ask: _"Is this a problem we can solve by talking, or something we can only know by doing?"_
+
+_Second._ If it's Essential Ambiguity, ask: _"What is the simplest action that would confirm this? How long would it take?"_
+
+_Third._ If that action is faster than another hour of discussion, just do it.
+
+You are not building something to throw away. You are building something to learn from.
+
+'''
+
+_Next episode: I've Seen This Problem Before — How to find problems someone has already solved using analogical reasoning_
+'''
